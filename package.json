@@ -1,10 +1,12 @@
 {
   "name": "gianluca-belvisi",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Gianluca Belvisi's personal page",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Gianluca Belvisi <popippo@gmail.com>",
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.1",
     "gatsby": "^2.32.11",
     "gatsby-cli": "^2.19.2",
     "gatsby-image": "^2.5.0",
