@@ -1,7 +1,8 @@
 import React from "react"
 import Link from "gatsby-link"
 import SEO from "../components/seo";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
+import { graphql } from 'gatsby'
 
 export default function Template({data}) {
     const post = data.markdownRemark
