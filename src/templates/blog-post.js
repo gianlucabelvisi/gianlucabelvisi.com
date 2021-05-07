@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
-import SEO from "../components/seo";
+import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { graphql } from 'gatsby'
 
@@ -9,7 +9,7 @@ export default function Template({data}) {
 
     return(
         <Layout>
-            <SEO title={post.frontmatter.title} />
+            <Seo title={post.frontmatter.title} />
             <div>
                 <Link to="/blog">Go Back</Link>
                 <hr/>

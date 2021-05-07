@@ -1,15 +1,17 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Hero from "../components/Hero";
 import Trips from "../components/Trips";
+import Testimonials from "../components/Testimonials";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <Hero/>
-    <Trips/>
+    <Trips heading="My favorite stuff"/>
+    <Testimonials/>
   </Layout>
 )
 
