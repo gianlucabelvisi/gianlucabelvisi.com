@@ -5,6 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #F26A2E;
     --secondary-color: #077BF1;
     --font-color: white;
+    --background-color: transparent;
+    --accent-color: var(--primary-color);
   }
     
   * {

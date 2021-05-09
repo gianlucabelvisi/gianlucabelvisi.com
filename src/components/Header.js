@@ -5,11 +5,11 @@ import { FaBars } from 'react-icons/fa'
 import { menuData } from "../data/MenuData";
 import { Button } from "./Button";
 
-const Header = () => {
+const Header = ({toggleDropdownOpen}) => {
     return (
         <Nav>
             <NavLink to="/">Gianluca</NavLink>
-            <Hamburger />
+            <Hamburger onClick={toggleDropdownOpen}/>
             <NavMenu>
                 {menuData.map((item, index) => (
                     <NavLink to={item.link} key={index}>
@@ -18,9 +18,9 @@ const Header = () => {
                 ))}
             </NavMenu>
 
-            <NavButton>
-                <Button primary="true" round="true" to="trips" >Button</Button>
-            </NavButton>
+            {/*<NavButton>*/}
+            {/*    <Button primary="true" round="true" to="trips" >Button</Button>*/}
+            {/*</NavButton>*/}
 
         </Nav>
     )

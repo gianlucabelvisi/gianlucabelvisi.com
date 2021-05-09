@@ -5,14 +5,18 @@ import Seo from "../components/Seo"
 import Hero from "../components/Hero";
 import Trips from "../components/Trips";
 import Testimonials from "../components/Testimonials";
+import Stats from "../components/Stats";
+import Email from "../components/Email";
 
 const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <Hero/>
-    <Trips heading="My favorite stuff"/>
-    <Testimonials/>
-  </Layout>
+    <Layout>
+        <Seo title="Home"/>
+        <Hero/>
+        <Trips heading="My favorite stuff"/>
+        <Testimonials/>
+        <Stats/>
+        <Email/>
+    </Layout>
 )
 
 export default IndexPage
