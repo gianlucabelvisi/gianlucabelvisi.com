@@ -8,7 +8,7 @@ import Testimonials from "../components/Testimonials";
 import Stats from "../components/Stats";
 import Email from "../components/Email";
 
-const IndexPage = () => (
+const Index = () => (
     <Layout>
         <Seo title="Home"/>
         <Hero/>
@@ -19,4 +19,4 @@ const IndexPage = () => (
     </Layout>
 )
 
-export default IndexPage
+export default Index

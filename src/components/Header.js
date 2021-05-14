@@ -1,27 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, {useState, useEffect} from "react"
+import {Link} from "gatsby"
 import styled from 'styled-components'
-import { FaBars } from 'react-icons/fa'
-import { menuData } from "../data/MenuData";
-import { Button } from "./Button";
+import {FaBars} from 'react-icons/fa'
+import {menuData} from "../data/MenuData";
+import Dropdown from "./Dropdown";
+import MenuElement from "./MenuElement";
 
-const Header = ({toggleDropdownOpen}) => {
+const Header = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const toggleDropdownOpen = () => {
+        setIsDropdownOpen(!isDropdownOpen)
+    }
+
+    const [path, setPath] = useState("")
+    useEffect(() => {
+        if (window.location.pathname) {
+            setPath(window.location.pathname)
+        }
+    }, [])
+
     return (
-        <Nav>
-            <NavLink to="/">Gianluca</NavLink>
-            <Hamburger onClick={toggleDropdownOpen}/>
-            <NavMenu>
-                {menuData.map((item, index) => (
-                    <NavLink to={item.link} key={index}>
-                        {item.title}
-                    </NavLink>
+        <Nav path={path}>
+            <HomeLink to="/">
+                <Title>Gianluca's</Title>
+                <SubTitle>worthless piece of blog</SubTitle>
+            </HomeLink>
+            <MenuWrapper>
+                {menuData.map((item) => (
+                    <MenuElement item={item}/>
                 ))}
-            </NavMenu>
-
-            {/*<NavButton>*/}
-            {/*    <Button primary="true" round="true" to="trips" >Button</Button>*/}
-            {/*</NavButton>*/}
-
+            </MenuWrapper>
+            <MobileWrapper>
+                <Hamburger onClick={toggleDropdownOpen}/>
+                <Dropdown isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
+            </MobileWrapper>
         </Nav>
     )
 }
@@ -29,7 +41,7 @@ const Header = ({toggleDropdownOpen}) => {
 export default Header
 
 const Nav = styled.nav`
-  background: transparent;
+  background: ${({path}) => (path !== "/" ? "var(--nav-background-color)" : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -37,20 +49,34 @@ const Nav = styled.nav`
   z-index: 100;
   position: relative;
 `
-const NavLink = styled(Link)`
-  color: var(--font-color);
+const HomeLink = styled(Link)`
+  color: var(--nav-font-color);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   padding: 1rem;
   height: 100%;
   cursor: pointer;
 `
-
+const MenuWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+const Title = styled.div`
+  font-size: larger;
+`
+const SubTitle = styled.div`
+  font-size: smaller;
+`
 const Hamburger = styled(FaBars)`
   display: none;
   color: var(--font-color);
-  
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -61,20 +87,8 @@ const Hamburger = styled(FaBars)`
     cursor: pointer;
   }
 `
-const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 48px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-const NavButton = styled.div`
+const MobileWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 24px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  } 
 `
