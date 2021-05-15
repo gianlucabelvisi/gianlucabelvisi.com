@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import { Button } from './Button';
 import Video from '../assets/videos/background.mp4'
 import Aos from 'aos'
 import "aos/dist/aos.css"
@@ -123,9 +122,9 @@ const Disclaimer = styled.div`
   opacity: .2;
 `
 
-const HeroP = styled.p`
-  font-size: clamp(1rem, 3vw, 3rem);
-  margin-bottom: 3rem;
-  font-weight: 400;
-`
+// const HeroP = styled.p`
+//   font-size: clamp(1rem, 3vw, 3rem);
+//   margin-bottom: 3rem;
+//   font-weight: 400;
+// `
 
