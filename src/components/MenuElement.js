@@ -52,7 +52,6 @@ const SubMenuLink = styled(MenuLink)`
 `
 const SubMenuContainer = styled.div`
   color: var(--nav-font-color);
-  opacity: 0;
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
   position: absolute;
@@ -61,6 +60,8 @@ const SubMenuContainer = styled.div`
   width: 20ch;
   z-index: 10;
   border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
   &:before {
     position: absolute;
     content: '';

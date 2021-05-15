@@ -12,34 +12,27 @@ const Hero = () => {
     }, [])
 
     return (
-        <HeroContainer>
-            <HeroBg>
+        <Container>
+            <Background>
                 <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine/>
-            </HeroBg>
+            </Background>
 
-            <HeroContent>
-                <HeroItems>
-                    <HeroH1 data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-                        Unreal Destinations
-                    </HeroH1>
-                    <HeroP data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                        Out of this world
-                    </HeroP>
-                    <Button primary="true" big="true" round="true"
-                            data-aos="fade-up" data-aos-delay="350" data-aos-duration="1000"
-                    >
-                        Travel Now
-                    </Button>
-                </HeroItems>
-            </HeroContent>
+            <Content>
+                <Overlay>
+                    <ShoutOut data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1000">
+                        Never let a good midlife crisis go to waste
+                    </ShoutOut>
+                    <Disclaimer>Placeholder Video</Disclaimer>
+                </Overlay>
+            </Content>
 
-        </HeroContainer>
+        </Container>
     );
 };
 
 export default Hero;
 
-const HeroContainer = styled.div`
+const Container = styled.div`
   background-color: #0c0c0c;
   display: flex;
   justify-content: center;
@@ -49,7 +42,6 @@ const HeroContainer = styled.div`
   padding: 0 1rem;
   position: relative;
   margin-top: -80px;
-  
   :before {
     content: "";
     position: absolute;
@@ -62,10 +54,8 @@ const HeroContainer = styled.div`
             linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%),
             linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
   }
-  
 `
-
-const HeroBg = styled.div`
+const Background = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -75,24 +65,20 @@ const HeroBg = styled.div`
   height: 100%;
   overflow: hidden;
 `
-
 const VideoBg = styled.video`
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 `
-
-
-const HeroContent = styled.div`
+const Content = styled.div`
   z-index: 3;
   height: calc(100vh - 80px);
   max-height: 100%;
   padding: 0rem calc((100vh - 1300px) / 2);
 `
-
-
-const HeroItems = styled.div`
+const Overlay = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,15 +90,38 @@ const HeroItems = styled.div`
   color: #fff;
   font-weight: bold;
 `
-
-const HeroH1 = styled.h1`
+const ShoutOut = styled.h1`
   font-size: clamp(1.5rem, 6vw, 4rem);
   margin-bottom: 1.5rem;
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0.1rem;
-`
+  max-width: 60%;
+  margin-top: -25rem;
+  opacity: 50% !important;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @media screen and (max-width: 1320px) {
+    max-width: 70%;
+  }
+  @media screen and (max-width: 1130px) {
+    max-width: 80%;
+  }
+  @media screen and (max-width: 800px) {
+    max-width: 90%;
+  }
 
+  &:hover {
+    opacity: 100% !important;
+    transform: scale(1.1) !important;
+  }
+`
+const Disclaimer = styled.div`
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: .2;
+`
 
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
