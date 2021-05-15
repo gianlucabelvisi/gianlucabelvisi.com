@@ -78,6 +78,7 @@ const SubMenuWrapper = styled.div`
   z-index: 1;
   &:hover ${SubMenuContainer} {
     opacity: 1;
+    pointer-events: all;
   }
 `
 const NoLink = styled(Link)`
