@@ -1,30 +1,21 @@
 import React from 'react';
 import styled from "styled-components"
-import {Button} from "./Button";
 import {FaTimes} from "react-icons/all";
 import {menuData} from "../data/MenuData";
-import Link from "gatsby-link";
-
+import DropdownElement from "./DropdownElement";
 
 const Dropdown = ({isDropdownOpen, toggleDropdownOpen}) => {
     return (
-        <Container isOpen={isDropdownOpen} onClick={toggleDropdownOpen}>
+        <Container isOpen={isDropdownOpen}>
             <Icon onClick={toggleDropdownOpen}>
                 <CloseIcon/>
             </Icon>
             <Wrapper>
                 <Menu>
-                    {menuData.map((item, index) => (
-                        <DropdownLink to={item.link} key={index}>
-                            {item.title}
-                        </DropdownLink>
+                    {menuData.map((item) => (
+                        <DropdownElement item={item}/>
                     ))}
                 </Menu>
-                <ButtonWrap>
-                    <Button round="true" to="/trips">
-                        Book
-                    </Button>
-                </ButtonWrap>
             </Wrapper>
         </Container>
     );
@@ -42,7 +33,7 @@ const Container = styled.aside`
   align-items: center;
   left: 0;
   transition: 0.3s ease-in-out;
-  opacity: ${({isOpen}) => (isOpen ? "1" : "0")};
+  opacity: ${({isOpen}) => (isOpen ? "0.9" : "0")};
   top: ${({isOpen}) => (isOpen ? "0" : "-100%")};
 `
 const Icon = styled.div`
@@ -57,37 +48,13 @@ const Icon = styled.div`
 const CloseIcon = styled(FaTimes)`
   color: var(--font-color);
 `
-const DropdownLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  color: var(--font-color);
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  
-  &:hover {
-    color: var(--accent-color);
-  }
-`
-
 const Wrapper = styled.div`
   color: var(--font-color);
 `
 const Menu = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   margin-bottom: 2rem;
-  
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(4, 60px);
-  }
-`
-const ButtonWrap = styled.div`
-  display: flex;
-  justify-content: center;
 `
