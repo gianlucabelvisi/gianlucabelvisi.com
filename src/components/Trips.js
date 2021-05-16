@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Button } from "./Button";
 import { ImLocation } from "react-icons/im"
 
 const Trips = ({heading}) => {
@@ -44,7 +43,6 @@ const Trips = ({heading}) => {
                                     <ImLocation/>
                                     <ProductTitle>{edge.node.name}</ProductTitle>
                                 </TextWrap>
-                                <Button to="/trips" round="true" css={`position: absolute; top: 420px; font-size: 14px`}>{edge.node.button}</Button>
                             </ProductInfo>
                         </ProductCard>
                         )

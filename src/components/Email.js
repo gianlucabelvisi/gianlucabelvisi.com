@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components"
 
 import EmailBg from '../assets/images/email.jpg'
-import {Button} from "./Button";
 
 const Email = () => {
     return (
@@ -15,24 +14,24 @@ const Email = () => {
                         <label htmlFor="email">
                             <input type="email" placeholder="Enter your email" id="email"/>
                         </label>
-                        <Button
-                            as="button"
-                            type="submit"
-                            round="true"
-                            css={`
-                              height: 48px;
-                              @media screen and (max-width: 768px) {
-                                width: 100%;
-                                min-width: 350px;
-                              }
-                              @media screen and (max-width: 400px) {
-                                width: 100%;
-                                min-width: 250px;
-                              }
-                            `}
-                        >
-                            Sign Up
-                        </Button>
+                        {/*<Button*/}
+                        {/*    as="button"*/}
+                        {/*    type="submit"*/}
+                        {/*    round="true"*/}
+                        {/*    css={`*/}
+                        {/*      height: 48px;*/}
+                        {/*      @media screen and (max-width: 768px) {*/}
+                        {/*        width: 100%;*/}
+                        {/*        min-width: 350px;*/}
+                        {/*      }*/}
+                        {/*      @media screen and (max-width: 400px) {*/}
+                        {/*        width: 100%;*/}
+                        {/*        min-width: 250px;*/}
+                        {/*      }*/}
+                        {/*    `}*/}
+                        {/*>*/}
+                        {/*    Sign Up*/}
+                        {/*</Button>*/}
                     </FormWrap>
                 </form>
             </Content>
