@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import Video from '../assets/videos/background.mp4'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
@@ -12,7 +13,7 @@ const Hero = () => {
     return (
         <Container>
             <Background>
-                {/*<VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine/>*/}
+                <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine/>
             </Background>
 
             <Content>
