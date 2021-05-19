@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Link from "gatsby-link";
 import styled from "styled-components"
-import {AiFillCaretRight} from "react-icons/all";
+import {AiFillCaretRight} from "react-icons/ai";
 
 const DropdownElement = ({item}) => {
 

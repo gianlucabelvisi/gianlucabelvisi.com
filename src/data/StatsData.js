@@ -1,4 +1,6 @@
-import {FaMoneyCheck, GiEarthAmerica, MdAirplanemodeActive, MdTimer} from "react-icons/all";
+import {FaMoneyCheck } from "react-icons/fa";
+import {GiEarthAmerica} from "react-icons/gi";
+import {MdAirplanemodeActive, MdTimer} from "react-icons/md";
 import React from "react";
 
 

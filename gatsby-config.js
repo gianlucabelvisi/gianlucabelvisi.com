@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gianluca Belvisi`,
+    title: "gianlucabelvisi.com",
     description: `Homepage of Gianluca Belvisi.`,
     author: `@gbelvs`,
   },
@@ -9,38 +9,14 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `videos`,
-        path: `${__dirname}/src/assets/videos`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    'gatsby-plugin-catch-links',
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gianluca-belvisi`,
+        short_name: `gbelvisi`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -48,6 +24,10 @@ module.exports = {
         icon: `src/assets/images/icon.jpg`, // This path is relative to the root of the site.
       },
     },
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -55,9 +35,21 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    `gatsby-plugin-image`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/assets/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
   ],
-}
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import {FaTimes} from "react-icons/all";
+import {FaTimes} from "react-icons/fa";
 import {menuData} from "../data/MenuData";
 import DropdownElement from "./DropdownElement";
 

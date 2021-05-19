@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import {FaRegLightbulb, IoMdCheckmarkCircleOutline} from "react-icons/all";
+import {FaRegLightbulb} from "react-icons/fa";
+import {IoMdCheckmarkCircleOutline} from "react-icons/io";
 import {graphql, useStaticQuery} from "gatsby";
 
 
@@ -108,13 +109,13 @@ const ColumnOne = styled.div`
 const Testimonial = styled.div`
   padding-top: 1rem;
   padding-right: 2rem;
-  
+
   h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-style: italic;
   }
-  
+
   p {
     color: #3b3b3b;
   }
@@ -125,7 +126,7 @@ const ColumnTwo = styled.div`
   margin-top: 2rem;
   grid-gap: 10px;
   @media screen and (max-width: 500px) {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 `
 
