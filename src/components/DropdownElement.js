@@ -19,7 +19,10 @@ const DropdownElement = ({item}) => {
     } else {
         return (
             <SubMenuContainer onClick={toggleSubMenuOpen}>
-                <NoLink>{item.title} <SubMenuButton isOpen={isSubMenuOpen}/>    </NoLink>
+                <NoLink>
+                    {item.title}
+                    <SubMenuButton isOpen={isSubMenuOpen}/>
+                </NoLink>
                 <SubMenuWrapper isOpen={isSubMenuOpen}>
                     {item.subMenu.map((item) => (
                         <SubMenuLink to={item.link}>
@@ -70,7 +73,7 @@ const NoLink = styled.div`
 const SubMenuButton = styled(AiFillCaretRight)`
   position: absolute;
   top: 3px;
-  right: 180px;
+  right: 40px;
   transform: ${({isOpen}) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
 `
 const SubMenuLink = styled(DropdownLink)`
