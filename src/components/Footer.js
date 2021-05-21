@@ -1,31 +1,35 @@
 import React from 'react';
 import styled from "styled-components"
 import Link from "gatsby-link";
+import Social from "./Social";
 
 const Footer = () => {
     return (
         <Container>
-            <LinksWrapper>
-                <Desc>
-                    <h1>Explore</h1>
-                    <p>Something something</p>
-                </Desc>
-                <LinkItems>
-                    <LinkTitle>Contact Us</LinkTitle>
-                    <FooterLink to="/about">About</FooterLink>
-                    <FooterLink to="/destinations">Destinations</FooterLink>
-                    <FooterLink to="/sponsors">Sponsors</FooterLink>
-                </LinkItems>
-            </LinksWrapper>
-            <LinksWrapper>
-                <LinkItems>
-                    <LinkTitle>Contact Us</LinkTitle>
-                    <FooterLink to="/about">Media</FooterLink>
-                    <FooterLink to="/destinations">Press</FooterLink>
-                    <FooterLink to="/sponsors">Stuff</FooterLink>
-                </LinkItems>
 
-            </LinksWrapper>
+            <Social></Social>
+
+            {/*<LinksWrapper>*/}
+            {/*    <Desc>*/}
+            {/*        <h1>Explore</h1>*/}
+            {/*        <p>Something something</p>*/}
+            {/*    </Desc>*/}
+            {/*    <LinkItems>*/}
+            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
+            {/*        <FooterLink to="/about">About</FooterLink>*/}
+            {/*        <FooterLink to="/destinations">Destinations</FooterLink>*/}
+            {/*        <FooterLink to="/sponsors">Sponsors</FooterLink>*/}
+            {/*    </LinkItems>*/}
+            {/*</LinksWrapper>*/}
+            {/*<LinksWrapper>*/}
+            {/*    <LinkItems>*/}
+            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
+            {/*        <FooterLink to="/about">Media</FooterLink>*/}
+            {/*        <FooterLink to="/destinations">Press</FooterLink>*/}
+            {/*        <FooterLink to="/sponsors">Stuff</FooterLink>*/}
+            {/*    </LinkItems>*/}
+
+            {/*</LinksWrapper>*/}
         </Container>
     );
 };
@@ -35,7 +39,7 @@ export default Footer;
 const Container = styled.div`
   padding: 5rem calc((100vw - 1100px) / 2);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   color: #000;
   background: #fafafb;
 `
