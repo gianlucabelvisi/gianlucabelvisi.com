@@ -1,4 +1,4 @@
-import {GiEarthAmerica, GiPadlock} from "react-icons/gi";
+import {GiPadlock} from "react-icons/gi";
 import React from "react";
 import {FaCcPaypal, FaGithub, FaInstagramSquare, FaTwitter} from "react-icons/fa";
 import {ImFacebook2} from "react-icons/im";

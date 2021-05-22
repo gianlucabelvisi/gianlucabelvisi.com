@@ -11,7 +11,7 @@ const Social = () => {
                     <Tab>
                         <Label>
                             <Icon>{item.icon}</Icon>
-                            <a href={item.link} target="_blank">{item.title}
+                            <a href={item.link} target="_blank" rel="noreferrer">{item.title}
                             <HoverIcon css={`background-color: ${item.bgColor}`}>{item.icon}</HoverIcon>
                             </a>
                         </Label>
