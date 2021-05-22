@@ -1,16 +1,13 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import Testimonials from "../components/Testimonials";
-import Stats from "../components/Stats";
+import WhoAmI from "../components/WhoAmI";
 
-const About = () => (
+const about = () => (
     <Layout>
-        <Seo title="About"/>
-        <Testimonials/>
-        <Stats/>
+        <Seo title="about"/>
+        <WhoAmI/>
     </Layout>
 )
 
-
-export default About
+export default about
