@@ -64,12 +64,12 @@ const SubMenuContainer = styled.div`
   opacity: 0;
   &:before {
     position: absolute;
-    content: ''; // we just need this mofo
-    background: var(--primary-color);
-    width: 20px;
+    content: '';
     height: 20px;
+    width: 20px;
     top: -10px;
     left: 35px;
+    background: var(--primary-color);
     transform: rotate(45deg);
   }
 `
