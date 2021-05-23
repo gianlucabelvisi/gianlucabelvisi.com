@@ -20,7 +20,7 @@ const Header = () => {
         }
     }, [])
 
-    const [sticky, setSticky] = useState(false)
+    const [sticky, setSticky] = useState(true)
 
     useScrollPosition(
         ({prevPos, currPos}) => {
