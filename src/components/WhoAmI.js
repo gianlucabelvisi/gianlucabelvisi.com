@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {graphql, useStaticQuery} from "gatsby";
 import {GiDeathSkull, GiMedicalThermometer} from "react-icons/gi";
+import Aos from "aos";
 
 
 const WhoAmI = () => {
@@ -19,6 +20,9 @@ const WhoAmI = () => {
           }
         }
     `)
+    useEffect(() => {
+        Aos.init({})
+    }, [])
     return (
         <Container>
             <Description>
@@ -30,7 +34,7 @@ const WhoAmI = () => {
                     <TopLine>
                         Testimonials
                     </TopLine>
-                    <Testimonial>
+                    <Testimonial data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <GiMedicalThermometer
                             css={`
                               color: #d20cf5;
@@ -42,7 +46,7 @@ const WhoAmI = () => {
                         <p>"Te non stai bene. (You are unwell.)"
                         </p>
                     </Testimonial>
-                    <Testimonial>
+                    <Testimonial data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <GiDeathSkull
                             css={`
                               color: #ec092e;
@@ -55,10 +59,10 @@ const WhoAmI = () => {
                     </Testimonial>
                 </ColumnOne>
 
-                <ColumnTwo>
+                <ColumnTwo data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
                     {data.allFile.edges.map(edge => {
                         return (
-                            <Image image={getImage(edge.node)}/>
+                            <Image image={getImage(edge.node)} />
                         )
                     })}
                 </ColumnTwo>
