@@ -40,7 +40,6 @@ const Container = styled.div`
   height: 100vh;
   padding: 0 1rem;
   position: relative;
-  margin-top: -80px;
   :before {
     content: "";
     position: absolute;

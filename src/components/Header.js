@@ -5,6 +5,7 @@ import {FaBars} from 'react-icons/fa'
 import {menuData} from "../data/MenuData";
 import Dropdown from "./Dropdown";
 import MenuElement from "./MenuElement";
+import {useScrollPosition} from "./hooks/useScrollPosition";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -19,8 +20,18 @@ const Header = () => {
         }
     }, [])
 
+    const [sticky, setSticky] = useState(false)
+
+    useScrollPosition(
+        ({prevPos, currPos}) => {
+            const isShow = currPos.y > prevPos.y
+            if (isShow !== sticky) setSticky(isShow)
+        },
+        [sticky]
+    )
+
     return (
-        <Nav path={path}>
+        <Nav path={path} sticky={sticky}>
             <HomeLink to="/">
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
@@ -44,10 +55,14 @@ const Nav = styled.nav`
   background: ${({path}) => (path !== "/" ? "var(--nav-background-color)" : "transparent")};
   height: 80px;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
-  position: relative;
+  position: fixed;
+  transition: transform 0.5s ease-in 0.5s;
+  transform: ${({sticky}) => (sticky ? "translateY(0)" : "translateY(-100%)")};
+
 `
 const HomeLink = styled(Link)`
   color: var(--nav-font-color);
