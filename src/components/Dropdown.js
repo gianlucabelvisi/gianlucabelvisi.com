@@ -12,8 +12,8 @@ const Dropdown = ({isDropdownOpen, toggleDropdownOpen}) => {
             </Icon>
             <Wrapper>
                 <Menu>
-                    {menuData.map((item) => (
-                        <DropdownElement item={item}/>
+                    {menuData.map((item, key) => (
+                        <DropdownElement item={item} key={key}/>
                     ))}
                 </Menu>
             </Wrapper>

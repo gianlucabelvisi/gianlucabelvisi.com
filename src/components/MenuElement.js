@@ -26,8 +26,8 @@ export default MenuElement;
 const SubMenuElement = ({items}) => {
     return (
         <SubMenuContainer>
-            {items.map((item) => (
-                <SubMenuLink to={item.link}>
+            {items.map((item, key) => (
+                <SubMenuLink to={item.link} key={key}>
                     {item.title}
                 </SubMenuLink>
             ))}
@@ -81,7 +81,7 @@ const SubMenuWrapper = styled.div`
     pointer-events: all;
   }
 `
-const NoLink = styled(Link)`
+const NoLink = styled.div`
   color: var(--nav-font-color);
   display: flex;
   align-items: center;

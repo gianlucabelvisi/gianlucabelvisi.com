@@ -7,8 +7,8 @@ const Social = () => {
         <Container>
             <Invite>Follow me on social media and stuff</Invite>
             <Accordion>
-                {socialData.map((item) => (
-                    <Tab>
+                {socialData.map((item, key) => (
+                    <Tab key={key}>
                         <Label>
                             <Icon>{item.icon}</Icon>
                             <a href={item.link} target="_blank" rel="noreferrer">{item.title}

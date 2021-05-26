@@ -60,11 +60,10 @@ const WhoAmI = () => {
                 </ColumnOne>
 
                 <ColumnTwo data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
-                    {data.allFile.edges.map(edge => {
-                        return (
-                            <Image image={getImage(edge.node)} />
+                    {data.allFile.edges.map((edge, key) =>  (
+                            <Image key={key} image={getImage(edge.node)} alt="who am I" />
                         )
-                    })}
+                    )}
                 </ColumnTwo>
             </ContentWrapper>
         </Container>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import {Link} from "gatsby"
 import styled from 'styled-components'
 import {FaBars} from 'react-icons/fa'
@@ -31,14 +31,14 @@ const Header = () => {
     )
 
     return (
-        <Nav path={path} sticky={sticky}>
+        <Nav path={path} sticky={sticky} >
             <HomeLink to="/">
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
             </HomeLink>
             <MenuWrapper>
-                {menuData.map((item) => (
-                    <MenuElement item={item}/>
+                {menuData.map((item, key) => (
+                    <MenuElement item={item} key={key}/>
                 ))}
             </MenuWrapper>
             <MobileWrapper>
@@ -58,11 +58,10 @@ const Nav = styled.nav`
   width: 100%;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
-  z-index: 100;
+  z-index: 10;
   position: fixed;
-  transition: transform 0.5s ease-in 0.5s;
-  transform: ${({sticky}) => (sticky ? "translateY(0)" : "translateY(-100%)")};
-
+  transition: top 1s ease-in 0.5s;
+  top: ${({sticky}) => (sticky ? "0" : "-100%")};
 `
 const HomeLink = styled(Link)`
   color: var(--nav-font-color);
