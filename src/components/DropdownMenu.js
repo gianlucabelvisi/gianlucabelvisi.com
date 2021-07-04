@@ -2,9 +2,9 @@ import React from 'react';
 import styled from "styled-components"
 import {FaTimes} from "react-icons/fa";
 import {menuData} from "../data/MenuData";
-import DropdownElement from "./DropdownElement";
+import DropdownElement from "./DropdownMenuElement";
 
-const Dropdown = ({isDropdownOpen, toggleDropdownOpen}) => {
+const DropdownMenu = ({isDropdownOpen, toggleDropdownOpen}) => {
     return (
         <Container isOpen={isDropdownOpen}>
             <Icon onClick={toggleDropdownOpen}>
@@ -21,7 +21,7 @@ const Dropdown = ({isDropdownOpen, toggleDropdownOpen}) => {
     );
 };
 
-export default Dropdown;
+export default DropdownMenu;
 
 const Container = styled.aside`
   position: fixed;

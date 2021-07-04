@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Link} from "gatsby";
 
-const MenuElement = ({item}) => {
+const DesktopMenuElement = ({item}) => {
     if (item.subMenu.length === 0) {
         return (
             <MenuLink to={item.link}>
@@ -21,7 +21,7 @@ const MenuElement = ({item}) => {
     }
 };
 
-export default MenuElement;
+export default DesktopMenuElement;
 
 const SubMenuElement = ({items}) => {
     return (

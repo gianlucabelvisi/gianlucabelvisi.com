@@ -3,9 +3,10 @@ import {Link} from "gatsby"
 import styled from 'styled-components'
 import {FaBars} from 'react-icons/fa'
 import {menuData} from "../data/MenuData";
-import Dropdown from "./Dropdown";
-import MenuElement from "./MenuElement";
+import DropdownMenu from "./DropdownMenu";
+import DesktopMenuElement from "./DesktopMenuElement";
 import {useScrollPosition} from "./hooks/useScrollPosition";
+import DesktopMenu from "./DesktopMenu";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -36,14 +37,10 @@ const Header = () => {
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
             </HomeLink>
-            <MenuWrapper>
-                {menuData.map((item, key) => (
-                    <MenuElement item={item} key={key}/>
-                ))}
-            </MenuWrapper>
+            <DesktopMenu/>
             <MobileWrapper>
                 <Hamburger onClick={toggleDropdownOpen}/>
-                <Dropdown isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
+                <DropdownMenu isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
             </MobileWrapper>
         </Nav>
     )
@@ -73,14 +70,6 @@ const HomeLink = styled(Link)`
   padding: 1rem;
   height: 100%;
   cursor: pointer;
-`
-const MenuWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `
 const Title = styled.div`
   font-size: larger;
