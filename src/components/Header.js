@@ -26,10 +26,18 @@ const Header = () => {
     useScrollPosition(
         ({prevPos, currPos}) => {
             const isShow = currPos.y > prevPos.y
-            if (isShow !== sticky) setSticky(isShow)
+            if (isShow !== sticky) {
+                setSticky(isShow)
+                if (path === "/" && !sticky) {
+                    setShowBackground(true)
+                }
+            }
         },
         [sticky]
     )
+
+    const [showBackground, setShowBackground] = useState(false)
+
 
     return (
         <Nav path={path} sticky={sticky} >
@@ -42,6 +50,7 @@ const Header = () => {
                 <Hamburger onClick={toggleDropdownOpen}/>
                 <DropdownMenu isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
             </MobileWrapper>
+            <Background show={showBackground}/>
         </Nav>
     )
 }
@@ -60,6 +69,16 @@ const Nav = styled.nav`
   transition: top 1s ease-in 0.5s;
   top: ${({sticky}) => (sticky ? "0" : "-100%")};
 `
+const Background = styled.div`
+  background: rgba(0, 0, 0, 0.1);
+  display: ${({show}) => (show ? "block" : "none")};
+  margin-top: -1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+`
 const HomeLink = styled(Link)`
   color: var(--nav-font-color);
   display: flex;
@@ -70,6 +89,11 @@ const HomeLink = styled(Link)`
   padding: 1rem;
   height: 100%;
   cursor: pointer;
+  z-index: 10;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 const Title = styled.div`
   font-size: larger;

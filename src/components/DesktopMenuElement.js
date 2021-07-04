@@ -44,11 +44,21 @@ const MenuLink = styled(Link)`
   padding: 1rem;
   height: 100%;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 const SubMenuLink = styled(MenuLink)`
   padding: 0.3rem;
   align-items: start;
   justify-content: start;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 const SubMenuContainer = styled.div`
   color: var(--nav-font-color);
@@ -89,6 +99,9 @@ const NoLink = styled.div`
   text-decoration: none;
   padding: 1rem;
   height: 100%;
-  cursor: pointer;
+  cursor: inherit;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
