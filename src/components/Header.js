@@ -1,10 +1,8 @@
-import React, {useState, useEffect, useRef} from "react"
+import React, {useEffect, useState} from "react"
 import {Link} from "gatsby"
 import styled from 'styled-components'
 import {FaBars} from 'react-icons/fa'
-import {menuData} from "../data/MenuData";
 import DropdownMenu from "./DropdownMenu";
-import DesktopMenuElement from "./DesktopMenuElement";
 import {useScrollPosition} from "./hooks/useScrollPosition";
 import DesktopMenu from "./DesktopMenu";
 

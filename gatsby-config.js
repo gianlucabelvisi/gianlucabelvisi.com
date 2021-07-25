@@ -11,6 +11,10 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-json`,
     "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
@@ -24,32 +28,51 @@ module.exports = {
         icon: `src/assets/images/icon.jpg`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        name: `data`,
+        path: `${__dirname}/src/data`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/assets/images/",
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
-      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          }
+        ],
+        // defaultLayouts: {
+        //   posts: require.resolve(`${__dirname}/src/templates/blog-post.js`),
+        //   default: require.resolve(`${__dirname}/src/templates/blog-post.js`),
+        // },
+      },
     },
   ],
 };

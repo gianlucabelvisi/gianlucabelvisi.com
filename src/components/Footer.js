@@ -9,27 +9,27 @@ const Footer = () => {
 
             <Social/>
 
-            <LinksWrapper>
-                <Desc>
-                    <h1>Explore</h1>
-                    <p>Something something</p>
-                </Desc>
-                <LinkItems>
-                    <LinkTitle>Contact Us</LinkTitle>
-                    <FooterLink to="/about">About</FooterLink>
-                    <FooterLink to="/destinations">Destinations</FooterLink>
-                    <FooterLink to="/sponsors">Sponsors</FooterLink>
-                </LinkItems>
-            </LinksWrapper>
-            <LinksWrapper>
-                <LinkItems>
-                    <LinkTitle>Contact Us</LinkTitle>
-                    <FooterLink to="/about">Media</FooterLink>
-                    <FooterLink to="/destinations">Press</FooterLink>
-                    <FooterLink to="/sponsors">Stuff</FooterLink>
-                </LinkItems>
+            {/*<LinksWrapper>*/}
+            {/*    <Desc>*/}
+            {/*        <h1>Explore</h1>*/}
+            {/*        <p>Something something</p>*/}
+            {/*    </Desc>*/}
+            {/*    <LinkItems>*/}
+            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
+            {/*        <FooterLink to="/about">About</FooterLink>*/}
+            {/*        <FooterLink to="/destinations">Destinations</FooterLink>*/}
+            {/*        <FooterLink to="/sponsors">Sponsors</FooterLink>*/}
+            {/*    </LinkItems>*/}
+            {/*</LinksWrapper>*/}
+            {/*<LinksWrapper>*/}
+            {/*    <LinkItems>*/}
+            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
+            {/*        <FooterLink to="/about">Media</FooterLink>*/}
+            {/*        <FooterLink to="/destinations">Press</FooterLink>*/}
+            {/*        <FooterLink to="/sponsors">Stuff</FooterLink>*/}
+            {/*    </LinkItems>*/}
 
-            </LinksWrapper>
+            {/*</LinksWrapper>*/}
         </Container>
     );
 };

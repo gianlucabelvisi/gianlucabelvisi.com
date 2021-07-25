@@ -4,6 +4,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {graphql, useStaticQuery} from "gatsby";
 import {GiDeathSkull, GiMedicalThermometer} from "react-icons/gi";
 import Aos from "aos";
+import ContentContainer from "./ContentContainer";
 
 
 const WhoAmI = () => {
@@ -13,7 +14,11 @@ const WhoAmI = () => {
             edges {
               node {
                 childImageSharp {
-                  gatsbyImageData(formats: [AUTO, WEBP, AVIF])
+                  gatsbyImageData(
+                    width: 300
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
                 }
               }
             }
@@ -24,7 +29,7 @@ const WhoAmI = () => {
         Aos.init({})
     }, [])
     return (
-        <Container>
+        <ContentContainer>
             <Description>
                 Who am I by the way
             </Description>
@@ -60,25 +65,18 @@ const WhoAmI = () => {
                 </ColumnOne>
 
                 <ColumnTwo data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
-                    {data.allFile.edges.map((edge, key) =>  (
-                            <Image key={key} image={getImage(edge.node)} alt="who am I" />
+                    {data.allFile.edges.map((edge, key) => (
+                            <Image key={key} image={getImage(edge.node)} alt="who am I"/>
                         )
                     )}
                 </ColumnTwo>
             </ContentWrapper>
-        </Container>
+        </ContentContainer>
     );
 };
 
 export default WhoAmI;
 
-const Container = styled.div`
-  width: 100%;
-  background: #fcfcfc;
-  color: #000;
-  padding: 5rem calc((100vw - 1300px) / 2);
-  height: 100%;
-`
 const TopLine = styled.p`
   color: var(--primary-color);
   font-size: 1.5rem;

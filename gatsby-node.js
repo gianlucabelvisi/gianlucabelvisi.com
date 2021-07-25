@@ -1,22 +1,43 @@
-const path = require('path')
+exports.createPages = function ({actions, graphql}) {
 
-exports.createPages = ({actions, graphql}) => {
-    const { createPage } = actions
-
-    const postTemplate = path.resolve('src/templates/blog-post.js')
+    // const { data } = await graphql`
+    //     query {
+    //         allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    //             edges {
+    //                 node {
+    //                     id
+    //                     frontmatter {
+    //                       path
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `
+    //
+    // const postTemplate = require.resolve('src/pages/blog-post.js')
+    //
+    // data.allMdx.edges.forEach(edge => {
+    //     const path = edge.node.frontmatter.path
+    //     const id = edge.node.id
+    //     console.log("Creating page " + path)
+    //     actions.createPages({
+    //         path: path,
+    //         component: postTemplate,
+    //         context: {
+    //             id
+    //         },
+    //     })
+    // })
 
     return graphql(`
     {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+        allMdx(sort: {fields: frontmatter___date, order: DESC}) {
             edges {
                 node {
-                    html
                     id
                     frontmatter {
-                        author
-                        date
-                        path
-                        title
+                      path
                     }
                 }
             }
@@ -27,10 +48,15 @@ exports.createPages = ({actions, graphql}) => {
             return Promise.reject(res.errors)
         }
 
-        res.data.allMarkdownRemark.edges.forEach(({node}) => {
-            createPage({
+        const postTemplate = require.resolve('./src/templates/blog-post.js')
+
+        res.data.allMdx.edges.forEach(({node}) => {
+            actions.createPage({
                 path: node.frontmatter.path,
-                component: postTemplate
+                component: postTemplate,
+                context: {
+                    id: node.id
+                },
             })
         })
     })
