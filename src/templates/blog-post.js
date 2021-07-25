@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
-import ContentContainer from "../components/ContentContainer";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 
 const BlogTemplate = ({data}) => {
@@ -15,14 +15,17 @@ const BlogTemplate = ({data}) => {
     return (
         <Layout>
             <Seo title={data.mdx.frontmatter.title}/>
-            {/*<ContentContainer>*/}
-                <Link to="/blog">Go Back</Link>
-                <hr/>
-                <h1>Hello World</h1>
-                <h1>{data.mdx.frontmatter.title}</h1>
-                <h4>Posted by {data.mdx.frontmatter.author} on {data.mdx.frontmatter.date}</h4>
+            <Wrapper>
+                <FeatureImageWrapper>
+                    <FeatureImage image={getImage(data.mdx.frontmatter.featureImage)} alt="who am I"/>
+                </FeatureImageWrapper>
+                {/*<Link to="/blog">Go Back</Link>*/}
+                {/*<hr/>*/}
+                {/*<h1>Hello World</h1>*/}
+                {/*<h1>{data.mdx.frontmatter.title}</h1>*/}
+                {/*<h4>Posted by {data.mdx.frontmatter.author} on {data.mdx.frontmatter.date}</h4>*/}
                 {/*<div dangerouslySetInnerHTML={{__html: post.html}}/>*/}
-            {/*</ContentContainer>*/}
+            </Wrapper>
         </Layout>
     )
 
@@ -42,9 +45,18 @@ export const pageQuery = graphql`
                 title
                 cardImage {
                     childImageSharp {
-                      fixed {
-                        ...GatsbyImageSharpFixed
-                      }
+                        gatsbyImageData(
+                            formats: [AUTO, WEBP, AVIF]
+                        )
+                    }
+                }
+                featureImage {
+                    childImageSharp {
+                        gatsbyImageData(
+                            formats: [AUTO, WEBP, AVIF], 
+                            height: 300, 
+                            quality: 100
+                        )
                     }
                 }
             }
@@ -71,3 +83,18 @@ const Wrapper = styled.div`
   }
 `
 
+
+const FeatureImageWrapper = styled.div`
+  grid-column: 3 / span 10;
+  grid-row: 2 / 4;
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    grid-column: 2 / span 6;
+  }
+`
+const FeatureImage = styled(GatsbyImage)`
+  height: 100%;
+  width: 100%;
+`
