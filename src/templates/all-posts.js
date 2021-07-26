@@ -8,21 +8,38 @@ import styled from "styled-components"
 import ContentContainer from "../components/ContentContainer";
 
 
-const AllPosts = ({data}) => {
+const AllPosts = ({pageContext, data}) => {
+
+    const {currentPage, numPages} = pageContext
+    const isFirst = currentPage === 1
+    const isLast = currentPage === numPages
+    const previousPage = 'blog-page${currentPage - 1}'
+    const nextPage = 'blog-page${currentPage + 1}'
+
+    const posts = data.allMdx.edges
 
     // const featureImage = data.mdx.frontmatter.childImageSharp.fixed
 
     return (
         <Layout>
-            <Seo title={data.mdx.frontmatter.title}/>
-            {/*<ContentContainer>*/}
-                <Link to="/blog">Go Back</Link>
-                <hr/>
-                <h1>Hello World</h1>
-                <h1>{data.mdx.frontmatter.title}</h1>
-                <h4>Posted by {data.mdx.frontmatter.author} on {data.mdx.frontmatter.date}</h4>
-                {/*<div dangerouslySetInnerHTML={{__html: post.html}}/>*/}
-            {/*</ContentContainer>*/}
+            <Seo title="Blog"/>
+            <ContentContainer>
+                <h1>Latest Posts</h1>
+                {
+                    posts.map(post => (
+                        <div key={post.node.frontmatter.path}>
+                            <h3>{post.node.frontmatter.title}</h3>
+                            <small>Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</small>
+                            <br/>
+                            <br/>
+                            <Link to={post.node.frontmatter.path}>Read More</Link>
+                            <br/>
+                            <br/>
+                            <hr/>
+                        </div>
+                    ))
+                }
+            </ContentContainer>
         </Layout>
     )
 
@@ -32,26 +49,22 @@ export default AllPosts
 
 
 export const pageQuery = graphql`
-    query AllPostsQuery($id: String!) {
-        mdx(id: {eq: $id}) {
-            body
-            frontmatter {
-                date
-                author
-                subTitle
-                title
-                cardImage {
-                    childImageSharp {
-                      fixed {
-                        ...GatsbyImageSharpFixed
-                      }
-                    }
-                }
-            }
+query AllPostsQuery($skip: Int!, $limit: Int!) {
+  allMdx(sort: {fields: frontmatter___date, order: DESC}, skip: $skip, limit: $limit) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+          subTitle
+          date
+          author
         }
+      }
     }
+  }
+}
 `
-
 
 
 const Wrapper = styled.div`

@@ -50,21 +50,21 @@ exports.createPages = function ({actions, graphql}) {
 
         // paginated pages for posts
 
-        // const postPerPage = 3
-        // const numPages = Math.ceil(res.data.allMdx.edges.length / postPerPage)
-        //
-        // Array.from({length: numPages}).forEach((_,i) => {
-        //   actions.createPages({
-        //       path: i === 0? "blogNew" : "blogPage${i + 2}",
-        //       component: require.resolve("./src/templates/all-posts.js"),
-        //       context: {
-        //           limit: postPerPage,
-        //           skip: i * postPerPage,
-        //           numPages: numPages,
-        //           currentPage: i + 1,
-        //       }
-        //   })
-        // })
+        const postPerPage = 3
+        const numPages = Math.ceil(res.data.allMdx.edges.length / postPerPage)
+
+        Array.from({length: numPages}).forEach((_,i) => {
+          actions.createPage({
+              path: 'blog-page' + (i+1),
+              component: require.resolve("./src/templates/all-posts.js"),
+              context: {
+                  limit: postPerPage,
+                  skip: i * postPerPage,
+                  numPages: numPages,
+                  currentPage: i + 1,
+              }
+          })
+        })
 
 
         // single blog entries
