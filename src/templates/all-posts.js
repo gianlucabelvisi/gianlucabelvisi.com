@@ -6,15 +6,16 @@ import {graphql} from 'gatsby'
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
 import ContentContainer from "../components/ContentContainer";
+import Pagination from "../components/Pagination";
 
 
 const AllPosts = ({pageContext, data}) => {
 
     const {currentPage, numPages} = pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const previousPage = 'blog-page${currentPage - 1}'
-    const nextPage = 'blog-page${currentPage + 1}'
+    const isFirst = currentPage === 1? "true" : "false"
+    const isLast = currentPage === numPages? "true" : "false"
+    const prevPage = '/blog-page' + (currentPage - 1)
+    const nextPage = '/blog-page' + (currentPage + 1)
 
     const posts = data.allMdx.edges
 
@@ -40,6 +41,13 @@ const AllPosts = ({pageContext, data}) => {
                     ))
                 }
             </ContentContainer>
+            <Pagination
+                isFirst={isFirst}
+                isLast={isLast}
+                prevPage={prevPage}
+                nextPage={nextPage}
+            />
+
         </Layout>
     )
 

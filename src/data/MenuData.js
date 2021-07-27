@@ -1,7 +1,7 @@
 export const menuData = [
     {
         title: "Blog",
-        link: "/blog",
+        link: "/blog-page1",
         subMenu: []
     },
     {
