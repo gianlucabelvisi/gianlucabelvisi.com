@@ -12,8 +12,8 @@ import Pagination from "../components/Pagination";
 const AllPosts = ({pageContext, data}) => {
 
     const {currentPage, numPages} = pageContext
-    const isFirst = currentPage === 1? "true" : "false"
-    const isLast = currentPage === numPages? "true" : "false"
+    const isFirst = currentPage === 1
+    const isLast = currentPage === numPages
     const prevPage = '/blog-page' + (currentPage - 1)
     const nextPage = '/blog-page' + (currentPage + 1)
 

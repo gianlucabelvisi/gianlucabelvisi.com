@@ -21,16 +21,16 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  a:first-child {
-    color: ${props => (props.isFirst === "true") ? "gray" : "black"};
-    pointer-events: ${props => (props.isFirst === "true") ? "none" : "auto"};
-    cursor: ${props => (props.isFirst === "true")  ? "default" : "pointer"};
+  a:nth-child(1) {
+    color: ${props => props.isFirst ? "gray" : "black"};
+    pointer-events: ${props => props.isFirst ? "none" : "auto"};
+    cursor: ${props => props.isFirst ? "default" : "pointer"};
   }
 
   a:nth-child(2) {
-    color: ${props => (props.isLast === "true")  ? "gray" : "black"};
-    pointer-events: ${props => (props.isLast === "true")  ? "none" : "auto"};
-    cursor: ${props => (props.isLast === "true")  ? "default" : "pointer"};
+    color: ${props => props.isLast ? "gray" : "black"};
+    pointer-events: ${props => props.isLast ? "none" : "auto"};
+    cursor: ${props => props.isLast ? "default" : "pointer"};
   }
 
   @media screen and (max-width: 768px) {
