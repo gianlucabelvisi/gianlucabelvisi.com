@@ -10,27 +10,24 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const BlogTemplate = ({data}) => {
 
-    const frontMatter = data.mdx.frontmatter
+    const frontmatter = data.mdx.frontmatter
 
     return (
         <Layout>
-            <Seo title={frontMatter.title}/>
+            <Seo title={frontmatter.title}/>
             <Wrapper>
                 <PostHeader>
-                    <Date>{frontMatter.date}</Date>
+                    <Date>{frontmatter.date}</Date>
                 </PostHeader>
                 <FeatureImageWrapper>
-                    <FeatureImage image={getImage(frontMatter.featureImage)} alt="Feature Image"/>
+                    <FeatureImage image={getImage(frontmatter.featureImage)} alt="Feature Image"/>
                 </FeatureImageWrapper>
-                <Content>
-
-                </Content>
-                {/*<Link to="/blog">Go Back</Link>*/}
-                {/*<hr/>*/}
-                {/*<h1>Hello World</h1>*/}
-                {/*<h1>{data.mdx.frontMatter.title}</h1>*/}
-                {/*<h4>Posted by {data.mdx.frontMatter.author} on {data.mdx.frontMatter.date}</h4>*/}
-                {/*<div dangerouslySetInnerHTML={{__html: post.html}}/>*/}
+                <Post>
+                    <h1>{frontmatter.title}</h1>
+                    <MDXRenderer>
+                        {data.mdx.body}
+                    </MDXRenderer>
+                </Post>
             </Wrapper>
         </Layout>
     )
@@ -83,7 +80,7 @@ const FeatureImage = styled(GatsbyImage)`
   width: 100%;
 `
 
-const Content = styled.div`
+const Post = styled.div`
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
   background-color: white;
@@ -105,7 +102,7 @@ export const pageQuery = graphql`
         mdx(id: {eq: $id}) {
             body
             frontmatter {
-                date
+                date(formatString: "MMMM DD, YYYY")
                 author
                 subTitle
                 title
@@ -120,7 +117,6 @@ export const pageQuery = graphql`
                     childImageSharp {
                         gatsbyImageData(
                             formats: [AUTO, WEBP, AVIF], 
-                            height: 300, 
                             quality: 100
                         )
                     }

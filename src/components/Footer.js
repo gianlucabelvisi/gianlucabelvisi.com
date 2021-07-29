@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <Container>
 
-            <Social/>
+            {/*<Social/>*/}
 
             {/*<LinksWrapper>*/}
             {/*    <Desc>*/}

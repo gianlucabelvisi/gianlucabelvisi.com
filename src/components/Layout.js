@@ -12,6 +12,8 @@ import {GlobalStyle} from "./styles/GlobalStyles";
 import Footer from "./Footer";
 import {ThemeProvider} from "styled-components";
 import Theme from "./styles/Theme";
+import styled from "styled-components"
+
 
 const Layout = ({children}) => {
 
@@ -19,6 +21,7 @@ const Layout = ({children}) => {
         <>
             <GlobalStyle/>
             <Header/>
+            <WiP>Work in Progress</WiP>
             <ThemeProvider theme={Theme}>
                 <main>{children}</main>
             </ThemeProvider>
@@ -28,3 +31,12 @@ const Layout = ({children}) => {
 }
 
 export default Layout
+
+const WiP = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: .2;
+  font-size: clamp(7rem, 3vw, 15rem);
+  z-index: 100;
+`
