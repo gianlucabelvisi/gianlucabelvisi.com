@@ -4,7 +4,7 @@ import Video from '../assets/videos/background.mp4'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
-const Hero = () => {
+const Hero = ({children}) => {
 
     useEffect(() => {
         Aos.init({})
@@ -24,6 +24,8 @@ const Hero = () => {
                     <Disclaimer>Placeholder Video</Disclaimer>
                 </Overlay>
             </Content>
+
+            {children}
 
         </Container>
     );
