@@ -21,9 +21,7 @@ const Index = ({data}) => {
             <Seo title="Home"/>
             <Hero/>
             <BlogCardsContainer>
-                {/*<BlogCardsHeading>*/}
                 <h1>Latest blog posts</h1>
-                {/*</BlogCardsHeading>*/}
                 <BlogCards>
                     {data.allMdx.edges.map(edge => {
 
