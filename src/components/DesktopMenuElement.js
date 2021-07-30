@@ -85,7 +85,7 @@ const SubMenuContainer = styled.div`
 `
 const SubMenuWrapper = styled.div`
   height: 100%;
-  z-index: 1;
+  z-index: 10;
   &:hover ${SubMenuContainer} {
     opacity: 1;
     pointer-events: all;

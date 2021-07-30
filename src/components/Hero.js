@@ -72,16 +72,18 @@ const VideoBg = styled.video`
   object-fit: cover;
 `
 const Content = styled.div`
-  z-index: 3;
+  z-index: 1;
   height: calc(100vh - 80px);
   max-height: 100%;
-  padding: 0rem calc((100vh - 1300px) / 2);
+  padding: 0 calc((100vh - 1300px) / 2);
+
 `
 const Overlay = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 3rem;
+  justify-content: start;
   align-items: center;
   text-align: center;
   height: 100vh;
@@ -89,15 +91,15 @@ const Overlay = styled.div`
   padding: 0;
   color: #fff;
   font-weight: bold;
+  pointer-events: none;
 `
 const ShoutOut = styled.h1`
   font-size: clamp(1.5rem, 6vw, 4rem);
-  margin-bottom: 1.5rem;
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0.1rem;
   max-width: 60%;
-  margin-top: -25rem;
+  margin-top: 3rem;
   opacity: 50% !important;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   @media screen and (max-width: 1320px) {

@@ -8,6 +8,7 @@ import Email from "../components/Email";
 import {graphql} from "gatsby";
 import styled from "styled-components"
 import Aos from "aos";
+import BlogCard from "../components/BlogCard";
 
 
 const Index = ({data}) => {
@@ -21,16 +22,23 @@ const Index = ({data}) => {
             <Seo title="Home"/>
             <Hero/>
             <BlogCardsContainer>
-                <h1>Latest blog posts</h1>
+                <BlogCardsHeading>
+                    <h1>Latest blog posts</h1>
+                </BlogCardsHeading>
                 <BlogCards>
                     {data.allMdx.edges.map(edge => {
-
+                        const fm = edge.node.frontmatter;
                         return (
-                            <BlogCard>
-                                Blog Card
+                            <BlogCard key={fm.path}
+                                      cardImage={fm.cardImage}
+                                      title={fm.title}
+                                      subTitle={fm.subTitle}
+                                      author={fm.author}
+                                      date={fm.date}
+                                      path={fm.path}
+                            >
                             </BlogCard>
                         )
-
                     })}
                 </BlogCards>
             </BlogCardsContainer>
@@ -45,23 +53,22 @@ export default Index
 
 const BlogCardsContainer = styled.div`
   position: absolute;
-  top: 50%;
+  bottom: 0;
   padding: 5rem calc((100vw - 1300px) / 2);
   color: #fff;
   width: 100%;
 `
 
 const BlogCardsHeading = styled.div`
-  font-size: clamp(1.2rem, 5vw, 3rem);
-  text-align: center;
-  color: #000;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  margin-bottom: 2rem;
 `
 
 const BlogCards = styled.div`
   
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2rem;
   justify-items: center;
   padding: 0 2rem;
   @media screen and (max-width: 1200px) {
@@ -71,15 +78,6 @@ const BlogCards = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
-const BlogCard = styled.div`
-  line-height: 2;
-  width: 100%;
-  height: 500px;
-  border-radius: 10px;
-  transition: 0.2s ease;
-`
-
 
 export const pageQuery = graphql`
 query BlogCardsQuery {

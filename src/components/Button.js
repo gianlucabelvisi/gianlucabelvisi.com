@@ -4,9 +4,9 @@ import { Link } from 'gatsby'
 
 import React from 'react';
 
-const LinkButton = ({children, onHover}) => {
+const LinkButton = ({to, children, onHover}) => {
     return (
-        <Wrapper>
+        <Wrapper to={to}>
             {children}
             <OnHover>{onHover}</OnHover>
         </Wrapper>

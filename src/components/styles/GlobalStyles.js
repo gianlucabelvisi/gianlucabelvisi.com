@@ -4,10 +4,14 @@ require('typeface-roboto')
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #fc4b07;
-    --secondary-color: #1966b2;
-    
-    
+    --primary-color: #e87c48;
+    --primary-color-darker: #bd643a;
+    --primary-color-lighter: #ff9664;
+    --secondary-color: #1275da;
+    --secondary-color-darker: #135291;
+    --secondary-color-lighter: #2c8eef;
+
+
     --background-color: var(--secondary-color);
     --background-color-ligther: var(--secondary-color);
     --background-color-darker: var(--secondary-color);
