@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "gatsby-link"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'

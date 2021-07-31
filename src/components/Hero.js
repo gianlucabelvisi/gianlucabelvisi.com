@@ -49,13 +49,14 @@ const Container = styled.div`
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     background: 
             linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%),
             linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
   }
 `
 const Background = styled.div`
+  z-index: 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -72,11 +73,9 @@ const VideoBg = styled.video`
   object-fit: cover;
 `
 const Content = styled.div`
-  z-index: 1;
   height: calc(100vh - 80px);
   max-height: 100%;
   padding: 0 calc((100vh - 1300px) / 2);
-
 `
 const Overlay = styled.div`
   position: relative;
@@ -91,16 +90,16 @@ const Overlay = styled.div`
   padding: 0;
   color: #fff;
   font-weight: bold;
-  pointer-events: none;
 `
 const ShoutOut = styled.h1`
+  z-index: 200;
   font-size: clamp(1.5rem, 6vw, 4rem);
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0.1rem;
   max-width: 60%;
   margin-top: 3rem;
-  opacity: 50% !important;
+  opacity: 80% !important;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   @media screen and (max-width: 1320px) {
     max-width: 70%;

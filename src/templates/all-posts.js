@@ -3,8 +3,6 @@ import Link from "gatsby-link"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
-import {MDXRenderer} from "gatsby-plugin-mdx";
-import styled from "styled-components"
 import ContentContainer from "../components/ContentContainer";
 import Pagination from "../components/Pagination";
 
@@ -19,7 +17,6 @@ const AllPosts = ({pageContext, data}) => {
 
     const posts = data.allMdx.edges
 
-    // const featureImage = data.mdx.frontmatter.childImageSharp.fixed
 
     return (
         <Layout>
@@ -74,21 +71,21 @@ query AllPostsQuery($skip: Int!, $limit: Int!) {
 }
 `
 
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(auto, 4.2rem)) 1fr;
-  grid-template-rows: 7.8rem 20rem 4rem auto;
-  gap: 0 2rem;
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 2rem repeat(6, 1fr) 2rem;
-    grid-gap: 0 1rem;
-  }
-
-  @media screen and (max-width: 500px) {
-    grid-template-columns: 1rem repeat(6, 1fr) 1rem;
-  }
-`
-
+//
+// const Wrapper = styled.div`
+//   height: 100%;
+//   display: grid;
+//   grid-template-columns: 1fr repeat(12, minmax(auto, 4.2rem)) 1fr;
+//   grid-template-rows: 7.8rem 20rem 4rem auto;
+//   gap: 0 2rem;
+//
+//   @media screen and (max-width: 768px) {
+//     grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+//     grid-gap: 0 1rem;
+//   }
+//
+//   @media screen and (max-width: 500px) {
+//     grid-template-columns: 1rem repeat(6, 1fr) 1rem;
+//   }
+// `
+//
