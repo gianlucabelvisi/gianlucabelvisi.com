@@ -51,6 +51,10 @@ const Title = styled.h2`
   position: relative;
   width: fit-content;
 
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2em;
+  }
+
   &:after {
     content: '';
     position: absolute;

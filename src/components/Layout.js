@@ -38,5 +38,5 @@ const WiP = styled.div`
   right: 0;
   opacity: .2;
   font-size: clamp(7rem, 3vw, 15rem);
-  z-index: 100;
+  z-index: 10;
 `

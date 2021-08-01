@@ -92,14 +92,14 @@ const Overlay = styled.div`
   font-weight: bold;
 `
 const ShoutOut = styled.h1`
-  z-index: 200;
+  z-index: 9;
   font-size: clamp(1.5rem, 6vw, 4rem);
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0.1rem;
   max-width: 60%;
   margin-top: 3rem;
-  opacity: 80% !important;
+  opacity: 60% !important;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   @media screen and (max-width: 1320px) {
     max-width: 70%;
@@ -109,6 +109,9 @@ const ShoutOut = styled.h1`
   }
   @media screen and (max-width: 800px) {
     max-width: 90%;
+  }
+  @media screen and (max-height: 1000px) {
+    max-width: 100%;
   }
 
   &:hover {

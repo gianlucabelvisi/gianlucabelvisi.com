@@ -42,7 +42,7 @@ const DropdownLink = styled(Link)`
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;
-  color: var(--font-color);
+  color: var(--font-color-light);
   cursor: pointer;
   transition: 0.2s ease-in-out;
   &:hover {
@@ -63,7 +63,7 @@ const NoLink = styled.div`
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;
-  color: var(--font-color);
+  color: var(--font-color-light);
   cursor: pointer;
   transition: 0.2s ease-in-out;
   &:hover {

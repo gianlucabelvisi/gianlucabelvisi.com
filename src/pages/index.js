@@ -26,7 +26,7 @@ const Index = ({data}) => {
                                   data-aos-delay="1000"
                                   data-aos-duration="500"
                                   data-aos-easing="ease-in-sine">
-                    <h1>Latest blog posts</h1>
+                    Latest blog posts
                 </BlogCardsHeading>
                 <BlogCards>
                     {data.allMdx.edges.map((edge, index) => {
@@ -61,13 +61,21 @@ const BlogCardsContainer = styled.div`
   color: #fff;
   width: 100%;
   z-index: 10;
+  
+  @media screen and (max-height: 1000px) {
+    padding-bottom: 1rem;
+  }
 `
 
-const BlogCardsHeading = styled.div`
-  font-size: clamp(1.2rem, 5vw, 2rem);
+const BlogCardsHeading = styled.h2`
+  font-size: clamp(1.2rem, 5vw, 4rem);
   margin-bottom: 2rem;
   padding-left: 2rem;
   opacity: .5;
+
+  @media screen and (max-height: 1000px) {
+    margin-bottom: 0.5rem;
+  }
 `
 
 const fadeLeft = keyframes`

@@ -25,7 +25,7 @@ export default DropdownMenu;
 
 const Container = styled.aside`
   position: fixed;
-  z-index: 999;
+  z-index: 50;
   width: 100%;
   height: 100%;
   background: #0d0d0d;
@@ -46,10 +46,10 @@ const Icon = styled.div`
   outline: none;
 `
 const CloseIcon = styled(FaTimes)`
-  color: var(--font-color);
+  color: var(--font-color-light);
 `
 const Wrapper = styled.div`
-  color: var(--font-color);
+  color: var(--font-color-light);
 `
 const Menu = styled.div`
   display: flex;

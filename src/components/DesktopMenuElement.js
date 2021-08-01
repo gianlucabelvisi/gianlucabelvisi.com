@@ -45,7 +45,7 @@ const MenuLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   position: relative;
-  z-index: 10;
+  z-index: 20;
   transition: transform .2s;
   &:hover {
     transform: scale(1.2);
@@ -68,7 +68,7 @@ const SubMenuContainer = styled.div`
   padding: 1rem;
   background-color: var(--primary-color);
   width: 20ch;
-  z-index: 10;
+  z-index: 20;
   border-radius: 10px;
   pointer-events: none;
   opacity: 0;
@@ -85,7 +85,7 @@ const SubMenuContainer = styled.div`
 `
 const SubMenuWrapper = styled.div`
   height: 100%;
-  z-index: 10;
+  z-index: 20;
   &:hover ${SubMenuContainer} {
     opacity: 1;
     pointer-events: all;

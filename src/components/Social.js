@@ -50,7 +50,7 @@ const Container = styled.div`
   }
 `
 const Invite = styled.h1`
-  color: var(--font-color);
+  color: var(--font-color-light);
   margin-bottom: 10px;
   text-align: center;
   @media screen and (max-width: 950px) {

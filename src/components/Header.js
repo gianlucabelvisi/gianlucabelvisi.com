@@ -62,7 +62,7 @@ const Nav = styled.nav`
   width: 100%;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
-  z-index: 10;
+  z-index: 20;
   position: fixed;
   transition: top 1s ease-in 0.5s;
   top: ${({sticky}) => (sticky ? "0" : "-100%")};
@@ -74,7 +74,7 @@ const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 10;
   pointer-events: none;
 `
 const HomeLink = styled(Link)`
@@ -87,7 +87,7 @@ const HomeLink = styled(Link)`
   padding: 1rem;
   height: 100%;
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
   transition: transform .2s;
   &:hover {
     transform: scale(1.2);
@@ -101,7 +101,7 @@ const SubTitle = styled.div`
 `
 const Hamburger = styled(FaBars)`
   display: none;
-  color: var(--font-color);
+  color: var(--font-color-light);
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
