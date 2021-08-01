@@ -10,14 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-color: #1275da;
     --secondary-color-darker: #135291;
     --secondary-color-lighter: #2c8eef;
-
-
-    --background-color: var(--secondary-color);
-    --background-color-ligther: var(--secondary-color);
-    --background-color-darker: var(--secondary-color);
-    --accent-color: var(--primary-color);
-
-    --font-color: white;
+    
+    --font-color-light: white;
+    --font-color-dark: black;
+    
     --nav-background-color: #141414;
     --nav-font-color: white;
 

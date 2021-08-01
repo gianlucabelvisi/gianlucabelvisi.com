@@ -9,8 +9,13 @@ export default {
     footer: {
         height: "200px"
     },
-    buttons: {
-        color: ""
+    button: {
+        mainColor: "var(--primary-color)",
+        hoverColor: "var(--primary-color)",
+        borderColor: "var(--primary-color-darker)",
+        fontColor: "white",
+        fontColorHover: "white",
+        borderRadius: "20px",
     },
     media: {
         tablet: "768",

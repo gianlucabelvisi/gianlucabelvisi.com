@@ -6,10 +6,10 @@ import React from 'react';
 
 const LinkButton = ({to, children, onHover}) => {
     return (
-        <Wrapper to={to}>
+        <Button to={to}>
             {children}
             <OnHover>{onHover}</OnHover>
-        </Wrapper>
+        </Button>
     );
 };
 export default LinkButton;
@@ -31,13 +31,14 @@ const OnHover = styled.span`
   padding: 0;
   transition: opacity 0.1s 0.5s, transform 0.4s 0.5s, width 0.4s 0.5s, padding-left 0.4s 0.5s;
 `
-const Wrapper = styled(Link)`
-  background: var(--button-color);
-  color: var(--button-font-color);
+const Button = styled(Link)`
+  background: ${props => props.theme.button.mainColor};
+  color: ${props => props.theme.button.fontColor};
   white-space: nowrap;
   align-items: center;
   justify-content: center;
-  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  border-radius: ${props => props.theme.button.borderRadius};
   padding: ${({ big }) => (big ? '16px 40px' : '10px 32px')};
   overflow: hidden;
   cursor: pointer;
@@ -46,9 +47,9 @@ const Wrapper = styled(Link)`
   transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
   &:hover {
     text-indent: 0;
-    background: var(--button-color-hover);
-    color: var(--button-font-color-hover);
-    border: 10px solid var(--button-border-color);
+    background: ${props => props.theme.button.hoverColor};
+    color: ${props => props.theme.button.fontColorHover};
+    border: 5px solid ${props => props.theme.button.borderColor};
     box-shadow: 3px 3px 2px rgba(black, 0.15);
     ${OnHover} {
       transform: translateX(0);
