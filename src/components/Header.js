@@ -38,7 +38,7 @@ const Header = () => {
 
 
     return (
-        <Nav path={path} sticky={sticky} >
+        <Nav path={path} sticky={sticky}>
             <HomeLink to="/">
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
@@ -67,14 +67,16 @@ const Nav = styled.nav`
   transition: top 1s ease-in 0.5s;
   top: ${({sticky}) => (sticky ? "0" : "-100%")};
 `
+
 const Background = styled.div`
   background: rgba(0, 0, 0, 0.1);
   display: ${({show}) => (show ? "block" : "none")};
   margin-top: -1rem;
+  left: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 9;
   pointer-events: none;
 `
 const HomeLink = styled(Link)`
