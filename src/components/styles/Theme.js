@@ -1,5 +1,5 @@
 
-export default {
+let Theme = {
     header: {
         height: "80px"
     },
@@ -22,3 +22,5 @@ export default {
         phone: "500"
     }
 }
+
+export default Theme

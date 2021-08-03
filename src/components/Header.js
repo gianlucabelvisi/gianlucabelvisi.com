@@ -31,7 +31,10 @@ const Header = () => {
                 }
             }
         },
-        [sticky]
+        [sticky],
+        null,
+        false,
+        30
     )
 
     const [showBackground, setShowBackground] = useState(false)
