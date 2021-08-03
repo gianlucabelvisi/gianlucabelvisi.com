@@ -6,7 +6,7 @@ import React from 'react';
 
 const LinkButton = ({to, children, onHover}) => {
     return (
-        <Button to={to}>
+        <Button to={to} width={onHover.length}>
             {children}
             <OnHover>{onHover}</OnHover>
         </Button>
@@ -26,7 +26,7 @@ const OnHover = styled.span`
   display: inline-block;
   transform: translateX(300px);
   font-weight: normal;
-  opacity: 0;
+  opacity: 0 !important;
   width: 0;
   padding: 0;
   transition: opacity 0.1s 0.5s, transform 0.4s 0.5s, width 0.4s 0.5s, padding-left 0.4s 0.5s;
@@ -53,9 +53,9 @@ const Button = styled(Link)`
     box-shadow: 3px 3px 2px rgba(black, 0.15);
     ${OnHover} {
       transform: translateX(0);
-      opacity: 1;
-      width: 6ch;
-      padding-left: 1ch;
+      opacity: 1 !important;
+      width: ${({ width }) => width}ch;
+      padding-left: 2ch;
     }
   }
 `

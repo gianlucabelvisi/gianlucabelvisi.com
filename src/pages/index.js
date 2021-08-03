@@ -38,6 +38,7 @@ const Index = ({data}) => {
                                       subTitle={fm.subTitle}
                                       date={fm.date}
                                       path={fm.path}
+                                      onHover={fm.onHover}
                                       index={index}
                             >
                             </BlogCard>
@@ -97,13 +98,10 @@ const BlogCards = styled.div`
   justify-items: center;
   padding: 0 2rem;
   animation: 1s ease-in-out 0s 1 ${fadeLeft};
-
+  
   @media screen and (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
   }
-  //@media screen and (max-width: 868px) {
-  //  grid-template-columns: 1fr;
-  //}
 `
 
 export const pageQuery = graphql`
@@ -117,6 +115,7 @@ query BlogCardsQuery {
           subTitle
           date(formatString: "MMMM DD, YYYY")
           author  
+          onHover  
           cardImage {
             childImageSharp {
                 gatsbyImageData(

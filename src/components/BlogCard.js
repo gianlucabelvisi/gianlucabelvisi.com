@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import LinkButton from "./Button";
 
-const BlogCard = ({cardImage, title, subTitle, path, date, index}) => {
+const BlogCard = ({cardImage, title, subTitle, path, date, onHover, index}) => {
 
 
     return (
@@ -17,7 +17,7 @@ const BlogCard = ({cardImage, title, subTitle, path, date, index}) => {
             <Content>
                 <Title>{title}</Title>
                 <SubTitle>{subTitle}</SubTitle>
-                <ReadButton to={path} onHover="Click!">Read</ReadButton>
+                <ReadButton to={path} onHover={onHover}>Read</ReadButton>
             </Content>
         </Card>
     );
@@ -79,6 +79,7 @@ const ReadButton = styled(LinkButton)`
 const Content = styled.div`
   --padding: 1rem;
   position: absolute;
+  width: 100%;
   bottom: 0;
   padding: var(--padding);
   transition: all 500ms ease;

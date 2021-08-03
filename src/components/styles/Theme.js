@@ -12,7 +12,7 @@ export default {
     button: {
         mainColor: "var(--primary-color)",
         hoverColor: "var(--primary-color)",
-        borderColor: "var(--primary-color-darker)",
+        borderColor: "var(--secondary-color-darker)",
         fontColor: "white",
         fontColorHover: "white",
         borderRadius: "20px",
