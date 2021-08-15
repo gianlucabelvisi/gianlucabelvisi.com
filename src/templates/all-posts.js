@@ -1,10 +1,12 @@
 import React from "react"
-import Link from "gatsby-link"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
 import ContentContainer from "../components/ContentContainer";
 import Pagination from "../components/Pagination";
+import styled from "styled-components";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import LinkButton from "../components/Button";
 
 
 const AllPosts = ({pageContext, data}) => {
@@ -22,20 +24,27 @@ const AllPosts = ({pageContext, data}) => {
         <Layout>
             <Seo title="Blog"/>
             <ContentContainer>
-                <h1>Latest Posts</h1>
+                <PageTitle>Blog Posts</PageTitle>
                 {
-                    posts.map(post => (
-                        <div key={post.node.frontmatter.path}>
-                            <h3>{post.node.frontmatter.title}</h3>
-                            <small>Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</small>
-                            <br/>
-                            <br/>
-                            <Link to={post.node.frontmatter.path}>Read More</Link>
-                            <br/>
-                            <br/>
-                            <hr/>
-                        </div>
-                    ))
+                    posts.map((post, index) => {
+                        const fm = post.node.frontmatter
+
+                        return (
+                            <Post key={fm.path}>
+                                <Image image={getImage(fm.featureImage)} alt="Feature image"/>
+
+                                <Date>{fm.date}</Date>
+
+                                <Content>
+                                    <Title>{fm.title}</Title>
+                                    <SubTitle>{fm.subTitle}</SubTitle>
+                                    <ReadButton to={fm.path} onHover={fm.onHover}>Read</ReadButton>
+                                </Content>
+
+                            </Post>
+                        )
+
+                    })
                 }
             </ContentContainer>
             <Pagination
@@ -52,6 +61,82 @@ const AllPosts = ({pageContext, data}) => {
 
 export default AllPosts
 
+const PageTitle = styled.h1`
+  margin-left: 1rem;   
+  margin-bottom: 1rem;
+`
+const Post = styled.div`
+  margin-bottom: 1rem;
+  height: 15rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  color: #fff;
+`
+
+const Image = styled(GatsbyImage)`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
+`
+
+const Date = styled.h2`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  background-color: hsl(0 0% 0% / .2);
+  border-top-right-radius: 10px;
+`
+
+const Content = styled.div`
+  --padding: 1rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: var(--padding);
+  transition: all 500ms ease;
+  background: linear-gradient(hsl(0 0% 0% / 0),
+  hsl(0 0% 0% / .2) 5%,
+  hsl(0 0% 0% / .4) 10%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+`
+
+const Title = styled.h2`
+  text-transform: uppercase;
+  position: relative;
+  width: fit-content;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2em;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    background: ${props => props.theme.card.accentColor};
+    transform-origin: left;
+    transition: transform 500ms ease;
+  }
+`
+
+const SubTitle = styled.div`
+  margin-bottom: 1rem;
+  max-width: 30rem;
+  padding-block: .6rem;
+`
+
+const ReadButton = styled(LinkButton)`
+`
 
 export const pageQuery = graphql`
 query AllPostsQuery($skip: Int!, $limit: Int!) {
@@ -62,8 +147,16 @@ query AllPostsQuery($skip: Int!, $limit: Int!) {
           path
           title
           subTitle
-          date
-          author
+          date(formatString: "MMMM DD, YYYY")
+          author  
+          onHover  
+          featureImage {
+            childImageSharp {
+                gatsbyImageData(
+                    formats: [AUTO, WEBP, AVIF]
+                )
+            }
+          }
         }
       }
     }
