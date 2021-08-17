@@ -34,7 +34,6 @@ const Hero = ({children}) => {
 export default Hero;
 
 const Container = styled.div`
-  background-color: #0c0c0c;
   display: flex;
   justify-content: center;
   color: ${props => props.theme.textColor};

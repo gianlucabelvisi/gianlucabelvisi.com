@@ -30,23 +30,14 @@ const Social = () => {
 export default Social;
 
 const Container = styled.div`
-  background-color: #222;
-  border-radius: 20px;
-  width: 90%;
-  margin: 50px auto;
+  background-color: ${props => props.theme.social.bgColor};
+  border-radius: ${props => props.theme.social.borderRadius};
+  width: 100%;
 
   * {
     margin: 0;
     padding: 0;
     border: 0;
-  }
-
-  @media screen and (max-width: 950px) {
-    width: 70%;
-    min-width: 450px;
-  }
-  @media screen and (max-width: 768px) {
-    width: 95%;
   }
 `
 const Invite = styled.h1`
@@ -61,9 +52,9 @@ const Invite = styled.h1`
 `
 
 const Accordion = styled.div`
-  background: #333;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  background: ${props => props.theme.social.bgColorLighter};
+  border-bottom-left-radius: ${props => props.theme.social.borderRadius};
+  border-bottom-right-radius: ${props => props.theme.social.borderRadius};
   width: 100%;
   min-width: 800px;
   display: block;
@@ -102,8 +93,9 @@ const HoverIcon = styled(Icon)`
 const Tab = styled.li`
   list-style-type: none;
   display: inline-block;
-  background-color: #444;
-  border-right: #333 solid 1px;
+  background-color: ${props => props.theme.social.bgColor};
+  border-right: ${props => props.theme.social.bgColorDarker} solid 1px;
+  border-top: ${props => props.theme.social.bgColorDarker} solid 1px;
   width: 80px;
   height: 200px;
   overflow: hidden;
@@ -150,8 +142,4 @@ const Content = styled.div`
   margin-left: 80px;
   position: relative;
   padding: 50px 0 0 15px;
-  
 `
-
-
-

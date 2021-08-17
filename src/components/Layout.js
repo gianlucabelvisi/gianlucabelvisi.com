@@ -14,18 +14,17 @@ import {ThemeProvider} from "styled-components";
 import Theme from "./styles/Theme";
 import styled from "styled-components"
 
-
 const Layout = ({children}) => {
 
     return (
         <>
             <GlobalStyle/>
-            <Header/>
-            <WiP>Work in Progress</WiP>
             <ThemeProvider theme={Theme}>
+                <WiP>Work in Progress</WiP>
+                <Header/>
                 <Main>{children}</Main>
+                <Footer/>
             </ThemeProvider>
-            <Footer/>
         </>
     )
 }
@@ -39,6 +38,7 @@ const WiP = styled.div`
   opacity: .2;
   font-size: clamp(7rem, 3vw, 15rem);
   z-index: 10;
+  pointer-events: none;
 `
 const Main = styled.main`
   background-color: ${props => props.theme.bgColor};

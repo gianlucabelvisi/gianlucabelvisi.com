@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from "styled-components"
+import Social from "./Social";
 
 const Footer = () => {
     return (
         <Container>
 
-            {/*<Social/>*/}
+            <Social/>
 
             {/*<LinksWrapper>*/}
             {/*    <Desc>*/}
@@ -35,12 +36,11 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.div`
-  padding: 5rem calc((100vw - 1100px) / 2);
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  padding: 2rem calc((100vw - 900px) / 2);
   color: #000;
-  height: 15rem;
+  min-height: 10rem;
   background-color: ${props => props.theme.bgColor};
+;
 `
 // const Desc = styled.div`
 //   padding: 0 2rem;

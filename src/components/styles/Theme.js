@@ -24,6 +24,12 @@ let Theme = {
     media: {
         tablet: "768",
         phone: "500"
+    },
+    social: {
+        borderRadius: "20px",
+        bgColor: "var(--secondary-color)",
+        bgColorLighter: "var(--secondary-color-lighter)",
+        bgColorDarker: "var(--secondary-color-darker)",
     }
 }
 

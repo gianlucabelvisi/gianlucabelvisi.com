@@ -7,13 +7,13 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #e87c48;
     --primary-color-darker: #bd643a;
     --primary-color-lighter: #ff9664;
-    --secondary-color: #1275da;
-    --secondary-color-darker: #135291;
-    --secondary-color-lighter: #2c8eef;
-    
+    --secondary-color: #135291;
+    --secondary-color-darker: #0b3966;
+    --secondary-color-lighter: #205b95;
+
     --font-color-light: #fafafb;
     --font-color-dark: black;
-    
+
     --nav-background-color: var(--secondary-color-darker);
     --nav-font-color: var(--font-color-light);
 

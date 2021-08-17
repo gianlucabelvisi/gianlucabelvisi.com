@@ -8,42 +8,42 @@ export const socialData = [
         icon: (<FaGithub />),
         bgColor: "#868895FF",
         title: "Github",
-        desc: "My GitHub page",
+        desc: "You can find this website there, plus some other projects that I'm not ashamed to keep as private.",
         link: "https://github.com/gianlucabelvisi"
     },
     {
         icon: (<ImFacebook2/>),
         bgColor: "#4267B2",
         title: "Facebook",
-        desc: "My Facebook page",
+        desc: "The main place where I post stuff, but I'm phasing it out and will be using this blog instead.",
         link: "https://facebook.com/gianlucabelvisi"
     },
     {
         icon: (<FaInstagramSquare/>),
         bgColor: "#833AB4",
         title: "Instagram",
-        desc: "My Instagram page",
+        desc: "I should be posting more on this one, but I do look at your pictures. They are cute.",
         link: "https://www.instagram.com/gianlucabelvisi/"
     },
     {
         icon: (<FaCcPaypal/>),
         bgColor: "#4267B2",
         title: "Paypal",
-        desc: "My Paypal page",
+        desc: "You don't have to send me money, but if you do, I promise they will be used for propagating evil.",
         link: "https://paypal.me/gianlucabelvisi"
     },
     {
         icon: (<FaTwitter/>),
         bgColor: "#1DA1F2",
         title: "Twitter",
-        desc: "My Twitter page",
+        desc: "I never tweet because they cancel you. So I use it to get news, memes, and naked women.",
         link: "https://twitter.com/gbelvs"
     },
     {
         icon: (<GiPadlock/>),
         bgColor: "#58c8f5",
         title: "OnlyFans",
-        desc: "My OnlyFans page",
+        desc: "Of course I don't have an OnlyFans, but thank you for believing it!",
         link: "https://onlyfans.com/gianlucabelvisi"
     }
 ]
