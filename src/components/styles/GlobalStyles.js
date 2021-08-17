@@ -11,18 +11,12 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-color-darker: #135291;
     --secondary-color-lighter: #2c8eef;
     
-    --font-color-light: white;
+    --font-color-light: #fafafb;
     --font-color-dark: black;
     
-    --nav-background-color: #141414;
-    --nav-font-color: white;
+    --nav-background-color: var(--secondary-color-darker);
+    --nav-font-color: var(--font-color-light);
 
-    --button-color: var(--primary-color);
-    --button-color-hover: var(--secondary-color);
-    --button-border-color: #9fbeff;
-    --button-border-radius: 50px;
-    --button-font-color: white;
-    --button-font-color-hover: #d9d2d2;
   }
 
   * {

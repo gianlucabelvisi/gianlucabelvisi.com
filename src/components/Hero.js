@@ -37,7 +37,7 @@ const Container = styled.div`
   background-color: #0c0c0c;
   display: flex;
   justify-content: center;
-  color: #fff;
+  color: ${props => props.theme.textColor};
   align-items: center;
   height: 100vh;
   padding: 0 1rem;
@@ -88,7 +88,7 @@ const Overlay = styled.div`
   height: 100vh;
   max-height: 100%;
   padding: 0;
-  color: #fff;
+  color: ${props => props.theme.textColor};
   font-weight: bold;
 `
 const ShoutOut = styled.h1`
@@ -126,10 +126,3 @@ const Disclaimer = styled.div`
   left: 0;
   opacity: .2;
 `
-
-// const HeroP = styled.p`
-//   font-size: clamp(1rem, 3vw, 3rem);
-//   margin-bottom: 3rem;
-//   font-weight: 400;
-// `
-

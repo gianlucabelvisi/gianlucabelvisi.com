@@ -1,5 +1,9 @@
 
 let Theme = {
+    bgColor: "#fafafb",
+    textColor: "white",
+    pTextColor: "black",
+    borderRadius: "",
     header: {
         height: "80px"
     },

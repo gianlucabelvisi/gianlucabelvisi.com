@@ -60,7 +60,7 @@ const Title = styled.h2`
     position: absolute;
     height: 3px;
     width: calc(100% + var(--padding));
-    left: calc(var(--padding) * -1);
+    left: calc(var(--padding)x * -1);
     bottom: 0;
     background: ${props => props.theme.card.accentColor};
     transform: scaleX(0);

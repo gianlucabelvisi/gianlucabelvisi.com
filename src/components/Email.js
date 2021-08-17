@@ -51,7 +51,6 @@ const Container = styled.div`
   height: 450px;
   width: 100%;
   padding: 5rem calc((100vw - 1300px) / 2);
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;

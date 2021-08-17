@@ -72,7 +72,7 @@ const Post = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
   position: relative;
-  color: #fff;
+  color: ${props => props.theme.textColor};
 `
 
 const Image = styled(GatsbyImage)`

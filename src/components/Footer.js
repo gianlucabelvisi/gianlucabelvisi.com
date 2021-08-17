@@ -39,7 +39,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   color: #000;
-  background: #fafafb;
+  height: 15rem;
+  background-color: ${props => props.theme.bgColor};
 `
 // const Desc = styled.div`
 //   padding: 0 2rem;

@@ -59,7 +59,7 @@ const BlogCardsContainer = styled.div`
   position: absolute;
   bottom: 0;
   padding: 5rem calc((100vw - 1300px) / 2);
-  color: #fff;
+  color: ${props => props.theme.textColor};
   width: 100%;
   z-index: 10;
   

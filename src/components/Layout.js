@@ -23,7 +23,7 @@ const Layout = ({children}) => {
             <Header/>
             <WiP>Work in Progress</WiP>
             <ThemeProvider theme={Theme}>
-                <main>{children}</main>
+                <Main>{children}</Main>
             </ThemeProvider>
             <Footer/>
         </>
@@ -39,4 +39,7 @@ const WiP = styled.div`
   opacity: .2;
   font-size: clamp(7rem, 3vw, 15rem);
   z-index: 10;
+`
+const Main = styled.main`
+  background-color: ${props => props.theme.bgColor};
 `

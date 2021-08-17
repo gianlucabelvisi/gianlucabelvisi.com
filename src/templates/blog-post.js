@@ -82,7 +82,7 @@ const FeatureImage = styled(GatsbyImage)`
 const Post = styled.div`
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
-  background-color: white;
+  background-color: ${props => props.theme.bgColor};
   padding: 2rem 2rem;
   z-index: 1;
 
