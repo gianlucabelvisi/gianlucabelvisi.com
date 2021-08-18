@@ -25,8 +25,11 @@ let Theme = {
         tablet: "768",
         phone: "500"
     },
+    allPosts: {
+        borderRadius: "10px",
+    },
     social: {
-        borderRadius: "20px",
+        borderRadius: "10px",
         bgColor: "var(--secondary-color)",
         bgColorLighter: "var(--secondary-color-lighter)",
         bgColorDarker: "var(--secondary-color-darker)",

@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components"
 import {Link} from "gatsby"
+import Aos from "aos";
 
 
 const Pagination = ({isFirst, isLast, prevPage, nextPage}) => {
+
+    useEffect(() => {
+        Aos.init({})
+    }, [])
+
     return (
         <Wrapper isFirst={isFirst} isLast={isLast}>
-            <Element to={prevPage}>Previous Page</Element>
-            <Element to={nextPage}>Next Page</Element>
+
+            <Element to={prevPage} data-aos="fade-right" data-aos-delay="90" data-aos-duration="1000">
+                Previous Page
+            </Element>
+
+            <Element to={nextPage} data-aos="fade-left" data-aos-delay="90" data-aos-duration="1000">
+                Next Page
+            </Element>
+
         </Wrapper>
     );
 };
@@ -16,7 +29,7 @@ export default Pagination;
 
 const Wrapper = styled.div`
   grid-column: 2 / span 12;
-  padding: 3rem 0;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;

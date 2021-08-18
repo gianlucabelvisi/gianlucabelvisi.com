@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components"
 import Social from "./Social";
+import Aos from "aos";
 
 const Footer = () => {
+
+    useEffect(() => {
+        Aos.init({})
+    }, [])
+
     return (
         <Wrapper>
 
-            <SocialWrapper>
+            <SocialWrapper data-aos="fade-up" data-aos-delay="90" data-aos-duration="2000">
                 <Social/>
             </SocialWrapper>
 

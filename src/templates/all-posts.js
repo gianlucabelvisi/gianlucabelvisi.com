@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
@@ -7,6 +7,7 @@ import Pagination from "../components/Pagination";
 import styled from "styled-components";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import LinkButton from "../components/Button";
+import Aos from "aos";
 
 
 const AllPosts = ({pageContext, data}) => {
@@ -17,8 +18,11 @@ const AllPosts = ({pageContext, data}) => {
     const prevPage = '/blog-page' + (currentPage - 1)
     const nextPage = '/blog-page' + (currentPage + 1)
 
-    const posts = data.allMdx.edges
+    useEffect(() => {
+        Aos.init({})
+    }, [])
 
+    const posts = data.allMdx.edges
 
     return (
         <Layout>
@@ -30,7 +34,7 @@ const AllPosts = ({pageContext, data}) => {
                         const fm = post.node.frontmatter
 
                         return (
-                            <Post key={fm.path}>
+                            <Post key={fm.path} data-aos={index%2 === 0? "fade-left" : "fade-right"} data-aos-delay="90" data-aos-duration="1000">
                                 <Image image={getImage(fm.featureImage)} alt="Feature image"/>
 
                                 <Date>{fm.date}</Date>
@@ -68,7 +72,8 @@ const PageTitle = styled.h1`
 const Post = styled.div`
   margin-bottom: 1rem;
   height: 15rem;
-  border-radius: 10px;
+  border-radius: ${props => props.theme.allPosts.borderRadius};
+  overflow: hidden;
   margin-left: 1rem;
   margin-right: 1rem;
   position: relative;
@@ -80,7 +85,7 @@ const Image = styled(GatsbyImage)`
   height: 100%;
   background-size: cover;
   position: relative;
-  border-radius: 10px;
+  border-radius: ${props => props.theme.allPosts.borderRadius};
 `
 
 const Date = styled.h2`
@@ -90,10 +95,11 @@ const Date = styled.h2`
   padding-right: 2rem;
   padding-left: 1rem;
   background-color: hsl(0 0% 0% / .2);
-  border-top-right-radius: 10px;
+  border-top-right-radius: ${props => props.theme.allPosts.borderRadius};
 `
 
 const Content = styled.div`
+  color: aliceblue;
   --padding: 1rem;
   position: absolute;
   width: 100%;
@@ -103,8 +109,8 @@ const Content = styled.div`
   background: linear-gradient(hsl(0 0% 0% / 0),
   hsl(0 0% 0% / .2) 5%,
   hsl(0 0% 0% / .4) 10%);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: ${props => props.theme.allPosts.borderRadius};
+  border-bottom-right-radius: ${props => props.theme.allPosts.borderRadius};
 `
 
 const Title = styled.h2`
@@ -164,21 +170,3 @@ query AllPostsQuery($skip: Int!, $limit: Int!) {
 }
 `
 
-//
-// const Wrapper = styled.div`
-//   height: 100%;
-//   display: grid;
-//   grid-template-columns: 1fr repeat(12, minmax(auto, 4.2rem)) 1fr;
-//   grid-template-rows: 7.8rem 20rem 4rem auto;
-//   gap: 0 2rem;
-//
-//   @media screen and (max-width: 768px) {
-//     grid-template-columns: 2rem repeat(6, 1fr) 2rem;
-//     grid-gap: 0 1rem;
-//   }
-//
-//   @media screen and (max-width: 500px) {
-//     grid-template-columns: 1rem repeat(6, 1fr) 1rem;
-//   }
-// `
-//

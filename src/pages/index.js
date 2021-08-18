@@ -40,6 +40,7 @@ const Index = ({data}) => {
                                       path={fm.path}
                                       onHover={fm.onHover}
                                       index={index}
+                                      data-aos="fade-left" data-aos-delay="90" data-aos-duration="1000"
                             >
                             </BlogCard>
                         )
