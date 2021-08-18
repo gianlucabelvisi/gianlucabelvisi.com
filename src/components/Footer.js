@@ -4,9 +4,11 @@ import Social from "./Social";
 
 const Footer = () => {
     return (
-        <Container>
+        <Wrapper>
 
-            <Social/>
+            <SocialWrapper>
+                <Social/>
+            </SocialWrapper>
 
             {/*<LinksWrapper>*/}
             {/*    <Desc>*/}
@@ -29,19 +31,41 @@ const Footer = () => {
             {/*    </LinkItems>*/}
 
             {/*</LinksWrapper>*/}
-        </Container>
+        </Wrapper>
     );
 };
 
 export default Footer;
 
-const Container = styled.div`
-  padding: 2rem calc((100vw - 900px) / 2);
-  color: #000;
-  min-height: 10rem;
+const Wrapper = styled.div`
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 4.2rem)) 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0 2rem;
   background-color: ${props => props.theme.bgColor};
-;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+    grid-gap: 0 1rem;
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1rem repeat(6, 1fr) 1rem;
+  }
 `
+const SocialWrapper = styled.div`
+  grid-column: 3 / span 10;
+  grid-row: 2 / 3;
+
+  @media screen and (max-width: 768px) {
+    grid-column: 2 / span 5;
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-column: 2 / span 4;
+  }
+`
+
+
 // const Desc = styled.div`
 //   padding: 0 2rem;
 //

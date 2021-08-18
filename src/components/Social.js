@@ -44,7 +44,7 @@ const Invite = styled.h1`
   color: var(--font-color-light);
   margin-bottom: 10px;
   text-align: center;
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 970px) {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -61,7 +61,7 @@ const Accordion = styled.div`
   overflow: hidden;
   height: 90%;
   font-size: 0;
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 970px) {
     display: block;
     min-width: 450px;
     height: auto;
@@ -115,7 +115,7 @@ const Tab = styled.li`
     margin-left: 0;
   }
 
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 970px) {
     display: block;
     border-bottom: 3px #333 solid;
     width: 90%;
