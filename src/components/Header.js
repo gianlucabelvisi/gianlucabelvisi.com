@@ -41,7 +41,7 @@ const Header = () => {
 
 
     return (
-        <Nav path={path} sticky={sticky}>
+        <Nav path={path} sticky={true}>
             <HomeLink to="/">
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
