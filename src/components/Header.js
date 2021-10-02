@@ -5,6 +5,7 @@ import {FaBars} from 'react-icons/fa'
 import DropdownMenu from "./DropdownMenu";
 import {useScrollPosition} from "./hooks/useScrollPosition";
 import DesktopMenu from "./DesktopMenu";
+import { useStaticQuery, graphql } from "gatsby"
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -39,12 +40,27 @@ const Header = () => {
 
     const [showBackground, setShowBackground] = useState(false)
 
+    const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      allSite {
+        edges {
+          node {
+            siteMetadata {
+              version
+            }
+          }
+        }
+      }
+    }
+  `)
+    const version = data.allSite.edges[0].node.siteMetadata.version
 
     return (
         <Nav path={path} sticky={true}>
             <HomeLink to="/">
                 <Title>Gianluca's</Title>
                 <SubTitle>worthless piece of blog</SubTitle>
+                <Version>Version: {version}</Version>
             </HomeLink>
             <DesktopMenu/>
             <MobileWrapper>
@@ -82,10 +98,18 @@ const Background = styled.div`
   z-index: 9;
   pointer-events: none;
 `
+const Version = styled.div`
+  font-size: smaller;
+  position: absolute;
+  bottom: -5px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+`
 const HomeLink = styled(Link)`
   color: var(--nav-font-color);
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -96,6 +120,9 @@ const HomeLink = styled(Link)`
   transition: transform .2s;
   &:hover {
     transform: scale(1.2);
+    ${Version} {
+      opacity: 1;
+    }
   }
 `
 const Title = styled.div`

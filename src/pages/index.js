@@ -4,7 +4,6 @@ import Seo from "../components/Seo"
 import Layout from "../components/Layout";
 import WhoAmI from "../components/WhoAmI";
 import Hero from "../components/Hero";
-import Email from "../components/Email";
 import {graphql} from "gatsby";
 import styled, {keyframes} from "styled-components"
 import Aos from "aos";
@@ -40,7 +39,9 @@ const Index = ({data}) => {
                                       path={fm.path}
                                       onHover={fm.onHover}
                                       index={index}
-                                      data-aos="fade-left" data-aos-delay="90" data-aos-duration="1000"
+                                      data-aos="fade-left"
+                                      data-aos-delay="90"
+                                      data-aos-duration="1000"
                             >
                             </BlogCard>
                         )
@@ -48,7 +49,7 @@ const Index = ({data}) => {
                 </BlogCards>
             </BlogCardsContainer>
             <WhoAmI/>
-            <Email/>
+            {/*<Email/>*/}
         </Layout>
 
     )

@@ -50,6 +50,7 @@ const Wrapper = styled.div`
   grid-template-rows: auto auto auto;
   gap: 0 2rem;
   background-color: ${props => props.theme.bgColor};
+  padding-bottom: 4rem;
   @media screen and (max-width: 768px) {
     grid-template-columns: 2rem repeat(6, 1fr) 2rem;
     grid-gap: 0 1rem;

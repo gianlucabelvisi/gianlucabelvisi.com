@@ -20,7 +20,6 @@ const Layout = ({children}) => {
         <>
             <GlobalStyle/>
             <ThemeProvider theme={Theme}>
-                <WiP>Work in Progress</WiP>
                 <Header/>
                 <Main>{children}</Main>
                 <Footer/>
@@ -31,15 +30,15 @@ const Layout = ({children}) => {
 
 export default Layout
 
-const WiP = styled.div`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  opacity: .2;
-  font-size: clamp(7rem, 3vw, 15rem);
-  z-index: 10;
-  pointer-events: none;
-`
+// const WiP = styled.div`
+//   position: fixed;
+//   bottom: 0;
+//   right: 0;
+//   opacity: .2;
+//   font-size: clamp(7rem, 3vw, 15rem);
+//   z-index: 10;
+//   pointer-events: none;
+// `
 const Main = styled.main`
   background-color: ${props => props.theme.bgColor};
 `
