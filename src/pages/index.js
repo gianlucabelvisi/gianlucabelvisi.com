@@ -92,7 +92,6 @@ const fadeLeft = keyframes`
     opacity: 1;
   }
 `;
-
 const BlogCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -103,6 +102,13 @@ const BlogCards = styled.div`
   
   @media screen and (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 499px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 65%;
+    height: auto;
+    font-size: .8rem;
   }
 `
 
