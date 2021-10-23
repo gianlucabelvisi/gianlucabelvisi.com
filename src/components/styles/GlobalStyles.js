@@ -31,4 +31,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5rem;
   }
 
+  h3 {
+    padding-bottom: 0.4rem;
+  }
+
 `

@@ -120,9 +120,7 @@ const BlogCards = styled.div`
   @media screen and (max-width: 499px) {
     width: 85%;
   }
-
 `
-
 
 export const pageQuery = graphql`
 query BlogCardsQuery {
