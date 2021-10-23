@@ -13,7 +13,7 @@ const Hero = ({children}) => {
     return (
         <Container>
             <Background>
-                <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsinline/>
+                <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine disablePictureInPicture preload="auto"/>
             </Background>
 
             <Content>
