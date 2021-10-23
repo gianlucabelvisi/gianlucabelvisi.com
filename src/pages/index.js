@@ -68,6 +68,12 @@ const BlogCardsContainer = styled.div`
   @media screen and (max-height: 1000px) {
     padding-bottom: 1rem;
   }
+
+  @media screen and (max-width: 600px) {
+    padding: 0;
+    margin: 0;
+  }
+
 `
 
 const BlogCardsHeading = styled.h2`
@@ -106,11 +112,17 @@ const BlogCards = styled.div`
   @media screen and (max-width: 499px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 65%;
+    width: 75%;
     height: auto;
     font-size: .8rem;
+    grid-gap: 1rem;
   }
+  @media screen and (max-width: 499px) {
+    width: 85%;
+  }
+
 `
+
 
 export const pageQuery = graphql`
 query BlogCardsQuery {

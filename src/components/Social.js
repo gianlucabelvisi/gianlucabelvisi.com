@@ -68,7 +68,11 @@ const Accordion = styled.div`
   }
   @media screen and (max-width: 768px) {
     width: 100%;
-    min-width: 350px;
+    min-width: 0;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    min-width: 0;
   }
 
 `
@@ -137,7 +141,6 @@ const Desc = styled.div`
 `
 const Content = styled.div`
   background: white;
-  width: 360px;
   height: 100%;
   margin-left: 80px;
   position: relative;

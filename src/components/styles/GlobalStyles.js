@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     --font-color-light: #fafafb;
     --font-color-dark: black;
 
-    --nav-background-color: var(--secondary-color-darker);
+    --nav-background-color: var(--secondary-color);
     --nav-font-color: var(--font-color-light);
 
   }
@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     margin-bottom: 1rem;
+    line-height: 1.5rem;
   }
 
 `

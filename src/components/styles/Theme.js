@@ -5,7 +5,9 @@ let Theme = {
     pTextColor: "black",
     borderRadius: "",
     header: {
-        height: "80px"
+        height: "80px",
+        bgColor: "var(--secondary-color)",
+        bgColorHome: "var(--secondary-color)",
     },
     card: {
       accentColor: "var(--primary-color)"

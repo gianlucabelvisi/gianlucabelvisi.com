@@ -23,8 +23,8 @@ module.exports = {
         name: `gianluca-belvisi`,
         short_name: `gbelvisi`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#135291`,
+        theme_color: `#135291`,
         display: `minimal-ui`,
         icon: `src/assets/images/icon.jpg`, // This path is relative to the root of the site.
       },

@@ -22,7 +22,7 @@ const BlogTemplate = ({data}) => {
                     <FeatureImage image={getImage(frontmatter.featureImage)} alt="Feature Image"/>
                 </FeatureImageWrapper>
                 <Post>
-                    <h1>{frontmatter.title}</h1>
+                    <Title>{frontmatter.title}</Title>
                     <MDXRenderer>
                         {data.mdx.body}
                     </MDXRenderer>
@@ -49,18 +49,18 @@ const Wrapper = styled.div`
     grid-template-columns: 1rem repeat(6, 1fr) 1rem;
   }
 `
-
 const PostHeader = styled.div`
   grid-column: 3 / span 10;
   grid-row: 1 / 2;
   position: relative;
+  @media screen and (max-width: 768px) {
+    grid-column: 2 / span 6;
+  }
 `
-
 const Date = styled.h2`
   position: absolute;
   bottom: 0;
 `
-
 const FeatureImageWrapper = styled.div`
   grid-column: 3 / span 10;
   grid-row: 2 / 4;
@@ -78,22 +78,25 @@ const FeatureImage = styled(GatsbyImage)`
   height: 100%;
   width: 100%;
 `
-
+const Title = styled.h1`
+  margin-bottom: 2rem;
+`
 const Post = styled.div`
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
   background-color: ${props => props.theme.bgColor};
   padding: 2rem 2rem;
   z-index: 1;
+  margin-bottom: 1rem;
 
   @media screen and (max-width: 768px) {
     grid-column: 2 / span 6;
+    padding: 2rem 0;
   }
 
   @media screen and (max-width: 500px) {
     padding: 0;
   }
-
 `
 
 export const pageQuery = graphql`

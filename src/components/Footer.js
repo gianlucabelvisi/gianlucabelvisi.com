@@ -11,32 +11,9 @@ const Footer = () => {
 
     return (
         <Wrapper>
-
             <SocialWrapper data-aos="fade-up" data-aos-delay="90" data-aos-duration="2000">
                 <Social/>
             </SocialWrapper>
-
-            {/*<LinksWrapper>*/}
-            {/*    <Desc>*/}
-            {/*        <h1>Explore</h1>*/}
-            {/*        <p>Something something</p>*/}
-            {/*    </Desc>*/}
-            {/*    <LinkItems>*/}
-            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
-            {/*        <FooterLink to="/about">About</FooterLink>*/}
-            {/*        <FooterLink to="/destinations">Destinations</FooterLink>*/}
-            {/*        <FooterLink to="/sponsors">Sponsors</FooterLink>*/}
-            {/*    </LinkItems>*/}
-            {/*</LinksWrapper>*/}
-            {/*<LinksWrapper>*/}
-            {/*    <LinkItems>*/}
-            {/*        <LinkTitle>Contact Us</LinkTitle>*/}
-            {/*        <FooterLink to="/about">Media</FooterLink>*/}
-            {/*        <FooterLink to="/destinations">Press</FooterLink>*/}
-            {/*        <FooterLink to="/sponsors">Stuff</FooterLink>*/}
-            {/*    </LinkItems>*/}
-
-            {/*</LinksWrapper>*/}
         </Wrapper>
     );
 };
@@ -64,55 +41,10 @@ const SocialWrapper = styled.div`
   grid-row: 2 / 3;
 
   @media screen and (max-width: 768px) {
-    grid-column: 2 / span 5;
+    grid-column: 2 / span 6;
   }
 
-  @media screen and (max-width: 500px) {
-    grid-column: 2 / span 4;
-  }
+  //@media screen and (max-width: 500px) {
+  //  grid-column: 2 / span 4;
+  //}
 `
-
-
-// const Desc = styled.div`
-//   padding: 0 2rem;
-//
-//   h1 {
-//     margin-bottom: 3rem;
-//     color: #f26a2e;
-//   }
-//
-//   @media screen and (max-width: 400px) {
-//     padding: 1rem;
-//   }
-// `
-// const LinksWrapper = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   @media screen and (max-width: 820px) {
-//     grid-template-columns: 1fr;
-//   }
-// `
-// const LinkItems = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   padding: 1rem 2rem;
-//   @media screen and (max-width: 400px) {
-//     padding: 1rem;
-//   }
-// `
-// const LinkTitle = styled.h2`
-//   font-size: 14px;
-//   margin-bottom: 16px;
-// `
-// const FooterLink = styled(Link)`
-//   text-decoration: none;
-//   margin-bottom: 0.5rem;
-//   font-size: 14px;
-//   color: #3d3d4e;
-//   &:hover {
-//     color: #f26a2e;
-//     transition: 0.3s ease-out;
-//   }
-// `
-
