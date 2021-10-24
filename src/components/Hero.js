@@ -113,7 +113,12 @@ const ShoutOut = styled.h1`
     max-width: 100%;
   }
 
-  &:hover {
+  @media screen and (max-width: 400px) {
+    margin-top: 0;
+  }
+
+
+    &:hover {
     opacity: 100% !important;
     transform: scale(1.1) !important;
   }
