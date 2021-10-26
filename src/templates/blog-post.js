@@ -5,6 +5,7 @@ import {graphql} from 'gatsby'
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import {MDXProvider} from "@mdx-js/react";
 
 
 const BlogTemplate = ({data}) => {
@@ -23,9 +24,23 @@ const BlogTemplate = ({data}) => {
                 </FeatureImageWrapper>
                 <Post>
                     <Title>{frontmatter.title}</Title>
-                    <MDXRenderer>
-                        {data.mdx.body}
-                    </MDXRenderer>
+                    <MDXProvider
+                        components={{
+                            // Map HTML element tag to React component
+                            p: P,
+                            ul: UL,
+                            li: LI,
+                            h2: H2,
+                            h3: H3,
+                            h4: H4,
+                            // Or define component inline
+                            //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
+                        }}
+                    >
+                        <MDXRenderer>
+                            {data.mdx.body}
+                        </MDXRenderer>
+                    </MDXProvider>
                 </Post>
             </Wrapper>
         </Layout>
@@ -97,6 +112,30 @@ const Post = styled.div`
   @media screen and (max-width: 500px) {
     padding: 0;
   }
+`
+
+const P = styled.p`
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+`
+const H2 = styled.h2`
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+`
+const H3 = styled.h3`
+  padding-top: 0.7rem;
+  padding-bottom: 0.8rem;
+`
+const H4 = styled.h4`
+  padding-top: 0.3rem;
+  padding-bottom: 0.2rem;
+`
+const UL = styled.ul`
+  margin-bottom: 1rem;
+`
+const LI = styled.li`
+  margin-left: 2rem;
+  margin-bottom: .5rem;
 `
 
 export const pageQuery = graphql`

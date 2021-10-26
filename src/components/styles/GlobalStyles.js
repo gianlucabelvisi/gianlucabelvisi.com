@@ -25,19 +25,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  p {
-    margin-bottom: 1rem;
-    line-height: 1.5rem;
-  }
-
-  h2 {
-    padding-top: 0.4rem;
-    padding-bottom: 0.6rem;
-  }
-  h3 {
-    padding-top: 0.2rem;
-    padding-bottom: 0.4rem;
-  }
-
+  
+  
 `
