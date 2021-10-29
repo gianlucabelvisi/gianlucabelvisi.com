@@ -6,6 +6,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
+import Spoiler from "../components/Spoiler";
 
 
 const BlogTemplate = ({data}) => {
@@ -34,7 +35,7 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            // Or define component inline
+                            Spoiler
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
