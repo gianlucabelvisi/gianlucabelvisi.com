@@ -7,6 +7,7 @@ import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
 import Spoiler from "../components/Spoiler";
+import YouTube from "../components/YouTube";
 
 
 const BlogTemplate = ({data}) => {
@@ -35,7 +36,8 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler
+                            Spoiler,
+                            YouTube
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
