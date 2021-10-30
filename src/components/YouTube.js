@@ -16,6 +16,7 @@ const YouTube = ({source}) => {
 const Iframe = styled.iframe`
   width: 560px;
   height: 315px;
+  margin-bottom: 1rem;
 `
 
 export default YouTube;
