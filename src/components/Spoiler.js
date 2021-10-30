@@ -22,6 +22,7 @@ const Spoiler = ({children}) => {
 
 const Wrapper = styled.div`
   position: relative;
+  margin-bottom: 1rem;
 `
 
 const Cover = styled.label`
