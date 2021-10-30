@@ -6,6 +6,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
+import Spoiler from "../components/Spoiler";
 
 
 const BlogTemplate = ({data}) => {
@@ -33,7 +34,8 @@ const BlogTemplate = ({data}) => {
                             h2: H2,
                             h3: H3,
                             h4: H4,
-                            // Or define component inline
+                            a: A,
+                            Spoiler
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
@@ -136,6 +138,17 @@ const UL = styled.ul`
 const LI = styled.li`
   margin-left: 2rem;
   margin-bottom: .5rem;
+`
+const A = styled.a`
+  color: ${props => props.theme.post.link.color};
+  text-decoration: none;
+  &:visited {
+    color: ${props => props.theme.post.link.visited};
+  }
+  &:hover {
+    color: ${props => props.theme.post.link.hover};
+  }
+  transition: color 0.5s ease-in-out;
 `
 
 export const pageQuery = graphql`

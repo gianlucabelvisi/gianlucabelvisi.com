@@ -35,7 +35,15 @@ let Theme = {
         bgColor: "var(--secondary-color)",
         bgColorLighter: "var(--secondary-color-lighter)",
         bgColorDarker: "var(--secondary-color-darker)",
-    }
+    },
+    post: {
+        link: {
+            color: "var(--primary-color)",
+            visited: "var(--primary-color-darker)",
+            hover: "var(--primary-color-lighter)",
+            active: "var(--secondary-color)",
+        }
+    },
 }
 
 export default Theme
