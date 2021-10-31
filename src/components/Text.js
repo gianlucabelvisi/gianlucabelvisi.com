@@ -2,6 +2,7 @@ import React from 'react';
 import "@fontsource/pacifico"
 require('typeface-dancing-script')
 require('typeface-indie-flower')
+require('typeface-irish-grover')
 
 export const Song = ({children}) => {
     return (
@@ -38,8 +39,21 @@ export const Break = () => {
 
 export const Question = ({children}) => {
     return (
-        <div>
-
+        <div style={{
+            fontFamily: "Irish Grover",
+            marginTop: "2rem",
+            marginBottom: "1rem",
+            paddingLeft: "1rem",
+            fontSize: "1.3rem"
+        }}>
+            <strong style={{
+                fontFamily: "Irish Grover",
+                fontSize: "1.3rem",
+                paddingRight: "1rem"
+            }}>
+                Question:
+            </strong>
+            {children}
         </div>
     );
 };
