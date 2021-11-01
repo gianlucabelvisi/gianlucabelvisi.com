@@ -117,9 +117,9 @@ const ShoutOut = styled.h1`
     margin-top: 0;
   }
 
-  @media screen and (max-height: 660px) {
-    opacity: 0% !important;
-  }
+  //@media screen and (max-height: 660px) {
+  //  opacity: 0% !important;
+  //}
 
 
   &:hover {

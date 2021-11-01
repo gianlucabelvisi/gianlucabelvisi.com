@@ -8,14 +8,14 @@ const BlogCard = ({cardImage, title, subTitle, path, date, onHover, index}) => {
 
     return (
         <Card index={index}>
-            <Image image={getImage(cardImage)} alt="SDAS"/>
+            <Image image={getImage(cardImage)} alt="Card Image"/>
 
             <Header>
                 <Date>{date}</Date>
             </Header>
 
             <Content>
-                <Title>{title}</Title>
+                <Title smaller={title.length > 15}>{title}</Title>
                 <SubTitle>{subTitle}</SubTitle>
                 <ReadButton to={path} onHover={onHover}>Read</ReadButton>
             </Content>
@@ -50,6 +50,7 @@ const Title = styled.h2`
   text-transform: uppercase;
   position: relative;
   width: fit-content;
+  font-size: ${({smaller}) => (smaller? "1rem" : "")};
 
   @media screen and (max-width: 1200px) {
     font-size: 1.2em;

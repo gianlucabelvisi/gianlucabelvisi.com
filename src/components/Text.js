@@ -1,20 +1,28 @@
 import React from 'react';
 import "@fontsource/pacifico"
+import styled from "styled-components";
+
 require('typeface-dancing-script')
 require('typeface-indie-flower')
 require('typeface-irish-grover')
 
+
 export const Song = ({children}) => {
     return (
-        <div style={{
-            fontFamily: "Indie Flower",
-            paddingLeft: "5rem",
-            fontSize: "1.4rem"
-        }}>
+        <SongWrapper>
             {children}
-        </div>
+        </SongWrapper>
     );
 };
+const SongWrapper = styled.div`
+  font-family: "Indie Flower", sans-serif;
+  padding-left: 4rem;
+  font-size: 1.4rem;
+  @media screen and (max-width: 500px) {
+    padding-left: 2rem;
+    font-size: 1.1rem;
+  }
+`
 
 export const Pony = ({children}) => {
     return (

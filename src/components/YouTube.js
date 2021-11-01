@@ -17,6 +17,10 @@ const Iframe = styled.iframe`
   width: 560px;
   height: 315px;
   margin-bottom: 1rem;
+  @media screen and (max-width: 560px) {
+    width: 375px;
+    height: auto;
+  }
 `
 
 export default YouTube;
