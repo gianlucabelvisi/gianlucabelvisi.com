@@ -141,7 +141,9 @@ const LI = styled.li`
   margin-left: 2rem;
   margin-bottom: .5rem;
 `
-const A = styled.a`
+const A = styled.a.attrs({
+    target: '_blank'
+})`
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
   &:visited {
