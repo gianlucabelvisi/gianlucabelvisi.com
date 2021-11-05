@@ -10,11 +10,18 @@ import Spoiler from "../components/Spoiler";
 import YouTube from "../components/YouTube";
 import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/Text";
 
+import {Disqus} from 'gatsby-plugin-disqus';
 
 const BlogTemplate = ({data}) => {
 
     const frontmatter = data.mdx.frontmatter
 
+    // var disqusConfig = function () {
+    //     this.page.url = 'gianlucabelvisi.com/' + frontmatter.path
+    //     this.page.identifier = frontmatter.path
+    //     this.page.title = frontmatter.title
+    // }
+    //
     return (
         <Layout>
             <Seo title={frontmatter.title}/>
@@ -45,6 +52,19 @@ const BlogTemplate = ({data}) => {
                             {data.mdx.body}
                         </MDXRenderer>
                     </MDXProvider>
+
+                    <Disqus
+                        config={{
+                            /* Replace PAGE_URL with your post's canonical URL variable */
+                            url: 'gianlucabelvisi.com/' + frontmatter.path,
+                            /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+                            identifier: frontmatter.path,
+                            /* Replace PAGE_TITLE with the title of the page */
+                            title: frontmatter.title,
+                        }}
+                    />
+
+
                 </Post>
             </Wrapper>
         </Layout>
@@ -146,12 +166,15 @@ const A = styled.a.attrs({
 })`
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
+
   &:visited {
     color: ${props => props.theme.post.link.visited};
   }
+
   &:hover {
     color: ${props => props.theme.post.link.hover};
   }
+
   transition: color 0.5s ease-in-out;
 `
 
@@ -160,6 +183,7 @@ export const pageQuery = graphql`
         mdx(id: {eq: $id}) {
             body
             frontmatter {
+                path
                 date(formatString: "MMMM DD, YYYY")
                 author
                 subTitle
