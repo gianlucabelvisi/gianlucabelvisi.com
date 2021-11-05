@@ -8,7 +8,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
 import Spoiler from "../components/Spoiler";
 import YouTube from "../components/YouTube";
-import {Break, EvilQuote, Question, Quote, Song} from "../components/Text";
+import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/Text";
 
 
 const BlogTemplate = ({data}) => {
@@ -37,7 +37,7 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote
+                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >

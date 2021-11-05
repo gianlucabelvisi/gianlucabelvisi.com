@@ -83,4 +83,16 @@ export const EvilQuote = ({children}) => {
     );
 };
 
+export const FigureLabel = ({children}) => {
+    return (
+        <div style={{
+            width: "100%",
+            textAlign: "center",
+            marginBottom: "2rem"
+        }}>
+            <em>{children}</em>
+        </div>
+    );
+};
+
 
