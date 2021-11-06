@@ -5,7 +5,7 @@ import {FaBars} from 'react-icons/fa'
 import DropdownMenu from "./DropdownMenu";
 import {useScrollPosition} from "./hooks/useScrollPosition";
 import DesktopMenu from "./DesktopMenu";
-import { useStaticQuery, graphql } from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -57,11 +57,15 @@ const Header = () => {
 
     return (
         <Nav path={path} sticky={true}>
-            <HomeLink to="/">
-                <Title>Gianluca's</Title>
-                <SubTitle>worthless piece of blog</SubTitle>
-                <Version>Version: {version}</Version>
-            </HomeLink>
+            <Logo>
+                <HomeLink to="/">
+                    <Title>Gianluca's</Title>
+                    <SubTitle>worthless piece of blog</SubTitle>
+                </HomeLink>
+                <Version to="/release-notes">
+                    Version: {version}
+                </Version>
+            </Logo>
             <DesktopMenu/>
             <MobileWrapper>
                 <Hamburger onClick={toggleDropdownOpen}/>
@@ -98,14 +102,24 @@ const Background = styled.div`
   z-index: 9;
   pointer-events: none;
 `
-const Version = styled.div`
+const Version = styled(Link)`
   font-size: smaller;
   position: absolute;
   bottom: -5px;
   opacity: 0;
   transition: opacity 2s ease-in-out;
+  color: var(--nav-font-color);
+  text-decoration: none;
 `
 const HomeLink = styled(Link)`
+  color: var(--nav-font-color);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+`
+const Logo = styled.div`
   color: var(--nav-font-color);
   display: flex;
   flex-direction: column;
@@ -118,8 +132,10 @@ const HomeLink = styled(Link)`
   cursor: pointer;
   z-index: 20;
   transition: transform .2s;
+
   &:hover {
     transform: scale(1.2);
+
     ${Version} {
       opacity: 1;
     }

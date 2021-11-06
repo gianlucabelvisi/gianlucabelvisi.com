@@ -3,7 +3,7 @@ module.exports = {
     title: "gianlucabelvisi.com",
     description: `Homepage of Gianluca Belvisi.`,
     author: `@gbelvs`,
-    version: '0.1.0',
+    version: '1.0.0',
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
