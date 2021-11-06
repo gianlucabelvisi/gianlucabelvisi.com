@@ -3,7 +3,7 @@ module.exports = {
     title: "gianlucabelvisi.com",
     description: `Homepage of Gianluca Belvisi.`,
     author: `@gbelvs`,
-    version: '0.0.2',
+    version: '0.1.0',
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -69,10 +69,6 @@ module.exports = {
             },
           }
         ],
-        // defaultLayouts: {
-        //   posts: require.resolve(`${__dirname}/src/templates/blog-post.js`),
-        //   default: require.resolve(`${__dirname}/src/templates/blog-post.js`),
-        // },
       },
     },
     {
