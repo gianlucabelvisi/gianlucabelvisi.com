@@ -56,7 +56,7 @@ const BlogTemplate = ({data}) => {
                     <Disqus
                         config={{
                             /* Replace PAGE_URL with your post's canonical URL variable */
-                            url: 'gianlucabelvisi.com/' + frontmatter.path,
+                            url: 'https://gianlucabelvisi.com/' + frontmatter.path,
                             /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
                             identifier: frontmatter.path,
                             /* Replace PAGE_TITLE with the title of the page */
