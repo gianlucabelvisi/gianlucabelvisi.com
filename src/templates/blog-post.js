@@ -7,8 +7,8 @@ import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
 import Spoiler from "../components/Spoiler";
-import YouTube from "../components/YouTube";
-import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/Text";
+import YouTube from "../components/blog/YouTube";
+import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/blog/Text";
 
 import {Disqus} from 'gatsby-plugin-disqus';
 
@@ -16,12 +16,6 @@ const BlogTemplate = ({data}) => {
 
     const frontmatter = data.mdx.frontmatter
 
-    // var disqusConfig = function () {
-    //     this.page.url = 'gianlucabelvisi.com/' + frontmatter.path
-    //     this.page.identifier = frontmatter.path
-    //     this.page.title = frontmatter.title
-    // }
-    //
     return (
         <Layout>
             <Seo title={frontmatter.title}/>
