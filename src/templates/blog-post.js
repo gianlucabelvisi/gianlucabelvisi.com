@@ -12,6 +12,7 @@ import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../component
 
 import {Disqus} from 'gatsby-plugin-disqus';
 import TextBox from "../components/blog/Boxes";
+import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
 
 const BlogTemplate = ({data}) => {
 
@@ -39,7 +40,8 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox
+                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox,
+                            ThreeColumns, Col1, Col23, Machiavelli
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
