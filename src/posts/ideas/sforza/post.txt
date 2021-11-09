@@ -33,3 +33,8 @@ Or you could watch The Borgias, with Jeremy Irons. It's on HBO, which means prob
 I don't advise that you play Assassin's Creed II. It's not a very good game, I'm not sure how much of that actually happened, and Caterina there speaks like Super Mario. I tried switching to the Italian language, but was compelled to revert when Ezio's mother said "topa".
 
 https://www.youtube.com/watch?v=mAQuuwj573M&t=12s
+
+
+<TextBox title={"Title"}>
+    <p>This is content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, ducimus eligendi eum, exercitationem expedita fugit ipsum iure laboriosam laudantium magni molestiae nulla quia reiciendis rerum saepe unde vero.</p>
+</TextBox>

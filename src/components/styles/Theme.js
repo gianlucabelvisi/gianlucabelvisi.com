@@ -4,6 +4,7 @@ let Theme = {
     textColor: "white",
     pTextColor: "black",
     borderRadius: "",
+    accentColor: "var(--primary-color-lighter)",
     header: {
         height: "80px",
         bgColor: "var(--secondary-color)",

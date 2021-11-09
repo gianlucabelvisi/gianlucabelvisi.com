@@ -11,6 +11,7 @@ import YouTube from "../components/blog/YouTube";
 import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/blog/Text";
 
 import {Disqus} from 'gatsby-plugin-disqus';
+import TextBox from "../components/blog/Boxes";
 
 const BlogTemplate = ({data}) => {
 
@@ -38,7 +39,7 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel
+                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
@@ -48,6 +49,9 @@ const BlogTemplate = ({data}) => {
                     </MDXProvider>
 
                     <Disqus
+                        style={{
+                            marginTop: "3rem"
+                        }}
                         config={{
                             url: 'https://gianlucabelvisi.com/' + frontmatter.path,
                             identifier: frontmatter.path,
