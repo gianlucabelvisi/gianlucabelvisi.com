@@ -1,7 +1,7 @@
 ---
 path: "/caterina-sforza-1"
 date: 2021-11-10
-title: "Caterina Sforza Part 1"
+title: "Caterina Sforza (Part 1)"
 subTitle: "In which we get acquainted with Renaissance Italy and its major players"
 author: "Gianluca Belvisi"
 cardImage: "cover.png"
@@ -9,9 +9,11 @@ featureImage: "cover.png"
 onHover: "and learn!"
 hashtags: "history, italy, renaissance"
 ---
-Do you ever miss **Game of Thrones**, with all its political machinations and incest? Well, stop hurting yourself re-watching the latest seasons, and read about the italian Renaissance instead! It's got similar tropes involving murder and sex, but significantly fewer dragons ex machina.
+Do you ever miss **Game of Thrones**, with all its political machinations and incest? Well, stop hurting yourself re-watching the latest seasons, and read about the italian Renaissance instead!
 
-## The map
+It's got similar tropes involving murder and sex, but significantly fewer dragons ex machina. 🤷🏽‍♂️
+
+## The world map
 
 Set between the 14th and 15th century, Renaissance Italy was a sort of Westeros, divided into states led by powerful families, like the Aragon in Naples, the Pope in Rome, the Medici in Florence, the Borgia in Milan, and stench of rotten fish in Venice.
 
@@ -36,7 +38,7 @@ Caterina was the illegitimate daughter of *Galeazzo Maria Sforza* and super hot 
 
 Being from **Milan**, I'm guessing that Caterina's bastard last name was **Fog**. But unlike that asshole Ned Stark, Galeazzo ended up taking Caterina as his own daughter, raising her a Sforza.
 
-The Sforza family had humble beginnings as warriors for hire, but were promoted to nobility thanks to their amazing achievements in the battlefield.
+The Sforza family had humble beginnings as warriors for hire, but were promoted to nobility thanks to their amazing achievements on the battlefield.
 
 Caterina was a mix of the two Stark sisters: humble but cunning when circumstances allowed for it, and absolute freaking badass when push came to shove.
 
@@ -47,24 +49,24 @@ Caterina was a mix of the two Stark sisters: humble but cunning when circumstanc
 
 Her father let her free to pursue her interests even though not necessarily ladylike, such as alchemy, fencing, and hunting. That said, he also assigned her a much older husband when she was only 13, which was super cringe even at the time, and had to be done on the *hush-hush*.
 
-The lucky husband was Girolamo Riario. He wasn't particularly smart or deserving, but his uncle was the motherfucking Pope Sisto IV, so he had that going for him.
+The lucky husband was **Girolamo Riario**. He wasn't particularly smart or deserving, but his uncle was the Motherfucking Pope Sisto IV, so he had that going for him.
 
 ![Girolamo Riario](girolamo.jpg)
 <FigureLabel>
     Girolamo in some tv series with Girolamo in it
 </FigureLabel>
 
-Uncle Sisto gave the newlyweds the kingdom of **Forli**, but the couple didn't have time to settle in, as they were spending most of their days in **Rome**, with Caterina making herself loved by the aristocracy and Girolamo plotting against Lorenzo the Magnificent because the Pope totally hated the guy and thought he wasn't so magnificent after all.
+Uncle Sisto gifted the kingdom of **Forli** to the newlyweds, but the couple didn't immediately settle in, as they were spending their days in **Rome**, with Caterina making herself loved by the aristocracy and Girolamo plotting against Lorenzo the Magnificent, because the Pope totally hated the guy and thought that he wasn't so magnificent after all.
 
 ## Red wedding, italian style
 
 The Pope assigned his nephew a simple task: "Hey Girolamo, would you kindly murder Lorenzo and Giuliano de' Medici for me, or is that too much to ask?"
 
-Girolamo came up with a plan that involved the help of the Pazzi family in **Florence**, who also didn't love the Medici. Pazzi means *crazy*.
+Girolamo came up with a plan that involved the help of the Pazzi family in **Florence**, who also didn't love the Medici. By the way, Pazzi means *crazy*.
 
-It's important to know that Girolamo was an idiot, and not to be trusted with *anything*.
+It's important to remember that Girolamo was an idiot, and not to be trusted with *anything*.
 
-The original plan was to poison the brothers at a banquet, but poisoning two people? Not super easy! They kinda need to bite the food at the same time, or they will realize what's going on. So the plan changed into an assault during mass at Santa Maria del Fiore, and go all stabby-stabby on the Medici siblings.
+The original plan was to poison the brothers at a banquet. Now, poisoning two people? Not exactly easy! They kinda need to bite the food at the same time, or they will realize what's going on, and you only get to kill one. So the plan was changed into an assault during mass at Santa Maria del Fiore, with some trusted hire going all stabby-stabby on the Medici siblings.
 
 ![Santa Maria del Fiore](smaria.jpg)
 <FigureLabel>
@@ -73,9 +75,9 @@ The original plan was to poison the brothers at a banquet, but poisoning two peo
 
 But **Montesecco**, the person that was supposed to execute the plan, was like I can't do it inside a church. Are you kidding? I have morals!
 
-So, two unvetted killers were hired last minute, as if this was a movie from the **Coen Bros**.
+So, two unvetted killers were found last minute, as if this was a movie from the **Coen Brothers**.
 
-The two *nihilists* waited for everybody in the church to get on their knees as was customary at the time, and unleashed their stabbing attacks. But instead of splitting the targets, the morons charged both on Giuliano who didn't stand a chance. Though this meant that Lorenzo had the time to spider-man away from the church.
+The two nihilists waited for everybody in the church to get on their knees, as was customary at the time, and unleashed their stabbing attacks. But instead of splitting the targets, the morons charged both on Giuliano who didn't stand a chance. Though this meant that Lorenzo had the time to spider-man away from the church.
 
 Needless to say, Lorenzo wasn't too thrilled about the whole ordeal, and promised a swift investigation.
 
@@ -102,7 +104,7 @@ The death of Sisto IV posed a problem for Girolamo Riario because, you see, he h
 
 Little known fact, but when a Pope dies, Rome becomes the set of a **Purge** movie. Thefts, revenge killings, orgies, cats and dogs living together. I guess they figure it's the only time when **God** is not watching.
 
-So there is a certain pressure on the clergy to poop out a new Pope.
+So there is a certain pressure on the clergy to poop out a new Pope asap.
 
 With her husband panicking under a bed, Caterina realized she had to step up and take her life in her hands.
 
@@ -118,17 +120,19 @@ Once inside, she occupied the fortress, which gave her access to heavy and very 
 
 ![Castel Sant'Angelo](castel.jpg)
 
-Her message was simple: "If you dare cross the bridge to go elect the new Pope, I'm going to blow you assholes up to the moon. And let me remind you that we know so little about what the moon is like, but it does seem shitty!"
+Her message was simple: "We need safe passage out of Rome. Until this is done, if you dare cross the bridge to go elect a new Pope, I'm going to blow you assholes up to the moon. And let me remind you that we know so little about what the moon is like, but it does seem shitty!"
 
-There was a lot of back and forth outside the wall of the castle. The cardinal were begging Caterina to let go, and Caterina from the wall shaking her head. Finally, it was agreed that she and her Husband had safe passage outside of Rome, and that they would retain the Kingdom of Forli.
+There was a lot of back and forth outside the wall of the castle. The cardinals were begging Caterina to let go, and Caterina from the wall was shaking her head. Nope!
 
-Caterina was like "Ok, but I also want money, dinero, pengarna." She was enjoying it.
+Finally, it was agreed that she and her Husband would not only receive safe passage, but that they would also retain the Kingdom of Forli.
+
+Caterina was like: "Ok, but I also want money, soldi, dinero, pengarna." She was enjoying it.
 
 The cardinals couldn't take an L this big, so they approached her husband. Girolamo agreed that what Caterina was asking was wrong. But what can you do? Bitches be crazy.
 
-Finally, they gave and authorized a payment for 8000 ducats. Caterina accepted and left the castle. The Riarios reached Forli safe and sound and learned that a new Pope was elected: **Innocent VIII**.
+Finally, they gave up and authorized a payment for 8000 ducats. Caterina accepted and left the castle. The Riarios reached Forli safe and sound and learned that a new Pope was elected: **Innocent VIII**.
 
-He hated Girolamo, to the surprise of no one.
+The new Pope hated Girolamo, to the surprise of no one.
 
 **End of Part 1.**
 
@@ -140,6 +144,6 @@ Stay tuned for Part 2 of Caterina's story. Will she and her husband enjoy their 
 
 ![Uber pregnant](uber_pregnant.jpg)
 <FigureLabel>
-    Caterina Sforza, here portrayed by Botticelli as some that, despite being uber-pregnant, gets shit done.
+    Caterina Sforza, here portrayed by Botticelli as someone that, despite being uber-pregnant, gets shit done.
 </FigureLabel>
 

@@ -1,0 +1,11 @@
+---
+path: "/caterina-sforza-3"
+date: 2021-11-10
+title: "Caterina Sforza Part 1"
+subTitle: "In which we get acquainted with Renaissance Italy and its major players"
+author: "Gianluca Belvisi"
+cardImage: "cover.png"
+featureImage: "cover.png"
+onHover: "and learn!"
+hashtags: "history, italy, renaissance"
+---

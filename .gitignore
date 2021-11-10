@@ -67,3 +67,4 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+/src/posts/2021/sforza-1/map.psd

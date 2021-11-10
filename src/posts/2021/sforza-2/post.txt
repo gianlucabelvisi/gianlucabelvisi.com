@@ -1,4 +1,14 @@
-
+---
+path: "/caterina-sforza-2"
+date: 2021-11-11
+title: "Caterina Sforza (Part 2)"
+subTitle: "In which our heroine goes to Forli and a bunch of stuff happens to her"
+author: "Gianluca Belvisi"
+cardImage: "cover.png"
+featureImage: "cover.png"
+onHover: "and learn!"
+hashtags: "history, italy, renaissance"
+---
 
 ## Death of husband #1
 
