@@ -43,3 +43,14 @@ https://www.youtube.com/watch?v=mAQuuwj573M&t=12s
 <TextBox title={"Title"}>
     <p>This is content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, ducimus eligendi eum, exercitationem expedita fugit ipsum iure laboriosam laudantium magni molestiae nulla quia reiciendis rerum saepe unde vero.</p>
 </TextBox>
+
+
+
+<TextBox title={"Title"}>
+    <ThreeColumns>
+        <Machiavelli/>
+        <Col23>
+            <p>This is content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores, ducimus eligendi eum, exercitationem expedita fugit ipsum iure laboriosam laudantium magni molestiae nulla quia reiciendis rerum saepe unde vero.</p>
+        </Col23>
+    </ThreeColumns>
+</TextBox>

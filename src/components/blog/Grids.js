@@ -21,7 +21,6 @@ const Grid3Col = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
 export const Col1 = styled.div`
   grid-column: 1;
   width: 100%;
@@ -33,7 +32,6 @@ export const Col1 = styled.div`
 export const Machiavelli = styled(Col1)`
   background: url(${MachiavelliPic}) no-repeat;
   background-size: contain;
-
 `
 export const Col23 = styled.div`
   grid-column: 2 / 4;
