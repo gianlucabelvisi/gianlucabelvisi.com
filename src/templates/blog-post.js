@@ -13,6 +13,7 @@ import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../component
 import {Disqus} from 'gatsby-plugin-disqus';
 import TextBox from "../components/blog/Boxes";
 import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
+import Newsletter from "../components/Newsletter";
 
 const BlogTemplate = ({data}) => {
 
@@ -49,6 +50,10 @@ const BlogTemplate = ({data}) => {
                             {data.mdx.body}
                         </MDXRenderer>
                     </MDXProvider>
+
+                    by {frontmatter.author}
+
+                    <Newsletter/>
 
                     <Disqus
                         style={{
