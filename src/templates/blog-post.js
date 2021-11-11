@@ -51,9 +51,14 @@ const BlogTemplate = ({data}) => {
                         </MDXRenderer>
                     </MDXProvider>
 
-                    by {frontmatter.author}
-
-                    <Newsletter/>
+                    <BlogTail>
+                        <Author>
+                            by <strong>{frontmatter.author}</strong>
+                        </Author>
+                        <Subscribe>
+                            <Newsletter/>
+                        </Subscribe>
+                    </BlogTail>
 
                     <Disqus
                         style={{
@@ -139,7 +144,6 @@ const Post = styled.div`
     padding: 0;
   }
 `
-
 const P = styled.p`
   margin-bottom: 1rem;
   line-height: 1.5rem;
@@ -178,6 +182,30 @@ const A = styled.a.attrs({
   }
 
   transition: color 0.5s ease-in-out;
+`
+
+
+const BlogTail = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+`
+const Author = styled.div`
+  flex-basis: 50%;
+  flex-grow: 1;
+  //background-color: lightcoral;
+`
+const Subscribe = styled.div`
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: right;
+  //background-color: lightblue;
+  @media screen and (max-width: 550px) {
+    text-align: left;
+  }
 `
 
 export const pageQuery = graphql`

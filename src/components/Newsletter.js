@@ -12,11 +12,11 @@ export const Newsletter = () => {
     return (
         <Wrapper>
             <Subscriber onClick={e => toggleModalOpen()}>
-               Subscribe to the newsletter!
+               <strong><u>Subscribe to the newsletter!</u></strong>
             </Subscriber>
             <Modal isOpen={isModalOpen}>
-                <div>You will only receive emails when a new post is out.</div>
-                <iframe src={"http://eepurl.com/hM9Vi5"} width="auto" height="450px">
+                <small>You will only receive emails when a new post is out</small>
+                <iframe src={"http://eepurl.com/hM9Vi5"} width="300px" height="450px">
                 </iframe>
             </Modal>
         </Wrapper>
@@ -26,9 +26,11 @@ export const Newsletter = () => {
 const Wrapper = styled.div`
 `
 const Subscriber = styled.label`
+  color: ${props => props.theme.post.link.color};
 `
 
 const Modal = styled.div`
+  padding-top: 1rem;
   transition: opacity 0.3s ease-in-out, height 1s ease-in-out;
   height: ${({isOpen}) => (isOpen ? "auto" : "0px")};
 
