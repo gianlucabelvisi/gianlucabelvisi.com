@@ -30,8 +30,9 @@ export const Col1 = styled.div`
   background: url(${(props) => props.source || ""});
 `
 export const Machiavelli = styled(Col1)`
-  background: url(${MachiavelliPic}) no-repeat;
+  background: url(${MachiavelliPic}) center no-repeat;
   background-size: contain;
+  min-height: 9rem;
 `
 export const Col23 = styled.div`
   grid-column: 2 / 4;

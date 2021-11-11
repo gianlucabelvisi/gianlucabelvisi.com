@@ -16,7 +16,7 @@ export const Newsletter = () => {
             </Subscriber>
             <Modal isOpen={isModalOpen}>
                 <small>You will only receive emails when a new post is out</small>
-                <iframe src={"http://eepurl.com/hM9Vi5"} width="300px" height="450px">
+                <iframe title={"Mailchimp"} src={"https://eepurl.com/hM9Vi5"} width="300px" height="450px">
                 </iframe>
             </Modal>
         </Wrapper>
@@ -33,7 +33,6 @@ const Modal = styled.div`
   padding-top: 1rem;
   transition: opacity 0.3s ease-in-out, height 1s ease-in-out;
   height: ${({isOpen}) => (isOpen ? "auto" : "0px")};
-
   opacity: ${({isOpen}) => (isOpen ? "1" : "0")};
 `
 
