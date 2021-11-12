@@ -17,8 +17,10 @@ const Grid3Col = styled.div`
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  @media screen and (max-width: 868px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `
 export const Col1 = styled.div`
@@ -29,10 +31,16 @@ export const Col1 = styled.div`
   margin-right: 1rem;
   background: url(${(props) => props.source || ""});
 `
-export const Machiavelli = styled(Col1)`
+export const BoxPic = styled(Col1)`
+  min-height: 9rem;
+  @media screen and (max-width: 500px) {
+    background-size: cover;
+    min-height: 16rem;
+  }
+`
+export const Machiavelli = styled(BoxPic)`
   background: url(${MachiavelliPic}) center no-repeat;
   background-size: contain;
-  min-height: 9rem;
 `
 export const Col23 = styled.div`
   grid-column: 2 / 4;
