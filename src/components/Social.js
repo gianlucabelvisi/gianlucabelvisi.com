@@ -21,7 +21,6 @@ const Social = () => {
                         </Content>
                     </Tab>
                 ))}
-
             </Accordion>
         </Container>
     );
@@ -33,7 +32,6 @@ const Container = styled.div`
   background-color: ${props => props.theme.social.bgColor};
   border-radius: ${props => props.theme.social.borderRadius};
   width: 100%;
-
   * {
     margin: 0;
     padding: 0;
@@ -50,7 +48,6 @@ const Invite = styled.h1`
     margin-top: 1rem;
   }
 `
-
 const Accordion = styled.div`
   background: ${props => props.theme.social.bgColorLighter};
   border-bottom-left-radius: ${props => props.theme.social.borderRadius};
@@ -74,7 +71,6 @@ const Accordion = styled.div`
     width: 100%;
     min-width: 0;
   }
-
 `
 const Icon = styled.div`
   color: white;
@@ -106,19 +102,15 @@ const Tab = styled.li`
   position: relative;
   margin: 0;
   transition: all 0.4s ease-in-out 0.1s;
-
   &:hover {
     width: 450px;
   }
-
   &:hover ${Icon} {
     margin-left: -100px;
   }
-
   &:hover ${HoverIcon} {
     margin-left: 0;
   }
-
   @media screen and (max-width: 970px) {
     display: block;
     border-bottom: 3px #333 solid;
