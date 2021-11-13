@@ -24,7 +24,11 @@ const Header = () => {
 
     useScrollPosition(
         ({prevPos, currPos}) => {
-            const isShow = currPos.y > prevPos.y
+            let isShow = true
+            if (currPos.y < -100) {
+                isShow = currPos.y > prevPos.y
+            }
+
             if (isShow !== sticky) {
                 setSticky(isShow)
                 if (path === "/" && !sticky) {
@@ -56,7 +60,7 @@ const Header = () => {
     const version = data.allSite.edges[0].node.siteMetadata.version
 
     return (
-        <Nav path={path} sticky={true}>
+        <Nav path={path} sticky={sticky}>
             <Logo>
                 <HomeLink to="/">
                     <Title>Gianluca's</Title>
