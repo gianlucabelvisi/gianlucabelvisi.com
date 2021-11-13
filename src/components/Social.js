@@ -145,4 +145,7 @@ const Content = styled.div`
   margin-left: 80px;
   position: relative;
   padding: 50px 0 0 15px;
+  @media screen and (max-width: 500px) {
+    padding: 10px 0 0 15px;     
+  }
 `
