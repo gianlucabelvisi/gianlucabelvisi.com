@@ -14,6 +14,7 @@ import {Disqus} from 'gatsby-plugin-disqus';
 import TextBox from "../components/blog/Boxes";
 import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
 import Newsletter from "../components/Newsletter";
+import Link from "gatsby-link";
 
 const BlogTemplate = ({data}) => {
 
@@ -55,6 +56,7 @@ const BlogTemplate = ({data}) => {
                         <Author>
                             by <strong>{frontmatter.author}</strong>
                         </Author>
+                        <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
                         <Subscribe>
                             <Newsletter/>
                         </Subscribe>
@@ -183,8 +185,6 @@ const A = styled.a.attrs({
 
   transition: color 0.5s ease-in-out;
 `
-
-
 const BlogTail = styled.div`
   margin-top: 2rem;
   display: flex;
@@ -194,12 +194,23 @@ const BlogTail = styled.div`
   }
 `
 const Author = styled.div`
-  flex-basis: 50%;
+  flex-basis: 40%;
   flex-grow: 1;
   //background-color: lightcoral;
 `
+const MorePosts = styled(Link)`
+  flex-basis: 20%;
+  flex-grow: 1;
+  color: ${props => props.theme.post.link.color};
+  text-align: center;
+  //text-decoration: none;
+  //background-color: lightcyan;
+  @media screen and (max-width: 550px) {
+    text-align: left;
+  }
+`
 const Subscribe = styled.div`
-  flex-basis: 50%;
+  flex-basis: 40%;
   flex-grow: 1;
   text-align: right;
   //background-color: lightblue;
