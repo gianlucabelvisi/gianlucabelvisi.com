@@ -8,7 +8,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
 import Spoiler from "../components/Spoiler";
 import YouTube from "../components/blog/YouTube";
-import {Break, EvilQuote, FigureLabel, Question, Quote, Song} from "../components/blog/Text";
+import {Break, EvilQuote, FigureLabel, NewLine, Question, Quote, Song} from "../components/blog/Text";
 
 import {Disqus} from 'gatsby-plugin-disqus';
 import TextBox from "../components/blog/Boxes";
@@ -42,7 +42,7 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox,
+                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox, NewLine,
                             ThreeColumns, Col1, Col23, Machiavelli
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
@@ -152,7 +152,7 @@ const P = styled.p`
 `
 const H2 = styled.h2`
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 `
 const H3 = styled.h3`
   padding-top: 0.7rem;

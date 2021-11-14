@@ -35,6 +35,14 @@ export const Pony = ({children}) => {
     );
 };
 
+export const NewLine = () => {
+    return (
+        <p style={{
+            marginBottom: "0",
+        }}>
+        </p>
+    );
+};
 
 export const Break = () => {
     return (
