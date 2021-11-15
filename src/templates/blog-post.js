@@ -15,6 +15,8 @@ import TextBox from "../components/blog/Boxes";
 import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
 import Newsletter from "../components/Newsletter";
 import Link from "gatsby-link";
+import {FacebookIcon, FacebookShareButton} from "react-share";
+import SocialShare from "../components/SocialShare";
 
 const BlogTemplate = ({data}) => {
 
@@ -32,6 +34,9 @@ const BlogTemplate = ({data}) => {
                 </FeatureImageWrapper>
                 <Post>
                     <Title>{frontmatter.title}</Title>
+
+                    <SocialShare path={frontmatter.path}></SocialShare>
+
                     <MDXProvider
                         components={{
                             // Map HTML element tag to React component
@@ -130,6 +135,7 @@ const Title = styled.h1`
   margin-bottom: 2rem;
 `
 const Post = styled.div`
+  position: relative;
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
   background-color: ${props => props.theme.bgColor};
