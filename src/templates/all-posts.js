@@ -146,7 +146,12 @@ const ReadButton = styled(LinkButton)`
 
 export const pageQuery = graphql`
 query AllPostsQuery($skip: Int!, $limit: Int!) {
-  allMdx(sort: {fields: frontmatter___date, order: DESC}, skip: $skip, limit: $limit) {
+  allMdx(
+        sort: {fields: frontmatter___date, order: DESC}, 
+        skip: $skip, 
+        limit: $limit,
+        filter: {isFuture: {eq: false}}
+    ) {
     edges {
       node {
         frontmatter {
