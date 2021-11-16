@@ -25,22 +25,22 @@ const SocialShare = ({path}) => {
         <ShareSection>
             <Wrapper>
                 <ReactTooltip effect="solid"/>
-                <FacebookShareButton url={url} data-tip="Share on Facebook" data-place="right">
+                <FacebookShareButton url={url} data-tip="BoomerBook" data-place="left">
                     <FacebookIcon size={32} round={true}/>
                 </FacebookShareButton>
-                <TwitterShareButton url={url} data-tip="Tweet!" data-place="right">
+                <TwitterShareButton url={url} data-tip="Tweet" data-place="left">
                     <TwitterIcon size={32} round={true}/>
                 </TwitterShareButton>
-                <RedditShareButton url={url} data-tip="Create Reddit post" data-place="right">
+                <RedditShareButton url={url} data-tip="Reddit it" data-place="left">
                     <RedditIcon size={32} round={true}/>
                 </RedditShareButton>
-                <WhatsappShareButton url={url} data-tip="Forward to WhatsApp" data-place="right">
+                <WhatsappShareButton url={url} data-tip="WhatsApp" data-place="left">
                     <WhatsappIcon size={32} round={true}/>
                 </WhatsappShareButton>
-                <InstapaperShareButton url={url} data-tip="Save on InstaPaper" data-place="right">
+                <InstapaperShareButton url={url} data-tip="InstaPaper" data-place="left">
                     <InstapaperIcon size={32} round={true}/>
                 </InstapaperShareButton>
-                <PinterestShareButton url={url} data-tip="Pin!" data-place="right">
+                <PinterestShareButton url={url} data-tip="Pin" data-place="left">
                     <PinterestIcon size={32} round={true}/>
                 </PinterestShareButton>
             </Wrapper>

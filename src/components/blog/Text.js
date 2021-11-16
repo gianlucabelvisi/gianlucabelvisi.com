@@ -103,4 +103,16 @@ export const FigureLabel = ({children}) => {
     );
 };
 
+export const Indented = ({children}) => {
+    return (
+        <div style={{
+            width: "100%",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+            marginBottom: "1rem"
+        }}>
+            <em>{children}</em>
+        </div>
+    );
+};
 

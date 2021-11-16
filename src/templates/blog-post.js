@@ -8,7 +8,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {MDXProvider} from "@mdx-js/react";
 import Spoiler from "../components/Spoiler";
 import YouTube from "../components/blog/YouTube";
-import {Break, EvilQuote, FigureLabel, NewLine, Question, Quote, Song} from "../components/blog/Text";
+import {Break, EvilQuote, FigureLabel, Indented, NewLine, Question, Quote, Song} from "../components/blog/Text";
 
 import {Disqus} from 'gatsby-plugin-disqus';
 import TextBox from "../components/blog/Boxes";
@@ -18,6 +18,7 @@ import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import ReactPlayer from "react-player";
 import ReactAudioPlayer from "react-audio-player";
+import {AiTwotonePushpin} from "react-icons/all";
 
 const BlogTemplate = ({data}) => {
 
@@ -48,8 +49,9 @@ const BlogTemplate = ({data}) => {
                             h3: H3,
                             h4: H4,
                             a: A,
-                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox, NewLine,
-                            ThreeColumns, Col1, Col23, Machiavelli, ReactPlayer, ReactAudioPlayer
+                            Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox, NewLine, Indented,
+                            ThreeColumns, Col1, Col23, Machiavelli, ReactPlayer, ReactAudioPlayer,
+                            AiTwotonePushpin
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
