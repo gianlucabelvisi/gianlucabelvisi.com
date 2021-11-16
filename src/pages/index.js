@@ -124,7 +124,12 @@ const BlogCards = styled.div`
 
 export const pageQuery = graphql`
 query BlogCardsQuery {
-  allMdx(sort: {fields: frontmatter___date, order: DESC}, skip: 0, limit: 3) {
+  allMdx(
+        sort: {fields: frontmatter___date, order: DESC}, 
+        filter: {isFuture: {eq: false}},
+        skip: 0, 
+        limit: 3,
+    ) {
     edges {
       node {
         frontmatter {
