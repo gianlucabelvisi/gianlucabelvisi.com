@@ -15,8 +15,9 @@ import TextBox from "../components/blog/Boxes";
 import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
 import Newsletter from "../components/Newsletter";
 import Link from "gatsby-link";
-import {FacebookIcon, FacebookShareButton} from "react-share";
 import SocialShare from "../components/SocialShare";
+import ReactPlayer from "react-player";
+import ReactAudioPlayer from "react-audio-player";
 
 const BlogTemplate = ({data}) => {
 
@@ -48,7 +49,7 @@ const BlogTemplate = ({data}) => {
                             h4: H4,
                             a: A,
                             Spoiler, YouTube, Song, Question, Break, Quote, EvilQuote, FigureLabel, TextBox, NewLine,
-                            ThreeColumns, Col1, Col23, Machiavelli
+                            ThreeColumns, Col1, Col23, Machiavelli, ReactPlayer, ReactAudioPlayer
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
