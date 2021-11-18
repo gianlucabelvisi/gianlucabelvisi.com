@@ -66,18 +66,9 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
       left: -35px;
   }
-
   @media screen and (max-width: 500px) {
     display: none;
-    //position: relative;
-    //flex-direction: row;
-    //margin-top: 0;
-    //left: 0;
-    //justify-content: right;
-    //margin-bottom: 1rem;
   }
-
-
 `
 
 
