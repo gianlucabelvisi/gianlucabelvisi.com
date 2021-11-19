@@ -17,6 +17,7 @@ import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import ReactAudioPlayer from "react-audio-player";
 import {AiTwotonePushpin} from "react-icons/ai";
+import ReactPlayer from 'react-player/lazy'
 
 const BlogTemplate = ({data}) => {
 
@@ -63,7 +64,8 @@ const BlogTemplate = ({data}) => {
                             Col23,
                             Machiavelli,
                             ReactAudioPlayer,
-                            AiTwotonePushpin
+                            AiTwotonePushpin,
+                            ReactPlayer
                             //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
                         }}
                     >
