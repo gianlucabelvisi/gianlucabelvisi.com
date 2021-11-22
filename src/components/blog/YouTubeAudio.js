@@ -28,7 +28,9 @@ const YouTubeAudio = ({url}) => {
                     onClick={togglePlaying}
                     onEnded={onEnded}
                 >
-                    {isPlaying ? <FaPause/> : <FaPlay/>}
+                    <Icon>
+                        {isPlaying ? <FaPause/> : <FaPlay/>}
+                    </Icon>
                 </PlayButton>
             </BackGround>
         </div>
@@ -39,7 +41,7 @@ const HiddenPlayer = styled(ReactPlayer)`
   display: none;
 `
 const BackGround = styled.div`
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${props => props.theme.button.mainColor};
   max-width: 100px;
   display: flex;
   justify-content: center;
@@ -50,10 +52,16 @@ const BackGround = styled.div`
 `
 const PlayButton = styled.button`
   font-size: 2rem;
-  color: ${props => props.theme.button.mainColor};
+  color: ${props => props.theme.bgColor};
   background: none;
   border: none;
   cursor: pointer;
+`
+const Icon = styled.div`
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export default YouTubeAudio;
