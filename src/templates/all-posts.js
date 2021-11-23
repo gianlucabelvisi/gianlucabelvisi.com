@@ -96,7 +96,6 @@ const Image = styled(GatsbyImage)`
   position: relative;
   border-radius: ${props => props.theme.allPosts.borderRadius};
 `
-
 const Date = styled.h2`
   position: absolute;
   top: 0;
@@ -106,7 +105,6 @@ const Date = styled.h2`
   background-color: hsl(0 0% 0% / .2);
   border-top-right-radius: ${props => props.theme.allPosts.borderRadius};
 `
-
 const Content = styled.div`
   color: aliceblue;
   --padding: 1rem;

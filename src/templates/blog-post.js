@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
@@ -17,8 +17,13 @@ import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import {AiTwotonePushpin} from "react-icons/ai";
 import YouTubeAudio from "../components/blog/YouTubeAudio";
+import Aos from "aos";
 
 const BlogTemplate = ({data}) => {
+
+    useEffect(() => {
+        Aos.init({})
+    }, [])
 
     const frontmatter = data.mdx.frontmatter
 
@@ -26,40 +31,51 @@ const BlogTemplate = ({data}) => {
         <Layout>
             <Seo title={frontmatter.title}/>
             <Wrapper>
-                <PostHeader>
+
+                <PostHeader data-aos="zoom-out-down" data-aos-delay="90" data-aos-duration="1000">
                     <Date>{frontmatter.date}</Date>
                 </PostHeader>
-                <FeatureImageWrapper>
+
+                <FeatureImageWrapper data-aos="fade-down" data-aos-delay="90" data-aos-duration="1000">
                     <FeatureImage image={getImage(frontmatter.featureImage)} alt="Feature Image"/>
                 </FeatureImageWrapper>
-                <Post>
-                    <Title>{frontmatter.title}</Title>
 
-                    <SocialShare path={frontmatter.path}/>
+                <Content>
 
-                    <MDXProvider
-                        components={{
-                            // Map HTML element tag to React component
-                            p: P,
-                            ul: UL,
-                            ol: OL,
-                            li: LI,
-                            h2: H2,
-                            h3: H3,
-                            h4: H4,
-                            a: A,
-                            Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Quote, EvilQuote,
-                            FigureLabel, TextBox, NewLine, Indented, ThreeColumns, Col1, Col23, Machiavelli,
-                            AiTwotonePushpin
-                            //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
-                        }}
-                    >
-                        <MDXRenderer>
-                            {data.mdx.body}
-                        </MDXRenderer>
-                    </MDXProvider>
+                    <SideBar data-aos="fade-right" data-aos-delay="180" data-aos-duration="1000">
+                        <SocialShare
+                            path={frontmatter.path}
+                        />
+                    </SideBar>
 
-                    <BlogTail>
+                    <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
+                        <Title>{frontmatter.title}</Title>
+
+                        <MDXProvider
+                            components={{
+                                // Map HTML element tag to React component
+                                p: P,
+                                ul: UL,
+                                ol: OL,
+                                li: LI,
+                                h2: H2,
+                                h3: H3,
+                                h4: H4,
+                                a: A,
+                                Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Quote, EvilQuote,
+                                FigureLabel, TextBox, NewLine, Indented, ThreeColumns, Col1, Col23, Machiavelli,
+                                AiTwotonePushpin
+                                //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
+                            }}
+                        >
+                            <MDXRenderer>
+                                {data.mdx.body}
+                            </MDXRenderer>
+                        </MDXProvider>
+
+                    </Post>
+
+                    <BlogTail data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
                         <Author>
                             by <strong>{frontmatter.author}</strong>
                         </Author>
@@ -69,19 +85,20 @@ const BlogTemplate = ({data}) => {
                         </Subscribe>
                     </BlogTail>
 
-                    <Disqus
-                        style={{
-                            marginTop: "3rem"
-                        }}
-                        config={{
-                            url: 'https://gianlucabelvisi.com/' + frontmatter.path,
-                            identifier: frontmatter.path,
-                            title: frontmatter.title,
-                        }}
-                    />
+                    <Comments data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+                        <Disqus
+                            style={{
+                                marginTop: "3rem"
+                            }}
+                            config={{
+                                url: 'https://gianlucabelvisi.com/' + frontmatter.path,
+                                identifier: frontmatter.path,
+                                title: frontmatter.title,
+                            }}
+                        />
+                    </Comments>
 
-
-                </Post>
+                </Content>
             </Wrapper>
         </Layout>
     )
@@ -136,7 +153,7 @@ const FeatureImage = styled(GatsbyImage)`
 const Title = styled.h1`
   margin-bottom: 2rem;
 `
-const Post = styled.div`
+const Content = styled.div`
   position: relative;
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
@@ -153,6 +170,12 @@ const Post = styled.div`
   @media screen and (max-width: 500px) {
     padding: 0;
   }
+`
+const SideBar = styled.div`
+`
+const Post = styled.div`
+`
+const Comments = styled.div`
 `
 const P = styled.p`
   margin-bottom: 1rem;
@@ -186,7 +209,7 @@ const A = styled.a.attrs({
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
   font-weight: bold;
-  
+
 
   &:visited {
     color: ${props => props.theme.post.link.visited};
