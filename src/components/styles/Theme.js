@@ -19,7 +19,7 @@ let Theme = {
     button: {
         mainColor: "var(--primary-color)",
         hoverColor: "var(--primary-color)",
-        borderColor: "var(--secondary-color-darker)",
+        borderColor: "var(--secondary-color-lighter)",
         fontColor: "white",
         fontColorHover: "white",
         borderRadius: "20px",

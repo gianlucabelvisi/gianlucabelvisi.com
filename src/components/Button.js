@@ -49,7 +49,7 @@ const Button = styled(Link)`
     text-indent: 0;
     background: ${props => props.theme.button.hoverColor};
     color: ${props => props.theme.button.fontColorHover};
-    border: 5px solid ${props => props.theme.button.borderColor};
+    border: 3px solid ${props => props.theme.button.borderColor};
     box-shadow: 3px 3px 2px rgba(black, 0.15);
     ${OnHover} {
       transform: translateX(0);

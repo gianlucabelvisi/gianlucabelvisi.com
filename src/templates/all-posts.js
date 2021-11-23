@@ -35,15 +35,17 @@ const AllPosts = ({pageContext, data}) => {
 
                         return (
                             <Post key={fm.path} data-aos={index%2 === 0? "fade-left" : "fade-right"} data-aos-delay="90" data-aos-duration="1000">
-                                <Image image={getImage(fm.featureImage)} alt="Feature image"/>
+                                <InnerWrapper>
+                                    <Image image={getImage(fm.featureImage)} alt="Feature image"/>
 
-                                <Date>{fm.date}</Date>
+                                    <Date>{fm.date}</Date>
 
-                                <Content>
-                                    <Title>{fm.title}</Title>
-                                    <SubTitle>{fm.subTitle}</SubTitle>
-                                    <ReadButton to={fm.path} onHover={fm.onHover}>Read</ReadButton>
-                                </Content>
+                                    <Content>
+                                        <Title>{fm.title}</Title>
+                                        <SubTitle>{fm.subTitle}</SubTitle>
+                                        <ReadButton to={fm.path} onHover={fm.onHover}>Read</ReadButton>
+                                    </Content>
+                                </InnerWrapper>
 
                             </Post>
                         )
@@ -79,7 +81,14 @@ const Post = styled.div`
   position: relative;
   color: ${props => props.theme.textColor};
 `
-
+const InnerWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  transition: all 500ms ease;
+  &:hover {
+    transform: scale(1.01);
+  }
+`
 const Image = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
