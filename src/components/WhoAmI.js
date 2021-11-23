@@ -28,13 +28,13 @@ const WhoAmI = () => {
     }, [])
     return (
         <ContentContainer>
-            <Description>
+            <Description data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
                 Who am I by the way
             </Description>
             <ContentWrapper>
 
                 <ColumnOne>
-                    <TopLine>
+                    <TopLine data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
                         Testimonials
                     </TopLine>
                     <Testimonial data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">

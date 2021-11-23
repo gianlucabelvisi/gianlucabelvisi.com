@@ -42,6 +42,7 @@ const BlogTemplate = ({data}) => {
                             // Map HTML element tag to React component
                             p: P,
                             ul: UL,
+                            ol: OL,
                             li: LI,
                             h2: H2,
                             h3: H3,
@@ -172,6 +173,9 @@ const H4 = styled.h4`
 const UL = styled.ul`
   margin-bottom: 1rem;
 `
+const OL = styled.ol`
+  margin-bottom: 1rem;
+`
 const LI = styled.li`
   margin-left: 2rem;
   margin-bottom: .5rem;
@@ -181,6 +185,8 @@ const A = styled.a.attrs({
 })`
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
+  font-weight: bold;
+  
 
   &:visited {
     color: ${props => props.theme.post.link.visited};
