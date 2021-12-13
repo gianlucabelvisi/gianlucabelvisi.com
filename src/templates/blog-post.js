@@ -2,22 +2,14 @@ import React, {useEffect} from "react"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
-import {MDXRenderer} from "gatsby-plugin-mdx";
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
-import {MDXProvider} from "@mdx-js/react";
-import Spoiler from "../components/Spoiler";
-import YouTube from "../components/blog/YouTube";
-import {Break, EvilQuote, FigureLabel, Indented, NewLine, Question, Quote, Song} from "../components/blog/Text";
 import {Disqus} from 'gatsby-plugin-disqus';
-import TextBox from "../components/blog/Boxes";
-import ThreeColumns, {Col1, Col23, Machiavelli} from "../components/blog/Grids";
 import Newsletter from "../components/Newsletter";
 import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
-import {AiTwotonePushpin} from "react-icons/ai";
-import YouTubeAudio from "../components/blog/YouTubeAudio";
 import Aos from "aos";
+import Mdx from "../components/blog/Mdx";
 
 const BlogTemplate = ({data}) => {
 
@@ -50,29 +42,7 @@ const BlogTemplate = ({data}) => {
 
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
-
-                        <MDXProvider
-                            components={{
-                                // Map HTML element tag to React component
-                                p: P,
-                                ul: UL,
-                                ol: OL,
-                                li: LI,
-                                h2: H2,
-                                h3: H3,
-                                h4: H4,
-                                a: A,
-                                Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Quote, EvilQuote,
-                                FigureLabel, TextBox, NewLine, Indented, ThreeColumns, Col1, Col23, Machiavelli,
-                                AiTwotonePushpin
-                                //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
-                            }}
-                        >
-                            <MDXRenderer>
-                                {data.mdx.body}
-                            </MDXRenderer>
-                        </MDXProvider>
-
+                        <Mdx body={data.mdx.body}/>
                     </Post>
 
                     <BlogTail data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -85,7 +55,7 @@ const BlogTemplate = ({data}) => {
                         </Subscribe>
                     </BlogTail>
 
-                    <Comments data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+                    <Comments data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
                         <Disqus
                             style={{
                                 marginTop: "3rem"
@@ -176,50 +146,6 @@ const SideBar = styled.div`
 const Post = styled.div`
 `
 const Comments = styled.div`
-`
-const P = styled.p`
-  margin-bottom: 1rem;
-  line-height: 1.5rem;
-`
-const H2 = styled.h2`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-`
-const H3 = styled.h3`
-  padding-top: 0.7rem;
-  padding-bottom: 0.8rem;
-`
-const H4 = styled.h4`
-  padding-top: 0.3rem;
-  padding-bottom: 0.2rem;
-`
-const UL = styled.ul`
-  margin-bottom: 1rem;
-`
-const OL = styled.ol`
-  margin-bottom: 1rem;
-`
-const LI = styled.li`
-  margin-left: 2rem;
-  margin-bottom: .5rem;
-`
-const A = styled.a.attrs({
-    target: '_blank'
-})`
-  color: ${props => props.theme.post.link.color};
-  text-decoration: none;
-  font-weight: bold;
-
-
-  &:visited {
-    color: ${props => props.theme.post.link.visited};
-  }
-
-  &:hover {
-    color: ${props => props.theme.post.link.hover};
-  }
-
-  transition: color 0.5s ease-in-out;
 `
 const BlogTail = styled.div`
   margin-top: 2rem;
