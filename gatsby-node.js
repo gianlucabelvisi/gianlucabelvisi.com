@@ -8,6 +8,10 @@ exports.createSchemaCustomization = ({actions, schema, getNode}) => {
                     type: 'Boolean!',
                     resolve: (s) => new Date(s.frontmatter.date) > new Date(),
                 },
+                isHidden: {
+                    type: 'Boolean!',
+                    resolve: (s) => !!s.frontmatter.hidden,
+                },
             },
         }),
     ])

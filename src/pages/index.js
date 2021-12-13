@@ -126,7 +126,7 @@ export const pageQuery = graphql`
 query BlogCardsQuery {
   allMdx(
         sort: {fields: frontmatter___date, order: DESC}, 
-        filter: {isFuture: {eq: false}},
+        filter: {isFuture: {eq: false}, isHidden: {eq: false}},
         skip: 0, 
         limit: 3,
     ) {

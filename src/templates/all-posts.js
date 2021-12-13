@@ -157,7 +157,7 @@ query AllPostsQuery($skip: Int!, $limit: Int!) {
         sort: {fields: frontmatter___date, order: DESC}, 
         skip: $skip, 
         limit: $limit,
-        filter: {isFuture: {eq: false}}
+        filter: {isFuture: {eq: false}, isHidden: {eq: false}}
     ) {
     edges {
       node {
