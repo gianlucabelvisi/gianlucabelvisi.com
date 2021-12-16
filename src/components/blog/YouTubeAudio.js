@@ -17,7 +17,7 @@ const YouTubeAudio = ({url}) => {
 
     return (
 
-        <div>
+        <Wrapper>
             <HiddenPlayer
                 url={url}
                 playing={isPlaying}
@@ -33,16 +33,25 @@ const YouTubeAudio = ({url}) => {
                     </Icon>
                 </PlayButton>
             </BackGround>
-        </div>
+            <Warning>
+                <small>
+                    There is a bug on mobile. If the music doesn't start, try stopping and playing a couple of times
+                    🤷🏽‍♂️
+                </small>
+            </Warning>
+        </Wrapper>
     );
 };
-
+const Wrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+`
 const HiddenPlayer = styled(ReactPlayer)`
   display: none;
 `
 const BackGround = styled.div`
   background-color: ${props => props.theme.button.mainColor};
-  max-width: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +71,9 @@ const Icon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+const Warning = styled.p`
+  width: 50%;
 `
 
 export default YouTubeAudio;

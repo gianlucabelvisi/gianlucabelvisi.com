@@ -9,7 +9,6 @@ import styled, {keyframes} from "styled-components"
 import Aos from "aos";
 import BlogCard from "../components/BlogCard";
 
-
 const Index = ({data}) => {
 
     useEffect(() => {
@@ -21,13 +20,19 @@ const Index = ({data}) => {
             <Seo title="Home"/>
             <Hero/>
             <BlogCardsContainer>
+
                 <BlogCardsHeading data-aos="flip-up"
-                                  data-aos-delay="1000"
-                                  data-aos-duration="500"
+                                  data-aos-delay="500"
+                                  data-aos-duration="1500"
                                   data-aos-easing="ease-in-sine">
                     Latest blog posts
                 </BlogCardsHeading>
-                <BlogCards>
+
+                <BlogCards data-aos="fade-left"
+                           data-aos-delay="500"
+                           data-aos-duration="1500"
+                           data-aos-easing="ease-out-cubic">
+
                     {data.allMdx.edges.map((edge, index) => {
                         const fm = edge.node.frontmatter
                         return (
@@ -42,8 +47,7 @@ const Index = ({data}) => {
                                       data-aos="fade-left"
                                       data-aos-delay="90"
                                       data-aos-duration="1000"
-                            >
-                            </BlogCard>
+                            />
                         )
                     })}
                 </BlogCards>
@@ -104,7 +108,7 @@ const BlogCards = styled.div`
   grid-gap: 2rem;
   justify-items: center;
   padding: 0 2rem;
-  animation: 1s ease-in-out 0s 1 ${fadeLeft};
+  //animation: 1s ease-in-out 0s 1 ${fadeLeft};
   
   @media screen and (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
