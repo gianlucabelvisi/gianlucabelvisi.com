@@ -36,7 +36,6 @@ const YouTubeAudio = ({url}) => {
             <Warning>
                 <small>
                     There is a bug on mobile. If the music doesn't start, try stopping and playing a couple of times
-                    🤷🏽‍♂️
                 </small>
             </Warning>
         </Wrapper>

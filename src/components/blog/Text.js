@@ -5,7 +5,7 @@ import styled from "styled-components";
 require('typeface-dancing-script')
 require('typeface-indie-flower')
 require('typeface-irish-grover')
-
+require('typeface-fredoka-one')
 
 export const Song = ({children}) => {
     return (
@@ -28,7 +28,7 @@ export const Pony = ({children}) => {
     return (
         <div style={{
             fontFamily: "Dancing Script",
-            // paddingLeft: "5rem"
+            fontSize: "2rem"
         }}>
             {children}
         </div>
@@ -76,11 +76,39 @@ export const Question = ({children}) => {
 
 export const Quote = ({children}) => {
     return (
-        <div>
-
-        </div>
+        <QuoteWrapper>
+            <h1>" {children} "</h1>
+        </QuoteWrapper>
     );
 };
+const QuoteWrapper = styled.div`
+  position: relative;
+  margin-block: 1.5rem;
+  padding-block: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: ${props => props.theme.accentColor};
+  width: 100%;
+  display: block;
+  border-radius: 30px;
+  color: white;
+
+  &:before {
+    content: 'quote';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    text-transform: uppercase;
+  }
+  &:after {
+    content: '/quote';
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    text-transform: uppercase;
+  }
+  
+`
 
 
 export const EvilQuote = ({children}) => {
