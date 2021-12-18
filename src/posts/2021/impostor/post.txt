@@ -6,7 +6,7 @@ subTitle: "..."
 author: "Gianluca Belvisi"
 cardImage: "cover2.jpg"
 featureImage: "cover2.jpg"
-onHover: "😭😭😭"
+onHover: "if you are good enough"
 hashtags: "lifestyle, work"
 hidden: true
 ---

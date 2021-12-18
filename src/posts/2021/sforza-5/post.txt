@@ -1,10 +1,12 @@
-
-## The legacy
-
-
-
-Or you could watch The Borgias, with Jeremy Irons. It's on HBO, which means probably a lot of barely justifiable nudities.
-
-I don't advise that you play Assassin's Creed II. It's not a very good game, I'm not sure how much of that actually happened, and Caterina there speaks like Super Mario. I tried switching to the Italian language, but was compelled to revert when Ezio's mother said "topa".
-
-https://www.youtube.com/watch?v=mAQuuwj573M&t=12s
+---
+path: "/caterina-sforza-5"
+date: 2021-11-16
+title: "Caterina Sforza (Part 5)"
+subTitle: "In which Caterina murders so many people that it's not even funny anymore"
+author: "Gianluca Belvisi"
+cardImage: "cover1.jpg"
+featureImage: "cover2.jpg"
+onHover: "with some white wine"
+hashtags: "history, italy, renaissance, caterina sforza"
+hidden: true
+---
