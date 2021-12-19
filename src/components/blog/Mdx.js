@@ -23,9 +23,9 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
-                Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Quote, EvilQuote,
-                FigureLabel, TextBox, NewLine, Indented, ThreeColumns, Col1, Col23, Machiavelli,
-                AiTwotonePushpin
+                Spoiler, YouTube, YouTubeAudio, Song, Question, Break,
+                FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
+                Col1, Col23, Machiavelli,AiTwotonePushpin
                 //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
             }}
         >
