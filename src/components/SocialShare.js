@@ -45,7 +45,6 @@ const SocialShare = ({path}) => {
                 </PinterestShareButton>
             </Wrapper>
         </ShareSection>
-
     );
 };
 
