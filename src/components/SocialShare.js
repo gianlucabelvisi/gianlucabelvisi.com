@@ -50,8 +50,6 @@ const SocialShare = ({path}) => {
 };
 
 const ShareSection = styled.div`
-  position: sticky;
-  top: 0;
   @media screen and (max-width: 500px) {
     position: relative;
   }

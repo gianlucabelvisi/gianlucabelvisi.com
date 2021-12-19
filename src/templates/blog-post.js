@@ -142,6 +142,8 @@ const Content = styled.div`
   }
 `
 const SideBar = styled.div`
+  position: sticky;
+  top: 0;
 `
 const Post = styled.div`
 `
