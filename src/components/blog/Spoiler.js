@@ -30,6 +30,7 @@ const Cover = styled.label`
   cursor: pointer;
   background-color: ${props => props.theme.button.mainColor};
   opacity: ${({isVisible}) => (isVisible ? "0" : "1")};
+  pointer-events: ${({isVisible}) => (isVisible ? "none" : "")};;
   height: 100%;
   width: 100%;
   transition: opacity .5s ease-in-out;

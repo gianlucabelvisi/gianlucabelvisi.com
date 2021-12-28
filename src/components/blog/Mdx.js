@@ -1,14 +1,16 @@
 import React from 'react';
-import Spoiler from "../Spoiler";
 import YouTube from "./YouTube";
 import YouTubeAudio from "./YouTubeAudio";
-import {Break, EvilQuote, FigureLabel, Indented, NewLine, Question, Quote, Song} from "./Text";
+import {Break, FigureLabel, Indented, NewLine, Question, Song} from "./Text";
 import TextBox from "./Boxes";
 import ThreeColumns, {Col1, Col23, Machiavelli} from "./Grids";
 import {AiTwotonePushpin} from "react-icons/ai";
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import {MDXProvider} from "@mdx-js/react";
 import styled from "styled-components";
+import {Link} from "gatsby";
+import Quote from "./Quote";
+import Spoiler from "./Spoiler";
 
 const Mdx = ({body}) => {
     return (
@@ -23,9 +25,9 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
-                Spoiler, YouTube, YouTubeAudio, Song, Question, Break,
+                Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
-                Col1, Col23, Machiavelli,AiTwotonePushpin
+                Col1, Col23, Machiavelli, AiTwotonePushpin
                 //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
             }}
         >
