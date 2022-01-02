@@ -1,0 +1,14 @@
+---
+path: "/investing-2021"
+date: 2022-01-05
+title: "My 2021 in investing"
+subTitle: "Time flies when you are making money"
+author: "Gianluca Belvisi"
+cardImage: "cover.jpg"
+featureImage: "cover.jpg"
+onHover: "and become rich!"
+hashtags: "investing, bucket lists"
+hidden: true
+
+---
+If my calculations are correct, we are reaching the end of 2020.
