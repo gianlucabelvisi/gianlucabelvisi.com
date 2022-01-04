@@ -3,7 +3,7 @@ import YouTube from "./YouTube";
 import YouTubeAudio from "./YouTubeAudio";
 import {Break, FigureLabel, Indented, NewLine, Question, Song} from "./Text";
 import TextBox from "./Boxes";
-import ThreeColumns, {Col1, Col23, Machiavelli} from "./Grids";
+import ThreeColumns, {Col1, Col23} from "./Grids";
 import {AiTwotonePushpin} from "react-icons/ai";
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import {MDXProvider} from "@mdx-js/react";
@@ -27,7 +27,7 @@ const Mdx = ({body}) => {
                 a: A,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
-                Col1, Col23, Machiavelli, AiTwotonePushpin
+                Col1, Col23, AiTwotonePushpin
                 //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
             }}
         >

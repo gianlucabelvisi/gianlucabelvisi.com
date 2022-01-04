@@ -16,7 +16,8 @@ const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   border-left: ${props => props.theme.accentColor} 3px solid;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `
 const Title = styled.div`
   text-transform: uppercase;

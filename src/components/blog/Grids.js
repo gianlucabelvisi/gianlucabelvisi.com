@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 
 import MachiavelliPic from '../../assets/images/machiavelli.jpg'
+import LucreziaPic from '../../assets/images/lucrezia2.jpg'
+import TigressPic from '../../assets/images/tigress.jpg'
 
 const ThreeColumns = ({children}) => {
     return (
@@ -40,6 +42,14 @@ export const BoxPic = styled(Col1)`
 `
 export const Machiavelli = styled(BoxPic)`
   background: url(${MachiavelliPic}) center no-repeat;
+  background-size: contain;
+`
+export const Lucrezia = styled(BoxPic)`
+  background: url(${LucreziaPic}) center no-repeat;
+  background-size: contain;
+`
+export const TigressBook = styled(BoxPic)`
+  background: url(${TigressPic}) center no-repeat;
   background-size: contain;
 `
 export const Col23 = styled.div`
