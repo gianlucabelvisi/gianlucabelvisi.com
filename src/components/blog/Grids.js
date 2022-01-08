@@ -4,6 +4,7 @@ import styled from "styled-components";
 import MachiavelliPic from '../../assets/images/machiavelli.jpg'
 import LucreziaPic from '../../assets/images/lucrezia2.jpg'
 import TigressPic from '../../assets/images/tigress.jpg'
+import BiancaPic from '../../assets/images/bianca.png'
 
 const ThreeColumns = ({children}) => {
     return (
@@ -19,6 +20,7 @@ const Grid3Col = styled.div`
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  margin-bottom: 2rem;
   @media screen and (max-width: 500px) {
     display: flex;
     flex-direction: column;
@@ -50,6 +52,10 @@ export const Lucrezia = styled(BoxPic)`
 `
 export const TigressBook = styled(BoxPic)`
   background: url(${TigressPic}) center no-repeat;
+  background-size: contain;
+`
+export const Bianca = styled(BoxPic)`
+  background: url(${BiancaPic}) center no-repeat;
   background-size: contain;
 `
 export const Col23 = styled.div`
