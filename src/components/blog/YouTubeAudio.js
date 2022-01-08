@@ -44,6 +44,8 @@ const YouTubeAudio = ({url}) => {
 const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 `
 const HiddenPlayer = styled(ReactPlayer)`
   display: none;
