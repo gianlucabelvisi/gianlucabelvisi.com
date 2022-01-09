@@ -75,6 +75,10 @@ const Icon = styled.div`
 `
 const Warning = styled.p`
   width: 50%;
+  display: none;
+  @media (pointer:none), (pointer:coarse) {
+    display: block;
+  }
 `
 
 export default YouTubeAudio;
