@@ -2,6 +2,9 @@
     <h1>gianlucabelvisi.com</h1>
 </a>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8fd18332-52f2-4b89-9a9a-08b1d29d1b28/deploy-status)](https://app.netlify.com/sites/competent-curran-fc490a/deploys)
+
+
 ## 🚀 deploy the site locally
 
 1.  **Install Node**

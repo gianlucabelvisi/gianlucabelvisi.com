@@ -36,7 +36,7 @@ export const socialData = [
         icon: (<FaTwitter/>),
         bgColor: "#1DA1F2",
         title: "Twitter",
-        desc: "I never tweet because I heard that they cancel you. So I use it to get news, memes, 23-or-me women.",
+        desc: "I never tweet because I heard that they cancel you. So I use it to get news, memes, naked women.",
         link: "https://twitter.com/gbelvs"
     },
     {
