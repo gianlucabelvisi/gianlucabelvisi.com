@@ -5,6 +5,12 @@ import MachiavelliPic from '../../assets/images/machiavelli.jpg'
 import LucreziaPic from '../../assets/images/lucrezia2.jpg'
 import TigressPic from '../../assets/images/tigress.jpg'
 import BiancaPic from '../../assets/images/bianca.png'
+import CrimePunishPic from '../../assets/images/crimepunishment.jpg'
+import GreenlightsPic from '../../assets/images/greenlights.jpg'
+import HailmaryPic from '../../assets/images/hailmary.jpg'
+import PridePic from '../../assets/images/pride.jpg'
+import RicherPic from '../../assets/images/richer.png'
+import TruthPic from '../../assets/images/truth.jpg'
 
 const ThreeColumns = ({children}) => {
     return (
@@ -56,6 +62,30 @@ export const TigressBook = styled(BoxPic)`
 `
 export const Bianca = styled(BoxPic)`
   background: url(${BiancaPic}) center no-repeat;
+  background-size: contain;
+`
+export const Crime = styled(BoxPic)`
+  background: url(${CrimePunishPic}) center no-repeat;
+  background-size: contain;
+`
+export const Greenlights = styled(BoxPic)`
+  background: url(${GreenlightsPic}) center no-repeat;
+  background-size: contain;
+`
+export const Hailmary = styled(BoxPic)`
+  background: url(${HailmaryPic}) center no-repeat;
+  background-size: contain;
+`
+export const Pride = styled(BoxPic)`
+  background: url(${PridePic}) center no-repeat;
+  background-size: contain;
+`
+export const Richer = styled(BoxPic)`
+  background: url(${RicherPic}) center no-repeat;
+  background-size: contain;
+`
+export const Truth = styled(BoxPic)`
+  background: url(${TruthPic}) center no-repeat;
   background-size: contain;
 `
 export const Col23 = styled.div`
