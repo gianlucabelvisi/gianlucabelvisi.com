@@ -10,6 +10,7 @@ import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
+import ViewCounter from "../components/ViewCounter";
 
 const BlogTemplate = ({data}) => {
 
@@ -43,6 +44,7 @@ const BlogTemplate = ({data}) => {
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
                         <Mdx body={data.mdx.body}/>
+                        <ViewCounter data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" id={frontmatter.path}/>
                     </Post>
 
                     <BlogTail data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">

@@ -52,7 +52,7 @@ typings/
 *.tgz
 
 # dotenv environment variable files
-.env*
+.env
 
 # gatsby files
 .cache/
@@ -76,3 +76,4 @@ yarn-error.log
 /src/posts/2021/impostor/imposter2.psd
 /src/posts/2021/impostor/ezio.psd
 /src/posts/2022/sforza-5/cover.psd
+/firebase.json
