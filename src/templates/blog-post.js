@@ -47,12 +47,12 @@ const BlogTemplate = ({data}) => {
                         <Mdx body={data.mdx.body}/>
                     </Post>
 
-                    <PostFooter>
+                    <PostFooter data-aos="fade-up" data-aos-delay="30" data-aos-duration="400">
                         <Reactions id={frontmatter.path}/>
                         <ViewCounter id={frontmatter.path}/>
                     </PostFooter>
 
-                    <BlogActions data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                    <BlogActions data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
                         <Author>
                             by <strong>{frontmatter.author}</strong>
                         </Author>

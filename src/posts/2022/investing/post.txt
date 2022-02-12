@@ -1,6 +1,6 @@
 ---
 path: "/investing-2021"
-date: 2022-01-05
+date: 2022-02-10
 title: "My 2021 in investing"
 subTitle: "Time flies when you are making money"
 author: "Gianluca Belvisi"
@@ -9,6 +9,28 @@ featureImage: "cover.jpg"
 onHover: "and become rich!"
 hashtags: "investing, bucket lists"
 hidden: true
-
 ---
-If my calculations are correct, we are reaching the end of 2020.
+
+Introduction.
+
+Goal every year.
+
+My results.
+
+Pony1.
+
+S&P 500 results.
+
+Pony2.
+
+Hedge funds.
+
+Streaming Services
+
+Vaccine companies
+
+Sunken Value Fallacy
+
+When to sell
+
+
