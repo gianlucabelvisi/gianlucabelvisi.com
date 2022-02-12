@@ -11,6 +11,7 @@ import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
 import ViewCounter from "../components/ViewCounter";
+import Reactions from "../components/Reactions";
 
 const BlogTemplate = ({data}) => {
 
@@ -44,10 +45,14 @@ const BlogTemplate = ({data}) => {
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
                         <Mdx body={data.mdx.body}/>
-                        <ViewCounter data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" id={frontmatter.path}/>
                     </Post>
 
-                    <BlogTail data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                    <PostFooter>
+                        <Reactions id={frontmatter.path}/>
+                        <ViewCounter id={frontmatter.path}/>
+                    </PostFooter>
+
+                    <BlogActions data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
                         <Author>
                             by <strong>{frontmatter.author}</strong>
                         </Author>
@@ -55,7 +60,7 @@ const BlogTemplate = ({data}) => {
                         <Subscribe>
                             <Newsletter/>
                         </Subscribe>
-                    </BlogTail>
+                    </BlogActions>
 
                     <Comments data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
                         <Disqus
@@ -154,7 +159,11 @@ const Post = styled.div`
 `
 const Comments = styled.div`
 `
-const BlogTail = styled.div`
+const PostFooter = styled.div`
+    display: flex;
+`
+
+const BlogActions = styled.div`
   margin-top: 2rem;
   display: flex;
   @media screen and (max-width: 550px) {
