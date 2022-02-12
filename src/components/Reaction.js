@@ -8,16 +8,16 @@ const Reaction = ({id, item, key}) => {
 
     const [reaction, setReaction] = useState(0);
 
-    const increaseCount = (name) => {
+    const increaseCount = () => {
         const database = getDatabase(app)
         const reactionRef = ref(database, 'reactions/' + id + '/' + item.name)
 
+        setReaction(reaction + 1)
         runTransaction(reactionRef, (stored) => {
             if (stored === undefined) {
                 stored = 0
             }
             stored++
-            setReaction(stored)
             return stored
         })
     }
@@ -34,12 +34,12 @@ const Reaction = ({id, item, key}) => {
         }
 
         fetchData()
-    }, [id]);
+    }, [id, item.name]);
 
     return (
         <div key={key}>
             <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
-            <EmoteBox data-tip={item.tooltip} data-place="bottom" onClick={e => increaseCount(item.name)}>
+            <EmoteBox data-tip={item.tooltip} data-place="bottom" onClick={e => increaseCount()}>
                 <Emote>
                     <DisplayEmote>
                         {item.icon}
