@@ -1,4 +1,3 @@
-
 let Theme = {
     bgColor: "#fafafb",
     textColor: "white",
@@ -11,7 +10,8 @@ let Theme = {
         bgColorHome: "var(--secondary-color)",
     },
     card: {
-      accentColor: "var(--primary-color)"
+        accentColor: "var(--primary-color)",
+        altColor: "var(--secondary-color-lighter)",
     },
     footer: {
         height: "200px"
