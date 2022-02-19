@@ -109,6 +109,7 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
   border-left: ${props => props.theme.accentColor} 3px solid;
   padding-left: 2rem;
+  padding-bottom: 2rem;
 `
 const Question = styled.h3`
   margin-bottom: 1rem;
@@ -116,19 +117,17 @@ const Question = styled.h3`
 const Answers = styled.div`
   position: absolute;
   width: 100%;
+  height: 100%;
   transition: all 300ms ease-in-out 0.4s;
   transform: ${({answered}) => (answered ? 'translateX(100%)' : '')};
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
 `
 const AnswerContainer = styled.div`
-  position: relative;
   height: 1rem;
   margin-bottom: 2rem;
-  flex: auto;
 `
 const Dot = styled(GoPrimitiveDot)`
   margin-left: 1rem;
@@ -143,7 +142,7 @@ const Answer = styled.h4`
   padding-right: 5rem;
 
   &:hover {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `
 const Results = styled.div`
