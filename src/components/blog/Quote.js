@@ -11,7 +11,7 @@ const Quote = ({title, from, children}) => {
         <QuoteWrapper>
             <Title>{quoteTitle}</Title>
             <Content>
-                <Text>"{children}"</Text>
+                <Text>{children}</Text>
                 <From>{from}</From>
             </Content>
             <Title>/{quoteTitle}</Title>

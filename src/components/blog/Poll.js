@@ -3,7 +3,7 @@ import {getDatabase, ref, runTransaction} from "firebase/database";
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {PieChart} from "react-minimal-pie-chart";
-import {GoPrimitiveDot} from "react-icons/all";
+import {GoPrimitiveDot} from "react-icons/go";
 
 export const PollBoxed = ({id, question, answers, labels}) => {
     return (
@@ -107,6 +107,8 @@ const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
+  border-left: ${props => props.theme.accentColor} 3px solid;
+  padding-left: 2rem;
 `
 const Question = styled.h3`
   margin-bottom: 1rem;
@@ -133,14 +135,15 @@ const Dot = styled(GoPrimitiveDot)`
   margin-right: 1rem;
   color: ${props => props.theme.accentColor};
 `
-const Answer = styled.div`
+const Answer = styled.h4`
   position: absolute;
   margin-bottom: .6rem;
   transition: font-size .2s ease;
   cursor: pointer;
+  padding-right: 5rem;
 
   &:hover {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 `
 const Results = styled.div`
