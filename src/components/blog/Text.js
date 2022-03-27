@@ -38,6 +38,20 @@ export const Pony = ({children}) => {
     );
 };
 
+export const Formula = ({children}) => {
+    return (
+        <div style={{
+            width: "100%",
+            fontSize: "1.9rem",
+            paddingTop: "1.5rem",
+            paddingBottom: "1.7rem",
+            textAlign: "center"
+        }}>
+            {children}
+        </div>
+    );
+};
+
 export const NewLine = () => {
     return (
         <p style={{

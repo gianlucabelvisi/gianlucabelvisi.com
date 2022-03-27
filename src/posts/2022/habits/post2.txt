@@ -1,0 +1,191 @@
+
+import {Formula, Pony} from "../../../components/blog/Text";
+import Quote from "../../../components/blog/Quote";
+
+Not long ago, while on a date, I was asked what my daily routine is, because apparently these are the kind of questions that people ask on dates. Bit too personal if you ask me.
+
+Anyway, I provided a lengthy and detailed of my usual day, which lastes a solid seven minutes. What can I say, I'm thorough.
+
+At the end of my monologue, my date was holding her head with two hands, her elbows firmly against the table.
+
+She sipped her beer and then asked me:
+
+<Pony>"Where... where do you find the energy to do all that?"</Pony>
+
+I allowed a few seconds of silence, for effect, then I replied:
+
+<Pony>"Food." 🦄</Pony>
+
+Let me be clear, this was a dickish answer on my part, which she didn't deserve. She was a perfectly nice woman and all.
+
+Now, the reasons why I'm self sabotaging my own dates are better discussed with a professional.
+
+
+<Pony>"So, what's your secret? I could really use some motivation." </Pony>
+
+<Pony>"You do, if you are a fucking moron." 🦄</Pony>
+
+We have already established that my flirting skill need a tiny bit of work, so no use lingering on it. Let's focus instead of the core message...
+
+## Motivation is bad, actually
+
+There will come times when things align just perfectly in your life, and as a result you will feel a motivation spike.
+
+It could be due to the right hormone levels, it could be post-nut clarity, or maybe you simply read one of those Tim Urban blog posts that say that you only have 4000 weeks in your life.
+
+Not, this highly motivated version of you is a toxic, false, unreliable version of you. You should never, ever trust this person with any important decision and you should avoid putting yourself in the position of being highly motivated.
+
+December 31st.
+
+That's it, from tomorrow, I will diet/write every day/become a terrorist. The tomorrow in these kinds of sentences is never 24 hours from now. It's more of an abstract location where all aspirations are sent to die. It's the elephant cemetery of good intentions.
+
+
+The reason.
+
+Shame does not lead to change.
+
+Do not trust in motivation, as it's not here to stay.
+
+Significant change in one's life comes with a huge spring attached. The more you stretch it, the higher the resistance and the kickback.
+
+Avoid positive feedback loops. Watching tv makes you feel sluggish, so you watch more tv because you don't have energy to do anything else
+
+Anxiety leads to junk food, junk food to obesity
+
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/nNOZe5giJhwsM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
+
+## One percent better
+
+Imagine the yourself of today. You woke up, had breakfast, went to work, xxx. Let's put a value to this person. Let's give it a 1. Imagine you being this very same you for the whole year. How much would that be. Let me run the math for you...
+
+<Formula>
+    1<sup>365</sup> = 1
+</Formula>
+
+Ok cool. At least it's not 0.2! I wouldn't want to be from Naples!
+
+Now imagine doing a tiny bit more every day. Let's say 1% more. Not much, is it? Almost a round error. Let's run the math again
+
+<Formula>
+    1.01<sup>365</sup> = 37.78
+</Formula>
+
+I think you will agree with me that 37.78 is significantly higher than 1.
+
+In just a year, you have turned your life around completely, and all you had to do was do 1% more every day.
+
+<Pony>
+    Don't you feel inspired?
+</Pony>
+
+Would you still feel inspired if I told you that I lied to you?
+
+Thanks to the powers of compounding, 1% better every day is actually a lot! Improve your basketball fundamentals 1% every day and you are Michael Jordan by mid april.
+
+So it appears that I manipulated you. I could have used Religion for that, or even worse Self Help. But I used Math instead.
+
+Don't you feel motivated now? If you do, don't!
+
+What you need to do is develop daily habits that will sustain you at your worst, when the motivation has left you, and all you want to do is be home eating cheese.
+
+
+Success is the product of daily habits.
+
+Do not compare yourself to others. Compare yourself to past yourself.
+
+When Facebook suggests you posts from 8 years ago, and after you have reabsorbed the tears as if they were snot, what do you t
+
+## goals vs systems
+
+goals do not differentiate winners from losers.
+
+Systems focus on the person you want to become, instead of the result.
+
+If you want to quit smoking, and someone offers you a cigarette. If you reply:
+
+"No, thank you. I'm trying to quit."
+
+You are framing yourself by your struggle. You are setting yourself for failure. Trying to quit, really? Another beer and you will crawl back to me, imploring for a smoke. And at that point do you know what i will say to you. Ok.
+
+Here is a better answer:
+
+"No, thank you. I'm not a smoker."
+
+You made it about your identity. Who you are.
+
+I personally like to go one step further and make it about who I am not:
+
+"No, thank you. I'm not a piece of shit."
+
+## Habit
+
+* cue
+* craving
+* response
+* reward
+
+## 1. Make it obvious
+
+make it automatic
+
+<Quote title="Fancy Quote" from="Jung">
+    Until you make the unconscious conscious, it will direct your life, and you will call it fate
+</Quote>
+
+"I will [stuff] at [time] o clock, in [location]"
+
+Stack habits so that one comes naturally after the other.
+
+You need an environment that will help you follow the habit.
+
+Make the cue visible and the bad invisible.
+
+Have a reading zone. Build a faraday cage and live inside it so that Tik Tok will never find you.
+
+## 2. Make it attractive
+
+Dopaming -- craving
+         -- experiencing
+
+Temptation buildiing: need to do VS want to do
+
+Group influence: find a culture you want to become.
+
+Make hard habits attractive by learning to associate them to a positive experience.
+
+Gym at 6:30
+
+Coffee mindfulness session
+
+Hardcore history.
+
+## 3. Make it easy
+
+Repetition
+
+Reduce friction
+
+Prime the environment for use
+
+2 minute rule
+
+## 4. Make it satisfying
+
+Sauna
+
+Reward yourself
+    sauna after gym
+
+feel succesful: complete tasks, put post its in done
+
+Don't break the chain. Killstreak.
+
+Acountability partners
+
+circles closing
+
+consume VS produce.
+
+
+
+You can break a bad habit, but you are unlikely to forget it.
