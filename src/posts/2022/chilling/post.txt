@@ -1,0 +1,85 @@
+---
+path: "/chilling"
+date: 2022-03-11
+title: "On Chilling"
+subTitle: "Did you know that chilling is really cool? Like, a lot?"
+author: "Gianluca Belvisi"
+cardImage: "cover-sm.jpg"
+featureImage: "cover.jpg"
+onHover: "relax"
+hashtags: "lifestyle, mindfulness"
+---
+import YouTube from "../../../components/blog/YouTube";
+import Poll from "../../../components/blog/Poll";
+
+Let's start with a poll, because I have implemented the feature and now I'm probably using it too much
+
+<Poll id="chill"
+      question="What do you do when you need to chill for a bit??"
+      answers={[
+          "I do drugs",
+          "Philosophy",
+          "Writing",
+          "Debating",
+          "Comedy",
+      ]}
+      labels={["Yes", "No, I'm dumb", "I'm broke 🙈"]}
+/>
+
+Well, that was a bunch of stupid answers. I might have written them, but you didn't have to choose any!
+
+Anyway, me? When I need chilling I need to be around snow and use gravity to and attrito do move from a
+
+
+So, I went on a small vacation last week. I felt like I was snowboarding in the north of Italy when the whole pandemic started, it will be of a symbolic effect of some sorts being there at its tail end.
+
+So I want to talk about this small vacation, and yes, this post has huge Patty and Selma vibes.
+
+<YouTube source={"39ZCWIgDgOk?start=60"}/>
+
+But this is my blog. The log in blog stands for log, for chrissakes, so leave me alone! I don't know that the b is for.
+
+
+
+
+
+![](pontedilegno.jpg)
+![](3000.jpg)
+
+![I look no older than 15](selfie.jpg)
+
+<FigureLabel>
+    I know what you're thinking: didn't Michael Schumacher end up in a come because he fell while having a GoPro on his head? Sure, but there is a difference. He was wearing a helmet.
+</FigureLabel>
+
+3000 glacier. Cover.
+
+Map.
+
+Video.
+
+<Poll id="next-post"
+      question="What would you like me to write next?"
+      answers={[
+          "Developing habits",
+          "Philosophy",
+          "Writing",
+          "Debating",
+          "Comedy",
+      ]}
+/>
+
+<FigureLabel>
+    This is non binding.
+</FigureLabel>
+
+
+## First act crisis
+
+Whenever I do something that steers outside my comfort zone, I like to think: "What's the worst thing that could happen right now?" Because this is a perfectly normal way to live!
+
+
+Story about car keys and snowboard.
+
+
+Poll: subscribe to my mailing list!

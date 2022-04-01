@@ -1,0 +1,23 @@
+---
+path: "/developing-habits"
+date: 2022-03-19
+title: "On developing habits"
+subTitle: ""
+author: "Gianluca Belvisi"
+cardImage: "cover.jpg"
+featureImage: "cover.jpg"
+onHover: ""
+hashtags: "lifestyle, self-improvement"
+---
+
+Intro.
+
+## Why write?
+
+
+
+## When and where to write?
+
+Writing vs typing.
+
+## How to write?
