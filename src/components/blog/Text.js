@@ -38,6 +38,20 @@ export const Pony = ({children}) => {
     );
 };
 
+export const Dialogue = ({children}) => {
+    return (
+        <div style={{
+            fontFamily: "Irish Grover",
+            fontSize: "1.5rem",
+            paddingBottom: "1.5rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem"
+        }}>
+            {children}
+        </div>
+    );
+};
+
 export const Formula = ({children}) => {
     return (
         <div style={{
