@@ -106,6 +106,7 @@ const Box = styled.div`
 const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   border-left: ${props => props.theme.accentColor} 3px solid;
   padding-left: 2rem;
