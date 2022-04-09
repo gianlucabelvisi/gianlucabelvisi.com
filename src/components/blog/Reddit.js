@@ -1,49 +1,54 @@
 import React from 'react';
 import styled from "styled-components";
+import {FigureLabel} from "./Text";
 
-const Reddit = ({source}) => {
+const Reddit = ({source, label = ""}) => {
     return (
         <Wrapper>
-            <iframe src={source}
-                    id="reddit-embed"
-                    title="Reddit"
-                    scrolling="no"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
-                    style={{
-                        border: "none",
-                        top: "0",
-                        left: "0",
-                        width: "100%",
-                        height: "100%",
-                        position: "absolute"
-                    }}
-            >
-            </iframe>
+            <Header>
+                <iframe src={source}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        style={{
+                            position: "absolute",
+                            top: "0",
+                            left: "0"
+                        }}
+                        allowFullScreen
+                />
+            </Header>
+            {label.length > 0 &&
+                <Footer>
+                    <em>
+                        {label}
+                    </em>
+                </Footer>
+            }
         </Wrapper>
     );
 };
 
 const Wrapper = styled.div`
-  border: none;
-  position: relative;
-  width: 100%;
-  padding-bottom: 50%;
-  overflow: hidden;
-  height: 0;
-  max-width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `
-const Iframe = styled.iframe
-    .attrs({
-        id: "reddit-embed",
-        sandbox: "allow-scripts allow-same-origin allow-popups"
-    })
-    `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    `
+const Header = styled.div`
+  padding-top: 75%;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    padding-top: 90%;
+  }
+  @media screen and (max-width: 600px) {
+    padding-top: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    padding-top: 120%;
+  }
+`
+const Footer = styled.div`
+  text-align: center;
+`
 
 export default Reddit;
