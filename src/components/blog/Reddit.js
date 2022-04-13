@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from "styled-components";
-import {FigureLabel} from "./Text";
 
-const Reddit = ({source, label = ""}) => {
+const Reddit = ({source, label = "", title = ""}) => {
     return (
         <Wrapper>
             <Header>
                 <iframe src={source}
+                        title={title}
                         width="100%"
                         height="100%"
                         frameBorder="0"
                         style={{
                             position: "absolute",
                             top: "0",
-                            left: "0"
+                            left: "0",
+                            width: "100%",
+                            height: "100%"
                         }}
                         allowFullScreen
                 />
@@ -33,7 +35,7 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
 `
 const Header = styled.div`
-  padding-top: 75%;
+  padding-bottom: 75%;
   position: relative;
   margin-top: 2rem;
   margin-bottom: 1rem;
