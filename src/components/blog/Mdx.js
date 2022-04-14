@@ -66,11 +66,7 @@ const LI = styled.li`
   margin-left: 2rem;
   margin-bottom: .5rem;
 `
-const A = styled.a
-//     .attrs({
-//     target: '_blank'
-// })
-    `
+const A = styled.a`
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
   font-weight: bold;
