@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.03);
   border-left: ${props => props.theme.accentColor} 3px solid;
   padding: 1rem;
-  margin-top: -0.5rem;
+  margin-top: -1rem;
   margin-bottom: 2rem;
 `
 const Content = styled.div`
