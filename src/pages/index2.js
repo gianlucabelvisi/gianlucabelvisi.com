@@ -15,12 +15,12 @@ const Index2 = ({data}) => {
         Aos.init({})
     }, [])
 
-    let edges = data.allMdx.edges
-    const featured  = edges[0].node.frontmatter
-    const latest      = edges.slice(1, 14)
-    const caterina    = edges.filter(edge => containsHashtag(edge.node, 'caterina sforza'))
-    const randomized  = [...edges].sort(() => Math.random() - 0.5)
-    const firstLast   = [...edges].reverse()
+    const posts       = data.allMdx.edges
+    const featured    = posts[0]
+    const latest      = posts.slice(1, 14)
+    const caterina    = posts.filter(post => containsHashtag(post, 'caterina sforza'))
+    const randomized  = [...posts].sort(() => Math.random() - 0.5)
+    const firstLast   = [...posts].reverse()
 
     return (
         <Layout isDark={true}>

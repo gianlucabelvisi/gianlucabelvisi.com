@@ -3,7 +3,8 @@ import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import LinkButton from "./Button";
 
-const FeaturedPost = ({content}) => {
+const FeaturedPost = ({post}) => {
+    const content = post.node.frontmatter
     return (
         <Wrapper>
             <Background image={getImage(content.featureImage)} alt="background"/>
