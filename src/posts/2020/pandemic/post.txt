@@ -6,7 +6,7 @@ subTitle: "It seems that society is going to fall, and we will all die soon, but
 author: "Gianluca Belvisi"
 cardImage: "asterix.jpg"
 featureImage: "asterix_horizontal.jpg"
-onHover: "and stay home!"
+onHover: "🦠🦠🦠🦠🦠"
 hashtags: "pandemic, germany, mindfulness"
 ---
 It seems that society is going to fall, and we will all die soon, but on the plus side, we get to work from home for a few weeks!

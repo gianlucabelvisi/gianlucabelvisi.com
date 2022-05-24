@@ -83,7 +83,7 @@ const Header = () => {
 export default Header
 
 const Nav = styled.nav`
-  background: ${({path}) => (path !== "/" ? "var(--nav-background-color)" : "transparent")};
+  background: ${({path}) => (path !== "/index2" && path !== "/"? "var(--nav-background-color)" : "transparent")};
   height: 80px;
   display: flex;
   width: 100%;

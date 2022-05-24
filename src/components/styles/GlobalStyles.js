@@ -4,6 +4,8 @@ require('typeface-roboto')
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    --white: #fafafb;
+    --black: #333;
     --primary-color: #e87c48;
     --primary-color-darker: #bd643a;
     --primary-color-lighter: #ff9664;
