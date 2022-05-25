@@ -24,7 +24,6 @@ const SocialShare = ({path}) => {
     return (
         <ShareSection>
             <Wrapper>
-                <ReactTooltip effect="solid"/>
                 <FacebookShareButton url={url} data-tip="BoomerBook" data-place="left">
                     <FacebookIcon size={32} round={true}/>
                 </FacebookShareButton>

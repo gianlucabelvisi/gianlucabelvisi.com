@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components"
 import NetflixCard from "./NetlifxCard";
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import {element} from "prop-types";
+import Aos from "aos";
 
-const NetflixSlider = ({title, posts}) => {
+const NetflixSlider = ({title, subtitle, posts}) => {
+
+    useEffect(() => {
+        Aos.init({})
+    }, [])
 
     const [sliderIndex, setSliderIndex] = useState(0)
     const {_, width} = useWindowDimensions()
@@ -16,6 +21,7 @@ const NetflixSlider = ({title, posts}) => {
         if (width > 800) return 3
         return 2;
     }
+
     function calculatePages() {
         return Math.ceil(posts.length / calculateItemsPerScreen(width))
     }
@@ -23,12 +29,12 @@ const NetflixSlider = ({title, posts}) => {
     return (
         <Container>
             <Header>
-                <Title>
+                <Title data-tip={subtitle} data-place="top"
+                       data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
+                >
                     {title}
-                    {/*- w {width} id {sliderIndex} pages {calculatePages()}*/}
                 </Title>
-                <Subtitle></Subtitle>
-                <ProgressBar>
+                <ProgressBar data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
                     {Array.from(Array(calculatePages()).keys()).map((elem, index) => {
                         return (
                             <ProgressElement key={index} highlighted={elem === sliderIndex}/>
@@ -36,7 +42,7 @@ const NetflixSlider = ({title, posts}) => {
                     })}
                 </ProgressBar>
             </Header>
-            <SliderWrapper>
+            <SliderWrapper data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <LeftHandle
                         disabled = {sliderIndex <= 0}
                         onClick = {e => setSliderIndex(sliderIndex - 1)}>
@@ -91,21 +97,27 @@ const Header = styled.div`
   justify-content: space-between;
   padding: 0 calc(var(--card-gap) * 2 + var(--handle-width));
   color: ${props => props.theme.white};
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  gap: 1rem;
 `
-const Subtitle = styled.div`
+const Title = styled.h2`
+  box-sizing: border-box;
+  width: auto;
+  flex: 1;
 `
 const ProgressBar = styled.div`
   display: flex;
   gap: 0.6rem;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex: 1;
 `
 const ProgressElement = styled.div`
   width: 1.3rem;
   height: 0.3rem;
   background-color: ${({highlighted}) => (highlighted? "var(--white)" : "gray")};
-`
-const Title = styled.h2`
-  box-sizing: border-box;
 `
 const SliderWrapper = styled.div`
   margin: 0;

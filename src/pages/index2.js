@@ -18,19 +18,35 @@ const Index2 = ({data}) => {
     const posts       = data.allMdx.edges
     const featured    = posts[0]
     const latest      = posts.slice(1, 14)
-    const caterina    = posts.filter(post => containsHashtag(post, 'caterina sforza'))
-    const randomized  = [...posts].sort(() => Math.random() - 0.5)
+    const caterina    = [...posts].filter(post => containsHashtag(post, 'caterina sforza')).reverse()
+    const randomized  = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
     const firstLast   = [...posts].reverse()
 
     return (
         <Layout isDark={true}>
             <Seo title="Netflish home 🦄"/>
-            <FeaturedPost content={featured}/>
+            <FeaturedPost post={featured}/>
             <Sliders>
-                <NetflixSlider title="Latest" posts={latest}/>
-                <NetflixSlider title="Caterina Sforza" posts={caterina}/>
-                <NetflixSlider title="Random" posts={randomized}/>
-                <NetflixSlider title="First to last" posts={firstLast}/>
+                <NetflixSlider
+                    title="Latest Posts"
+                    subtitle="The more recent they are, the better written"
+                    posts={latest}
+                />
+                <NetflixSlider
+                    title="Caterina Sforza"
+                    subtitle="This pentalogy is quite possibly the piece of writing I'm the most proud of"
+                    posts={caterina}
+                />
+                <NetflixSlider
+                    title="Random Posts"
+                    subtitle="If you are a chaos embracer"
+                    posts={randomized}
+                />
+                <NetflixSlider
+                    title="Chronological Order"
+                    subtitle="Useful for the stalker type"
+                    posts={firstLast}
+                />
             </Sliders>
         </Layout>
 

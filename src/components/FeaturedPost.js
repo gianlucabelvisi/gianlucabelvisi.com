@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import LinkButton from "./Button";
+import Aos from "aos";
 
 const FeaturedPost = ({post}) => {
+
+    useEffect(() => {
+        Aos.init({})
+    }, [])
+
     const content = post.node.frontmatter
     return (
-        <Wrapper>
-            <Background image={getImage(content.featureImage)} alt="background"/>
-            <Overlay>
-                <Title>{content.title}</Title>
-                <SubTitle>{content.subTitle}</SubTitle>
+        <Wrapper data-aos="fade-up" data-aos-duration="1000">
+            <Background image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
+            <Overlay data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                <Title >{content.title}</Title>
+                <SubTitle data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">{content.subTitle}</SubTitle>
                 <Button to={content.path} onHover={content.onHover}>Read</Button>
             </Overlay>
-            <Emoji>
+            <Emoji data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
                 {content.onHover}
             </Emoji>
         </Wrapper>);

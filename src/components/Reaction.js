@@ -38,7 +38,6 @@ const Reaction = ({id, item, key}) => {
 
     return (
         <div key={key}>
-            <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
             <EmoteBox data-tip={item.tooltip} data-place="bottom" onClick={e => increaseCount()}>
                 <Emote>
                     <DisplayEmote>

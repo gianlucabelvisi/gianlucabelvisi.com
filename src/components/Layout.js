@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import {ThemeProvider} from "styled-components";
 import Theme from "./styles/Theme";
 import styled from "styled-components"
+import ReactTooltip from "react-tooltip";
 
 const Layout = ({children, isDark = false}) => {
 
@@ -20,6 +21,7 @@ const Layout = ({children, isDark = false}) => {
         <>
             <GlobalStyle/>
             <ThemeProvider theme={Theme}>
+                <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
                 <Container isDark={isDark}>
                     <Header/>
                     <Main>{children}</Main>
