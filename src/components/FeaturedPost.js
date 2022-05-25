@@ -14,12 +14,12 @@ const FeaturedPost = ({post}) => {
     return (
         <Wrapper data-aos="fade-up" data-aos-duration="1000">
             <Background image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
-            <Overlay data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+            <Overlay>
                 <Title >{content.title}</Title>
-                <SubTitle data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">{content.subTitle}</SubTitle>
+                <SubTitle>{content.subTitle}</SubTitle>
                 <Button to={content.path} onHover={content.onHover}>Read</Button>
             </Overlay>
-            <Emoji data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <Emoji>
                 {content.onHover}
             </Emoji>
         </Wrapper>);

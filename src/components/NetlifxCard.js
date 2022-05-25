@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import LinkButton from "./Button";
+import {NetflixButton} from "./NetflixButton";
+import {BsFillPlayFill} from "react-icons/bs";
 
 const NetflixCard = ({cardImage, title, subTitle, path, date, onHover, index}) => {
 
@@ -15,9 +16,11 @@ const NetflixCard = ({cardImage, title, subTitle, path, date, onHover, index}) =
             </Header>
 
             <Content>
-                <Title smaller={title.length > 25}>{title}</Title>
-                <SubTitle>{subTitle}</SubTitle>
-                <ReadButton to={path} onHover={onHover}>Read</ReadButton>
+                <Title>{title}</Title>
+                <Footer>
+                    <SubTitle>{subTitle}</SubTitle>
+                    <NetflixButton to={path}/>
+                </Footer>
             </Content>
         </Card>
     );
@@ -28,119 +31,83 @@ export default NetflixCard;
 const Image = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: inherit;
 `
-
 const Header = styled.div`
-  color: #eee6e6;
+  color: ${props => props.theme.white};
   position: absolute;
   top: 0;
   left: 0;
   background-color: hsl(0 0% 0% / .2);
-  //border-radius: 4px;
   transition: transform 500ms ease;
+  transition-delay: 300ms;
   transform: translateY(-100%);
 `
-
-const Date = styled.h2`
+const Date = styled.h4`
   padding-left: 1em;
   padding-right: 1em;
 `
-
-const Title = styled.h2`
+const Content = styled.div`
+  --title-height: 3rem;
+  --footer-height: 4rem;
+  --total-height: calc(var(--title-height) + var(--footer-height));
+  
+  color: ${props => props.theme.white};
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  bottom: calc(-1 * var(--total-height));
+  transition: all 500ms ease;
+  transition-delay: 300ms;
+  background: linear-gradient(hsl(0 0% 0% / 0),
+  hsl(0 0% 0% / .2) 5%,
+  hsl(0 0% 0% / .4) 10%,
+  hsl(0 0% 0% / .5) 30%,
+  hsl(0 0% 0% / .6) 50%
+  );
+`
+const Title = styled.h5`
+  padding-top: .7rem;
+  padding-bottom: .3rem;
   text-transform: uppercase;
   position: relative;
   width: fit-content;
-  font-size: ${({smaller}) => (smaller? "0.9rem" : "")};
-
-  @media screen and (max-width: 1200px) {
-    font-size: 1.2em;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: calc(100% + var(--padding));
-    left: calc(var(--padding) * -1);
-    bottom: 0;
-    background: ${props => props.theme.card.accentColor};
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 500ms ease;
-  }
+  height: var(--title-height);
 `
-
-const SubTitle = styled.div`
-  margin-bottom: 1rem;
-`
-
-const ReadButton = styled(LinkButton)`
-`
-
-const Content = styled.div`
-  color: #eee6e6;
-  --padding: 1rem;
-  position: absolute;
+const Footer = styled.div`
+  color: ${props => props.theme.white};
   width: 100%;
-  bottom: 0;
-  padding: var(--padding);
-  transition: all 500ms ease;
-
-  background: linear-gradient(hsl(0 0% 0% / 0),
-  hsl(0 0% 0% / .2) 5%,
-  hsl(0 0% 0% / .4) 10%);
-
-  @media (hover) {
-    & {
-      transform: translateY(70%);
-
-      *:not(${Title}) {
-        opacity: 0;
-        transition: all 700ms ease;
-      }
-    }
-  }
+  height: var(--footer-height);
+  display: flex;
+  align-items: center;
+  margin-left: 0;
 `
-
+const SubTitle = styled.div`
+  font-size: .6rem;
+`
 const Card = styled.div`
   position: relative;
   line-height: 2;
   width: 100%;
-  height: auto;
-  //border-radius: 20px;
+  height: 100%;
   overflow: hidden;
-  transition: all 500ms ease;
   z-index: 10;
-
-  
-  
   &:hover,
   &:focus-within {
-
-    ${Image} {
-      transform: translateY(0);
-      transition: all 0ms;
-    }
-
-    ${Title}:after {
-      transform: scaleX(1);
-    }
-
-    ${Content} {
-      * {
-        opacity: 1;
-      }
-
-      transition-delay: 500ms;
-      transform: translateY(0);
-      background: linear-gradient(hsl(0 0% 0% / 0),
-      hsl(0 0% 0% / .3) 20%,
-      hsl(0 0% 0% / 1));
-    }
-
     ${Header} {
       transform: translateY(0);
     }
   }
+  &:hover {
+    ${Content} {
+      transform: translateY(calc(-1 * var(--total-height)));
+    }
+  }
 `
+

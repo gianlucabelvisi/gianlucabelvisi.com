@@ -3,7 +3,6 @@ import styled from "styled-components"
 import NetflixCard from "./NetlifxCard";
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import useWindowDimensions from "./hooks/useWindowDimensions";
-import {element} from "prop-types";
 import Aos from "aos";
 
 const NetflixSlider = ({title, subtitle, posts}) => {
@@ -29,10 +28,10 @@ const NetflixSlider = ({title, subtitle, posts}) => {
     return (
         <Container>
             <Header>
-                <Title data-tip={subtitle} data-place="top"
-                       data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
-                >
-                    {title}
+                <Title data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                    <TitleWrapper data-tip={subtitle} data-place="top">
+                        {title}
+                    </TitleWrapper>
                 </Title>
                 <ProgressBar data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
                     {Array.from(Array(calculatePages()).keys()).map((elem, index) => {
@@ -44,8 +43,8 @@ const NetflixSlider = ({title, subtitle, posts}) => {
             </Header>
             <SliderWrapper data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <LeftHandle
-                        disabled = {sliderIndex <= 0}
-                        onClick = {e => setSliderIndex(sliderIndex - 1)}>
+                    disabled={sliderIndex <= 0}
+                    onClick={e => setSliderIndex(sliderIndex - 1)}>
                     <Arrow>
                         <BsChevronCompactLeft/>
                     </Arrow>
@@ -53,8 +52,10 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                 <Slider index={sliderIndex}>
                     {posts.map((post, index) => {
                         const fm = post.node.frontmatter
+                        let itemsPerScreen = calculateItemsPerScreen(width);
+                        let isLast = index + 1 === itemsPerScreen
                         return (
-                            <CardContainer key={fm.path} itemsPerScreen={calculateItemsPerScreen(width)}>
+                            <CardContainer key={fm.path} itemsPerScreen={itemsPerScreen} isLast={isLast}>
                                 <NetflixCard
                                     cardImage={fm.cardImage}
                                     title={fm.title}
@@ -69,8 +70,8 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                     })}
                 </Slider>
                 <RightHandle
-                        disabled = {sliderIndex >= calculatePages() - 1}
-                        onClick = {e => setSliderIndex(sliderIndex + 1)}>
+                    disabled={sliderIndex >= calculatePages() - 1}
+                    onClick={e => setSliderIndex(sliderIndex + 1)}>
                     <Arrow>
                         <BsChevronCompactRight/>
                     </Arrow>
@@ -94,6 +95,7 @@ const Container = styled.div`
 `
 const Header = styled.div`
   display: flex;
+  position: relative;
   justify-content: space-between;
   padding: 0 calc(var(--card-gap) * 2 + var(--handle-width));
   color: ${props => props.theme.white};
@@ -102,11 +104,17 @@ const Header = styled.div`
   gap: 1rem;
 `
 const Title = styled.h2`
+  position: relative;
+  z-index: 0;
   box-sizing: border-box;
   width: auto;
   flex: 1;
 `
+const TitleWrapper = styled.div`
+  display: inline-block;
+`
 const ProgressBar = styled.div`
+  position: relative;
   display: flex;
   gap: 0.6rem;
   align-items: center;
@@ -117,7 +125,7 @@ const ProgressBar = styled.div`
 const ProgressElement = styled.div`
   width: 1.3rem;
   height: 0.3rem;
-  background-color: ${({highlighted}) => (highlighted? "var(--white)" : "gray")};
+  background-color: ${({highlighted}) => (highlighted ? "var(--white)" : "gray")};
 `
 const SliderWrapper = styled.div`
   margin: 0;
@@ -180,4 +188,10 @@ const CardContainer = styled.div`
   overflow: hidden;
   box-sizing: border-box;
   padding-right: var(--card-gap);
+  transition: all 500ms ease;
+  transition-delay: 300ms;
+  &:hover {
+    z-index: 1000;
+    transform: scale(1.5) translateY(-15%) translateX(${({isLast}) => (isLast? "-15" : "+15")}%);
+  }
 `

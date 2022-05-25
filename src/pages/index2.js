@@ -24,7 +24,7 @@ const Index2 = ({data}) => {
 
     return (
         <Layout isDark={true}>
-            <Seo title="Netflish home 🦄"/>
+            <Seo title="Gianluca Belvisi 🦄"/>
             <FeaturedPost post={featured}/>
             <Sliders>
                 <NetflixSlider
