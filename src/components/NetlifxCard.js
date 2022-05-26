@@ -48,7 +48,7 @@ const Date = styled.h4`
   padding-right: 1em;
 `
 const Content = styled.div`
-  --title-height: 3rem;
+  --title-height: 3.8rem;
   --footer-height: 4rem;
   --total-height: calc(var(--title-height) + var(--footer-height));
   
@@ -61,8 +61,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
-  bottom: calc(-1 * var(--total-height));
+  height: var(--total-height);
+  bottom: calc(-1 * var(--footer-height));
   transition: all 500ms ease;
   background: linear-gradient(hsl(0 0% 0% / 0),
   hsl(0 0% 0% / .2) 5%,
@@ -106,7 +106,7 @@ const Card = styled.div`
   }
   &:hover {
     ${Content} {
-      transform: translateY(calc(-1 * var(--total-height)));
+      transform: translateY(calc(-1 * var(--footer-height)));
       transition-delay: 300ms;
     }
   }
