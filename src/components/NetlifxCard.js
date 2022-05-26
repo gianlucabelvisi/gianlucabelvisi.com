@@ -18,7 +18,7 @@ const NetflixCard = ({cardImage, title, subTitle, path, date, onHover, index}) =
                 <Title>{title}</Title>
                 <Footer>
                     <SubTitle>{subTitle}</SubTitle>
-                    <NetflixButton to={path}/>
+                    <NetflixButton to={path} big={false}/>
                 </Footer>
             </Content>
         </Card>
@@ -31,6 +31,7 @@ const Image = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
   background-size: inherit;
+  overflow: visible;
 `
 const Header = styled.div`
   color: ${props => props.theme.white};
@@ -63,7 +64,6 @@ const Content = styled.div`
   height: auto;
   bottom: calc(-1 * var(--total-height));
   transition: all 500ms ease;
-  transition-delay: 300ms;
   background: linear-gradient(hsl(0 0% 0% / 0),
   hsl(0 0% 0% / .2) 5%,
   hsl(0 0% 0% / .4) 10%,
@@ -101,11 +101,13 @@ const Card = styled.div`
   &:focus-within {
     ${Header} {
       transform: translateY(0);
+      transition-delay: 300ms;
     }
   }
   &:hover {
     ${Content} {
       transform: translateY(calc(-1 * var(--total-height)));
+      transition-delay: 300ms;
     }
   }
 `

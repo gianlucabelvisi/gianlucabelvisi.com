@@ -41,7 +41,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                     })}
                 </ProgressBar>
             </Header>
-            <SliderWrapper data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <SliderWrapper data-aos="fade-up" data-aos-duration="300">
                 <LeftHandle
                     disabled={sliderIndex <= 0}
                     onClick={e => setSliderIndex(sliderIndex - 1)}>
@@ -132,6 +132,8 @@ const SliderWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  width: 100%;
+  overflow-x: clip;
 `
 const Slider = styled.div`
   display: flex;
@@ -150,7 +152,7 @@ const Handle = styled.button`
   border: none;
   border-radius: .5rem;
   background-color: rgba(0, 0, 0, .25);
-  z-index: 10;
+  z-index: 1000;
   flex-grow: 0;
   flex-shrink: 0;
   width: var(--handle-width);
@@ -189,9 +191,9 @@ const CardContainer = styled.div`
   box-sizing: border-box;
   padding-right: var(--card-gap);
   transition: all 500ms ease;
-  transition-delay: 300ms;
   &:hover {
     z-index: 1000;
+    transition-delay: 300ms;
     transform: scale(1.5) translateY(-15%) translateX(${({isLast}) => (isLast? "-15" : "+15")}%);
   }
 `

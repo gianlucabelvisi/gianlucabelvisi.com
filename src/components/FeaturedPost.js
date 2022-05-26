@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import LinkButton from "./Button";
 import Aos from "aos";
+import {NetflixButton} from "./NetflixButton";
 
 const FeaturedPost = ({post}) => {
 
@@ -17,7 +17,7 @@ const FeaturedPost = ({post}) => {
             <Overlay>
                 <Title >{content.title}</Title>
                 <SubTitle>{content.subTitle}</SubTitle>
-                <Button to={content.path} onHover={content.onHover}>Read</Button>
+                <Button to={content.path} big={true}>Read</Button>
             </Overlay>
             <Emoji>
                 {content.onHover}
@@ -78,11 +78,9 @@ const SubTitle = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
 `
-
-const Button = styled(LinkButton)`
+const Button = styled(NetflixButton)`
   margin-top: 2rem;
 `
-
 const Emoji = styled.div`
   font-size: var(--font-size-emoji);
   position: absolute;
