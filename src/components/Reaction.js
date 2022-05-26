@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import app from 'gatsby-plugin-firebase-v9.0'
 import {getDatabase, ref, runTransaction} from "firebase/database";
 import styled, {keyframes} from "styled-components";
-import ReactTooltip from "react-tooltip";
 
 const Reaction = ({id, item, key}) => {
 

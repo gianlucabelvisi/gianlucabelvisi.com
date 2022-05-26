@@ -12,7 +12,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
     }, [])
 
     const [sliderIndex, setSliderIndex] = useState(0)
-    const {_, width} = useWindowDimensions()
+    const { width } = useWindowDimensions()
 
     function calculateItemsPerScreen(width) {
         if (width > 1200) return 5

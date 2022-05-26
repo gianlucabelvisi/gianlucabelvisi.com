@@ -14,7 +14,6 @@ import {
     WhatsappShareButton
 } from "react-share";
 import styled from "styled-components"
-import ReactTooltip from 'react-tooltip';
 
 
 const SocialShare = ({path}) => {
