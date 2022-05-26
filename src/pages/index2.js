@@ -7,7 +7,7 @@ import Aos from "aos";
 import FeaturedPost from "../components/FeaturedPost";
 import NetflixSlider from "../components/NetflixSlider";
 import styled from "styled-components"
-import {containsHashtag} from "../components/blog/Hashtags";
+import {containsHashtags} from "../components/blog/Hashtags";
 
 const Index2 = ({data}) => {
 
@@ -18,9 +18,11 @@ const Index2 = ({data}) => {
     const posts       = data.allMdx.edges
     const featured    = posts[0]
     const latest      = posts.slice(1, 14)
-    const caterina    = [...posts].filter(post => containsHashtag(post, 'caterina sforza')).reverse()
+    const caterina    = [...posts].filter(post => containsHashtags(post, 'caterina sforza')).reverse()
+    const food        = [...posts].filter(post => containsHashtags(post, 'food', 'coffee', 'diet')).reverse()
+    const mindfulness = [...posts].filter(post => containsHashtags(post, 'mindfulness')).reverse()
     const randomized  = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
-    const firstLast   = [...posts].reverse()
+    const chrono      = [...posts].reverse()
 
     return (
         <Layout isDark={true}>
@@ -28,24 +30,34 @@ const Index2 = ({data}) => {
             <FeaturedPost post={featured}/>
             <Sliders>
                 <NetflixSlider
-                    title="Latest Posts"
+                    title="Latest posts"
                     subtitle="The more recent they are, the better written"
                     posts={latest}
                 />
                 <NetflixSlider
-                    title="Caterina Sforza"
+                    title="On Caterina Sforza"
                     subtitle="This pentalogy is quite possibly the piece of writing I'm the most proud of"
                     posts={caterina}
                 />
                 <NetflixSlider
-                    title="Random Posts"
-                    subtitle="If you are a chaos embracer"
+                    title="Because you like food"
+                    subtitle="We all do"
+                    posts={food}
+                />
+                <NetflixSlider
+                    title="On mindfulness"
+                    subtitle="If you are one with Chaos"
+                    posts={mindfulness}
+                />
+                <NetflixSlider
+                    title="Random posts"
+                    subtitle="If you are one with Chaos"
                     posts={randomized}
                 />
                 <NetflixSlider
                     title="Chronological Order"
-                    subtitle="Useful for the stalker type"
-                    posts={firstLast}
+                    subtitle="For the stalker type"
+                    posts={chrono}
                 />
             </Sliders>
         </Layout>
@@ -56,8 +68,7 @@ const Index2 = ({data}) => {
 export default Index2
 
 const Sliders = styled.div`
-
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 `
 
 

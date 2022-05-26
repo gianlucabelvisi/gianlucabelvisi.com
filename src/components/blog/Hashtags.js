@@ -1,8 +1,13 @@
 
-export function containsHashtag(edge, hashtag) {
+export function containsHashtags(edge, args) {
+
+    let hashtags = [...arguments]
+    hashtags.shift()
+
     let result = edge.node.frontmatter.hashtags.split(',')
                      .filter(tag => tag !== undefined)
                      .map(tag => tag.trim())
-                     .filter(tag => tag === hashtag)
+                     .filter(tag => hashtags.includes(tag))
+
     return result !== undefined && result.length !== 0
 }
