@@ -122,13 +122,12 @@ const FeatureImageWrapper = styled.div`
 `
 const FeatureImage = styled(GatsbyImage)`
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  height: 100%;
   @media screen and (max-width: 768px) {
     height: 70%;
   }
-  //width: 100%;
 `
 const Title = styled.h1`
   margin-bottom: 2rem;
