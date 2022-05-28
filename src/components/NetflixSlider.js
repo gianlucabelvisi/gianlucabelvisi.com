@@ -28,7 +28,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
     return (
         <Container>
             <Header>
-                <Title data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                <Title>
                     <TitleWrapper data-tip={subtitle} data-place="top">
                         {title}
                     </TitleWrapper>
@@ -41,7 +41,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                     })}
                 </ProgressBar>
             </Header>
-            <SliderWrapper data-aos="fade-up" data-aos-duration="300">
+            <SliderWrapper>
                 <LeftHandle
                     disabled={sliderIndex <= 0}
                     onClick={e => setSliderIndex(sliderIndex - 1)}>

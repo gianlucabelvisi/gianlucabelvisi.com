@@ -83,7 +83,8 @@ export const FigureLabel = ({children}) => {
         <div style={{
             width: "100%",
             textAlign: "center",
-            marginBottom: "2rem"
+            marginBottom: "2rem",
+            marginTop: ".5rem"
         }}>
             <em>{children}</em>
         </div>

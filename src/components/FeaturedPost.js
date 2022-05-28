@@ -22,7 +22,8 @@ const FeaturedPost = ({post}) => {
             <Emoji>
                 {content.onHover}
             </Emoji>
-        </Wrapper>);
+        </Wrapper>
+    );
 };
 
 export default FeaturedPost;
@@ -48,9 +49,11 @@ const Overlay = styled.div`
   padding: 1rem;
   border-radius: 12px;
   width: 90%;
-  background: linear-gradient(hsl(0 0% 0% / .6),
-  hsl(0 0% 0% / .3) 30%,
-  hsl(0 0% 0% / 0));
+  background: linear-gradient(hsl(0 0% 0% / .9),
+  hsl(0 0% 0% / .8) 60%,
+  hsl(0 0% 0% / .6) 40%,
+  hsl(0 0% 0% / .2) 
+  );
 
   transition: all 500ms ease;
 
@@ -59,6 +62,9 @@ const Overlay = styled.div`
     transform: scale(1.05);
   }
 
+  @media screen and (max-width: 1200px) {
+    top: 56%;
+  }
   @media screen and (max-width: 1000px) {
     top: 50%;
   }
@@ -82,6 +88,7 @@ const Button = styled(NetflixButton)`
   margin-top: 2rem;
 `
 const Emoji = styled.div`
+  color: ${props => props.theme.white};;
   font-size: var(--font-size-emoji);
   position: absolute;
   bottom: 10px;
