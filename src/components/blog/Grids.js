@@ -5,6 +5,7 @@ import MachiavelliPic from '../../assets/images/machiavelli.jpg'
 import LucreziaPic from '../../assets/images/lucrezia2.jpg'
 import TigressPic from '../../assets/images/tigress.jpg'
 import BiancaPic from '../../assets/images/bianca.png'
+import BatmanPic from '../../assets/images/batman.jpg'
 import CrimePunishPic from '../../assets/images/crimepunishment.jpg'
 import GreenlightsPic from '../../assets/images/greenlights.jpg'
 import HailmaryPic from '../../assets/images/hailmary.jpg'
@@ -26,7 +27,6 @@ const Grid3Col = styled.div`
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  margin-bottom: 2rem;
   @media screen and (max-width: 500px) {
     display: flex;
     flex-direction: column;
@@ -62,6 +62,10 @@ export const TigressBook = styled(BoxPic)`
 `
 export const Bianca = styled(BoxPic)`
   background: url(${BiancaPic}) center no-repeat;
+  background-size: contain;
+`
+export const Batman = styled(BoxPic)`
+  background: url(${BatmanPic}) center no-repeat;
   background-size: contain;
 `
 export const Crime = styled(BoxPic)`

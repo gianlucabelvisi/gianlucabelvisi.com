@@ -1,4 +1,4 @@
-# Logs
+ç# Logs
 logs
 *.log
 npm-debug.log*
@@ -82,3 +82,4 @@ yarn-error.log
 /src/posts/2022/investing/tops.psd
 /src/posts/2022/habits/slap.psd
 /src/posts/2022/habits/croissants-orig.jpg
+/src/posts/2022/films/cover-orig.png
