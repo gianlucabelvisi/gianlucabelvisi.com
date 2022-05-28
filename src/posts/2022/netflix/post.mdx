@@ -2,7 +2,7 @@
 path: "/netflix"
 date: 2022-05-27
 title: "I turned my blog into Netflix because of reasons"
-subTitle: "Follow me down the rabbit hole of restyling a website. Content Warning: code inside"
+subTitle: "Follow me down the rabbit hole of restyling a website. Content Warning: coding samples"
 author: "Gianluca Belvisi"
 cardImage: "cover_small.jpg"
 featureImage: "cover_featured.jpg"
@@ -11,35 +11,36 @@ hashtags: "this blog"
 hidden: true
 ---
 
+import YouTube from "../../../components/blog/YouTube";
 import LinkButton from "../../../components/Button";
 import Poll from "../../../components/blog/Poll";
 import {FigureLabel, Pony} from "../../../components/blog/Text";
 
-I've been let know that my website is, and I quote, esthetically uneasy on the eyes. Unpleasant to look at. Uncanny valley-y. And don't get me wrong, it's ok for an **amateurish** work, but it's so frustrating as it could have been good with just a little more effort.
+I've been let know that my website is -- and I quote -- esthetically uneasy on the eyes. Unpleasant to look at. Uncanny valley-y. And don't get me wrong, it's ok for an **amateurish** work, but it's also frustrating, as it could have been good with just a little more effort.
 
-Now, in front of this harsh but well worded feedback - so rare these days! - the only thing I could think of is:
+Now, in front of this **harsh** but well worded feedback -- so rare these days! -- the only thought I had in my mind was:
 
 <Pony>I need to cut ties with this person. 🦄</Pony>
 
-Then I took a long look at my homepage...
+Then, I took a long look at my homepage...
 
 ![](old_site.jpg)
 
 <Pony>Oh my god she's right! 🙀</Pony>
 
-So, after cutting ties with her, I got to work at a radical overhaul of my blog, wielding a glass of wine and unafraid of using it.
+So, after cutting ties with this person, I got to work at a **radical** overhaul of my blog, wielding a glass of wine and unafraid of using it.
 
 ## First things first
 
-When **change** is warranted, one must understand why change is needed, otherwise you are going to transform something into something else, and still retain the same problems.
+When **change** is warranted, one must understand why, otherwise something will be transformed into something else, and still retain the same issues.
 
-So, what is currently not working on my homepage? Well, it seems to be coming straight from 2003, what with that huge six seconds holiday video on repeat that doesn't even work on mobile, I suspect for battery reasons.
+What is not working with my homepage? For starters, it seems to be coming straight from **2003**, what with that huge six seconds holiday video on repeat that doesn't even work on mobile, I suspect for battery reasons.
 
-It does have cool animations, and it gives you a glimpse on the latest content I posted, but are you feeling compelled to read a post with such a presentation?
+It does have cool animations, and it gives you a glimpse on the latest content I posted, but are you feeling **compelled** to read a post with such a presentation?
 
 ...
 
-It's not a rhetorical question. Please answer...
+It's **not** a rhetorical question. Please answer...
 
 <Poll id="netflix"
       question="Are you feeling compelled to read a post with such a presentation?"
@@ -47,54 +48,56 @@ It's not a rhetorical question. Please answer...
       labels={["No 🦄", "No 🙈", "Yes (liar)", "I'm Hitler"]}
 />
 
-So, what should the homepage focus on? Why do people come here? Why would they do that if they can be anywhere else? Why, the content of course!
+With this in mind, what should the focus be? Why do people come here? Why would they do choose this website instead of literally anything else? Why, the **content** of course!
 
-The witty posts uncovering stories from remote internet corners, the Renaissance, the w. All written with a cute self-deprecating sense of humor. And I'm not saying this, I'm just reading from your dms, at least the parts that I can read without blushing, you silly pervs 🙈
+The witty posts uncovering stories from [remote internet corners](r/place), the retelling of a (in)famous [Renaissance hero](caterina-sforza-1), the invaluable [investing advice](https://www.youtube.com/watch?v=dQw4w9WgXcQ). All well curated and written, with a self-deprecating sense of humor that is just cute, until it's not.
 
-Looking at online avenues where content is King 👑, I soon realized that I needed to turn my blog into Netflix, only with good content!
+And I'm not saying this, I'm just reading from your dms, at least the parts that I can read without blushing, you silly pervs. 🙈
 
+Ok, cool. Content. I can subscribe to that! Looking at online avenues where content is King 👑, I soon realized that I needed to turn my blog into **Netflix**, only, you know, with good content!
+
+Let's look at Netflix...
 
 ![](netflix.jpg)
 
 <FigureLabel>Hot take: I think that <strong>Stranger Things</strong> is pickled garbage.</FigureLabel>
 
-
-I want you to experience my blog the same way I experience Netflix, that is, scrolling the lists for something to watch to a solid 5 minutes, then resolve to watch for the umpteenth time an illegally downloaded version of **In Bruges**.
+I want you to **experience** my blog the same way I experience Netflix, which is by scrolling the lists of shows and films for something to watch for a solid 5 minutes, not finding anything, and then resolve to watch for the umpteenth time an illegally downloaded version of **In Bruges**.
 
 
 <div style="padding-top:47.000%;position:relative;"><iframe src="https://gifer.com/embed/NRVv" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p></p>
 
 ## The project
 
-Let's start with a blueprint of what we want to achieve...
+Let's start with a **blueprint** of what we want to achieve. Please click on the Miro board...
 
 <iframe width="650" height="800" src="https://miro.com/app/live-embed/uXjVOxQ3ODY=/?moveToViewport=-788,-625,874,1221" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 
+<p></p>
+
 I see a list of things that need be done:
 
-◼ A simple way of fetching posts, together with all their metadata, so that we can easily create groups
+* A simple way of fetching posts, together with all their metadata, so that we can easily create groups for the content rich homepage
 
-◼ The most recent post must become the featured one, and occupy a solid third of the screen
+* The most recent post must become the featured one, occupying a solid third of the screen
 
-◼ Several rows of sliders that present posts grouped by different criteria
+* Several rows of sliders show posts grouped by different criteria. Hovering on each thumbnail will show more information and the button to reach the content
 
-◼ A transparent header that allows the featured image to be in full display, but that turns black the moment you start scrolling
+## Fetching Content
 
+This is incredibly easy to achieve, as **Gatsby**, the framework I'm using on top of React, allows for content querying via GraphQL, which is kinda weird to look at -- and that's why I won't show it to you -- but oh so effective!
 
-## Fetching content
+<div style="padding-top:42.400%;position:relative;"><iframe src="https://gifer.com/embed/p5" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p></p>
 
-This is incredibly easy to achieve, as Gatsby, the framework I'm using on top of React, allows for content querying via GraphQl, which is really weird, which is why I won't show you a query, but also effective.
-
-Suffice to say that, in my code, all I need to do is this:
+Long story short, in my code all I need to do is this:
 
 ```javascript copy
 const posts = data.allMdx.edges
 ```
 
-And boom I have all the posts on my palm, ready to be manipulated and grouped as I please. Let's do some of that grouping:
+And boom I have all the posts on my thumb, ready to be **grouped** as I please. Let's do some of that:
 
 ```javascript copy
-
 const posts               = data.allMdx.edges
 const featured          = posts[0]
 const latest               = [...posts].slice(1, 14)
@@ -103,15 +106,13 @@ const food                 = [...posts].filter(post => containsHashtags(post, 'f
 const mindfulness   = [...posts].filter(post => containsHashtags(post, 'mindfulness')).reverse()
 const randomized    = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
 const chronological = [...posts].reverse()
-
 ```
 
 Ok, this only took me a glass of wine to do, but only because when I created my blog, I have been forward-looking and implemented hashtags support even if not needed at the time. Amateurish my ass.
 
-Now that we have the cOnTeNt, let's put it to use on an actual page. Based on the Miro board above, this is all we need...
+Now that we have the **CoNtEnT**, let's put it to use on an actual page. Based on the blueprint above, this is all we need...
 
 ```jsx copy
-
 <Layout isDark={true}>
     <FeaturedPost post={featured}/>
     <Sliders>
@@ -128,19 +129,19 @@ Now that we have the cOnTeNt, let's put it to use on an actual page. Based on th
         // other sliders omitted...
     </Sliders>
 </Layout>
-
 ```
 
-## The featured post
+It's not much, but it's honest work. This concludes my wait a second I forgot to implement the components! 🙈
 
+## The Featured Post
 
+Let's start with the main content, the most recent post displayed at the top of the screen. Here's all you need:
 
 ```jsx copy
-
 <Wrapper data-aos="fade-up" data-aos-duration="1000">
     <Background image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
     <Overlay>
-        <Title >{content.title}</Title>
+        <Title>{content.title}</Title>
         <SubTitle>{content.subTitle}</SubTitle>
         <Button to={content.path} big={true}>Read</Button>
     </Overlay>
@@ -150,24 +151,33 @@ Now that we have the cOnTeNt, let's put it to use on an actual page. Based on th
 </Wrapper>
 ```
 
-### Let's talk about the button
+The wrapper is a position relative, while the overlay is a position absolute that adapts to be on the bottom half of the image based on screen size.
+
+I used to have emojis that appear when you rest your cursor over a button. I want to move away from that, but no use losing the emojis entirely, so I added them to the bottom right. They really tie the room together.
+
+Speaking of which, we need to talk about the button.
+
+### We need to talk about the button
+
+The button I created for version 1.0 simply won't do with the new style. It's too noisy, too unnecessary in the way it expands when hovering on it, what was I thinking?!
 
 <p></p>
-
 
 <LinkButton to={""} onHover={"💩💩💩💩💩💩💩"}>Shitty Button</LinkButton>
 
 <p></p>
 
-asd
+So I that to take it down a notch for the home screen. Here the final result for the featured post...
 
 ![](featured-preview.jpg)
 
-## The slider
+## The Slider
 
-asdsa
+But that was easy mode. The real challenge is the slider. Each row is an instance of a slider, and there we want to paginate posts so that only a subset is visible. Then you can scroll left and right via aptly placed buttons.
 
-It's gonna be fine. You are going to be fine.
+Once you hover or tap on a post, more information will be displayed, so that you have no other chance but read the post, unless you want me to cut ties with you.
+
+Here's the final layout. It is a bit of a doozy, but you are not dumb, so trust me, it's gonna be fine. You are going to be fine. Now please commit the following code to memory...
 
 ```jsx copy
 <Container>
@@ -223,9 +233,48 @@ It's gonna be fine. You are going to be fine.
 
     </SliderWrapper>
 </Container>
-
 ```
 
+Let's start from the top.
 
+### The Slider Header
 
-asd
+![](slider.jpg)
+
+You can see that there is a title on the left, and a subtitle that I chose to render as a tooltip in order to reduce visual overload.
+
+And on the right, a progress bar that reports the number of pages and the one you are currently on.
+
+But in order to render this progress bar, I need to know how many pages there are going to be for each slider. How to calculate that? Easy-peasy:
+
+```javascript copy
+Math.ceil(posts.length / itemsPerScreen(width))
+```
+
+How many items per screen should I display? Well, it depends on the size of the window. Let's say 5 posts for a size of 1200 pixels and above, then progressively fewer with a minimum of 2 if you are on your phone.
+
+But this cannot be a static assignment, because you assholes resize the screen every time, which means that I have to subscribe to the window resize event, and update my number of posts every time you mess around.
+
+### The Slider Body
+
+This is the meat of the matter. The posts are all display flexed, where the ones that don't fit the screen are just stacking up to the right, conveniently invisible.
+
+Every time you press either the left or right arrow button, I will shift the content for 100% of the screen width, with some ease.
+
+Now, if you try this on Netflix, you will notice that once you reach the end of content, you will loop around to the beginning.
+
+If you have ever implemented a 2D side scrolling game, you will know that the way to do this is to lay down the train tracks while on the train...
+
+<div style='position:relative; padding-bottom:calc(56.25% + 44px)'><iframe src='https://gfycat.com/ifr/BelovedReasonableIcefish' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p></p>
+
+...meaning that once a piece of background reaches the left side of the screen, and it's no longer visible, you move it to the right side, ready to enter the screen. Rinse repeat.
+
+So, I have to implement something similar for my slider, except I'm not gonna do that! I have no idea how to do it in CSS, and I'm running out of wine! So, in this home, once we reach the end of content, we stop scrolling.
+
+So here is the final result. Notice how smooth is the slide! Notice how the items get bigger when you hover on them!
+
+<YouTube source="KpkUzVVvosk"/>
+
+For the final result, you can visit my new index page, unless you are coming from there, in which case you got spoiled of the ending, and I feel sorry for you. 😞
+
+In case you prefer the old page, it's still there at [index-cringe](index-cringe), but know that I will cut ties with whichever ip address visits it.
