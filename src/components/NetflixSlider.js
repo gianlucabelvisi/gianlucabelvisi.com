@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import styled from "styled-components"
 import NetflixCard from "./NetlifxCard";
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import Aos from "aos";
+import Delayed from "./Delayed";
 
 const NetflixSlider = ({title, subtitle, posts}) => {
 
@@ -12,12 +13,18 @@ const NetflixSlider = ({title, subtitle, posts}) => {
     }, [])
 
     const [sliderIndex, setSliderIndex] = useState(0)
-    const { width } = useWindowDimensions()
+    const {width} = useWindowDimensions()
 
     function calculateItemsPerScreen(width) {
-        if (width > 1200) return 5
-        if (width > 1000) return 4
-        if (width > 800) return 3
+        if (width > 1200) {
+            return 5
+        }
+        if (width > 1000) {
+            return 4
+        }
+        if (width > 800) {
+            return 3
+        }
         return 2;
     }
 
@@ -26,59 +33,63 @@ const NetflixSlider = ({title, subtitle, posts}) => {
     }
 
     return (
-        <Container>
-            <Header>
-                <Title>
-                    <TitleWrapper data-tip={subtitle} data-place="top">
-                        {title}
-                    </TitleWrapper>
-                </Title>
-                <ProgressBar data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
-                    {Array.from(Array(calculatePages()).keys()).map((elem, index) => {
-                        return (
-                            <ProgressElement key={index} highlighted={elem === sliderIndex}/>
-                        )
-                    })}
-                </ProgressBar>
-            </Header>
-            <SliderWrapper>
-                <LeftHandle
-                    disabled={sliderIndex <= 0}
-                    onClick={e => setSliderIndex(sliderIndex - 1)}>
-                    <Arrow>
-                        <BsChevronCompactLeft/>
-                    </Arrow>
-                </LeftHandle>
-                <Slider index={sliderIndex}>
-                    {posts.map((post, index) => {
-                        const fm = post.node.frontmatter
-                        let itemsPerScreen = calculateItemsPerScreen(width);
-                        let isLast = index + 1 === itemsPerScreen
-                        return (
-                            <CardContainer key={fm.path} itemsPerScreen={itemsPerScreen} isLast={isLast}>
-                                <NetflixCard
-                                    cardImage={fm.cardImage}
-                                    title={fm.title}
-                                    subTitle={fm.subTitle}
-                                    date={fm.date}
-                                    path={fm.path}
-                                    onHover={fm.onHover}
-                                    index={index}
-                                />
-                            </CardContainer>
-                        )
-                    })}
-                </Slider>
-                <RightHandle
-                    disabled={sliderIndex >= calculatePages() - 1}
-                    onClick={e => setSliderIndex(sliderIndex + 1)}>
-                    <Arrow>
-                        <BsChevronCompactRight/>
-                    </Arrow>
-                </RightHandle>
+        <Delayed>
+            <Container>
+                <Header>
+                    <Title>
+                        <TitleWrapper data-tip={subtitle} data-place="top">
+                            {title}
+                        </TitleWrapper>
+                    </Title>
+                    <ProgressBar data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        {Array.from(Array(calculatePages()).keys()).map((elem, index) => {
+                            return (
+                                <ProgressElement key={index} highlighted={elem === sliderIndex}/>
+                            )
+                        })}
+                    </ProgressBar>
+                </Header>
+                <SliderWrapper>
+                    <LeftHandle
+                        disabled={sliderIndex <= 0}
+                        onClick={e => setSliderIndex(sliderIndex - 1)}>
+                        <Arrow>
+                            <BsChevronCompactLeft/>
+                        </Arrow>
+                    </LeftHandle>
+                    <Slider index={sliderIndex}>
+                        {posts.map((post, index) => {
+                            const fm = post.node.frontmatter
+                            let itemsPerScreen = calculateItemsPerScreen(width);
+                            // console.log("items per screen", itemsPerScreen)
+                            let isLast = index + 1 === itemsPerScreen
+                            return (
+                                <CardContainer key={fm.path} itemsPerScreen={itemsPerScreen} isLast={isLast}>
+                                    <NetflixCard
+                                        cardImage={fm.cardImage}
+                                        title={fm.title}
+                                        subTitle={fm.subTitle}
+                                        date={fm.date}
+                                        path={fm.path}
+                                        onHover={fm.onHover}
+                                        index={index}
+                                    />
+                                </CardContainer>
+                            )
+                        })}
+                    </Slider>
 
-            </SliderWrapper>
-        </Container>
+                    <RightHandle
+                        disabled={sliderIndex >= calculatePages() - 1}
+                        onClick={e => {setSliderIndex(sliderIndex + 1)}}>
+                        <Arrow>
+                            <BsChevronCompactRight/>
+                        </Arrow>
+                    </RightHandle>
+
+                </SliderWrapper>
+            </Container>
+        </Delayed>
     );
 };
 
@@ -182,18 +193,20 @@ const RightHandle = styled(Handle)`
   border-bottom-right-radius: 0;
 `
 const CardContainer = styled.div`
-  flex: 0 0 calc(100% / ${props => props.itemsPerScreen});
+  --items-per-screen: calc(100% / ${props => props.itemsPerScreen});
+  flex: 0 0 var(--items-per-screen);
   border-radius: .5rem;
-  min-width: calc(100% / ${props => props.itemsPerScreen});
-  width: calc(100% / ${props => props.itemsPerScreen});
+  min-width: var(--items-per-screen);
+  width: var(--items-per-screen);
   aspect-ratio: 5 / 4;
   overflow: hidden;
   box-sizing: border-box;
   padding-right: var(--card-gap);
   transition: all 500ms ease;
+
   &:hover {
     z-index: 1000;
     transition-delay: 300ms;
-    transform: scale(1.5) translateY(-15%) translateX(${({isLast}) => (isLast? "-15" : "+15")}%);
+    transform: scale(1.5) translateY(-15%) translateX(${({isLast}) => (isLast ? "-15" : "+15")}%);
   }
 `

@@ -31,6 +31,11 @@ export default FeaturedPost;
 const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
+
+  @media screen and (max-width: 700px) {
+    height: 30rem;
+  }
+  
   --font-size-emoji: clamp(1rem, 7vw, 4rem);
   --font-size-title: clamp(1rem, 5vw, 3rem);
   --font-size-subtitle: clamp(0.8rem, 3vw, 1.5rem);
@@ -71,8 +76,8 @@ const Overlay = styled.div`
   @media screen and (max-width: 800px) {
     top: 40%;
   }
-  @media screen and (max-width: 500px) {
-    top: 30%;
+  @media screen and (max-width: 700px) {
+    top: 50%;
   }
 `
 const Title = styled.div`

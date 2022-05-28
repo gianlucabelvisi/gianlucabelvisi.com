@@ -8,6 +8,7 @@ export default function useWindowDimensions() {
     const getWindowDimensions = useCallback( () => {
         const width = hasWindow ? window.innerWidth : null;
         const height = hasWindow ? window.innerHeight : null;
+        // console.log("Window dimensions: ", width, height)
         return {
             width,
             height,
