@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components"
 import NetflixCard from "./NetlifxCard";
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";

@@ -11,6 +11,8 @@ import styled from "styled-components";
 import {Link} from "gatsby";
 import Quote from "./Quote";
 import Spoiler from "./Spoiler";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/nightOwl"
 
 const Mdx = ({body}) => {
     return (
@@ -25,6 +27,28 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
+                pre: props => {
+                    console.log(props);
+                    const className = props.children.props.className || "";
+                    const code = props.children.props.children.trim();
+                    const language = className.replace(/language-/, "");
+                    return (
+                        <Highlight {...defaultProps} code={code} language={language} theme={theme}>
+                            {({className, style, tokens, getLineProps, getTokenProps}) => (
+                                <pre className={className} style={style}>
+                                {tokens.map((line, i) => (
+                                    <div {...getLineProps({line, key: i})}>
+                                        {line.map((token, key) => (
+                                            <span {...getTokenProps({token, key})} />
+                                        ))}
+                                    </div>
+                                ))}
+                              </pre>
+                            )}
+                        </Highlight>
+                    );
+                },
+                wrapper: ({ children }) => <>{children}</>,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
                 Col1, Col23, AiTwotonePushpin
