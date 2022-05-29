@@ -91,13 +91,15 @@ This is incredibly easy to achieve, as **Gatsby**, the framework I'm using on to
 
 Long story short, in my code all I need to do is this:
 
-```javascript copy
+```js
+
 const posts = data.allMdx.edges
+
 ```
 
 And boom I have all the posts on my thumb, ready to be **grouped** as I please. Let's do some of that:
 
-```javascript copy
+```js
 const posts               = data.allMdx.edges
 const featured          = posts[0]
 const latest               = [...posts].slice(1, 14)
@@ -112,7 +114,7 @@ Ok, this only took me a glass of wine to do, but only because when I created my 
 
 Now that we have the **CoNtEnT**, let's put it to use on an actual page. Based on the blueprint above, this is all we need...
 
-```jsx copy
+```jsx
 <Layout isDark={true}>
     <FeaturedPost post={featured}/>
     <Sliders>
@@ -137,7 +139,8 @@ It's not much, but it's honest work. This concludes my wait a second I forgot to
 
 Let's start with the main content, the most recent post displayed at the top of the screen. Here's all you need:
 
-```jsx copy
+```jsx
+
 <Wrapper data-aos="fade-up" data-aos-duration="1000">
     <Background image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
     <Overlay>
@@ -247,7 +250,7 @@ And on the right, a progress bar that reports the number of pages and the one yo
 
 But in order to render this progress bar, I need to know how many pages there are going to be for each slider. How to calculate that? Easy-peasy:
 
-```javascript copy
+```js
 Math.ceil(posts.length / itemsPerScreen(width))
 ```
 
