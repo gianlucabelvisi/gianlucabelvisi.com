@@ -2,12 +2,14 @@ import React from 'react';
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {NetflixButton} from "./NetflixButton";
+import ReactTooltip from "react-tooltip";
 
 const NetflixCard = ({cardImage, title, subTitle, path, date, onHover, index}) => {
 
 
     return (
         <Card index={index}>
+            <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
             <Image image={getImage(cardImage)} alt="Card Image"/>
 
             <Header>
@@ -46,6 +48,7 @@ const Header = styled.div`
 const Date = styled.h4`
   padding-left: 1em;
   padding-right: 1em;
+  font-size: .8rem;
   @media screen and (max-width: 500px) {
       font-size: .7rem;
   }
@@ -79,10 +82,10 @@ const Title = styled.h5`
   position: relative;
   width: fit-content;
   height: var(--title-height);
+  line-height: 1.2rem;
   @media screen and (max-width: 400px) {
     line-height: 1rem;
   }
-
 `
 const Footer = styled.div`
   color: ${props => props.theme.white};
@@ -114,6 +117,11 @@ const Card = styled.div`
       transform: translateY(0);
       transition-delay: 300ms;
     }
+    ${Title} {
+      transition: padding-top 1s ease;
+      padding-top: 1rem;
+    }
+
   }
   &:hover {
     ${Content} {

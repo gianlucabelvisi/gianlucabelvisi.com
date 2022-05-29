@@ -15,20 +15,21 @@ const Index2 = ({data}) => {
         Aos.init({})
     }, [])
 
-    const posts       = data.allMdx.edges
-    const featured    = posts[0]
-    const latest      = posts.slice(1, 14)
-    const caterina    = [...posts].filter(post => containsHashtags(post, 'caterina sforza')).reverse()
-    const food        = [...posts].filter(post => containsHashtags(post, 'food', 'coffee', 'diet')).reverse()
-    const mindfulness = [...posts].filter(post => containsHashtags(post, 'mindfulness')).reverse()
-    const randomized  = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
-    const chrono      = [...posts].reverse()
+    const posts = data.allMdx.edges
+    const featured = posts[0]
+    const latest = posts.slice(1, 14)
+    const caterina = [...posts].filter(post => containsHashtags(post, 'caterina sforza')).reverse()
+    const food = [...posts].filter(post => containsHashtags(post, 'food', 'coffee', 'diet')).reverse()
+    const mindfulness = [...posts].filter(post => containsHashtags(post, 'mindfulness')).sort(() => Math.random() - 0.5).slice(0, 15)
+    const randomized = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
+    const chrono = [...posts].reverse()
 
     return (
         <Layout isDark={true}>
             <Seo title="Gianluca Belvisi 🦄"/>
             <FeaturedPost post={featured}/>
             <Sliders>
+                <Fader/>
                 <NetflixSlider
                     title="Latest posts"
                     subtitle="The more recent they are, the better written"
@@ -45,7 +46,7 @@ const Index2 = ({data}) => {
                     posts={food}
                 />
                 <NetflixSlider
-                    title="On mindfulness"
+                    title="You seem to be into mindfulness"
                     subtitle="If you are one with Chaos"
                     posts={mindfulness}
                 />
@@ -68,7 +69,20 @@ const Index2 = ({data}) => {
 export default Index2
 
 const Sliders = styled.div`
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+`
+const Fader = styled.div`
+  position: absolute;
+  top: -4rem;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(180deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, .2) 20%,
+  rgba(0, 0, 0, .4) 40%,
+  rgb(19, 19, 19) 100%
+  );
 `
 
 
