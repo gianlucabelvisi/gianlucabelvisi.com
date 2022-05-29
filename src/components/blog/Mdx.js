@@ -11,7 +11,6 @@ import styled from "styled-components";
 import {Link} from "gatsby";
 import Quote from "./Quote";
 import Spoiler from "./Spoiler";
-import CustomCodeBlock from "./CustomCodeBlock";
 
 const Mdx = ({body}) => {
     return (
@@ -26,7 +25,6 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
-                code: (props) => <CustomCodeBlock {...props} />,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
                 Col1, Col23, AiTwotonePushpin
