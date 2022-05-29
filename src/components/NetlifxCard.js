@@ -46,9 +46,12 @@ const Header = styled.div`
 const Date = styled.h4`
   padding-left: 1em;
   padding-right: 1em;
+  @media screen and (max-width: 500px) {
+      font-size: .7rem;
+  }
 `
 const Content = styled.div`
-  --title-height: 3.8rem;
+  --title-height: 3rem;
   --footer-height: 4rem;
   --total-height: calc(var(--title-height) + var(--footer-height));
   
@@ -72,12 +75,14 @@ const Content = styled.div`
   );
 `
 const Title = styled.h5`
-  padding-top: .7rem;
-  padding-bottom: .3rem;
   text-transform: uppercase;
   position: relative;
   width: fit-content;
   height: var(--title-height);
+  @media screen and (max-width: 400px) {
+    line-height: 1rem;
+  }
+
 `
 const Footer = styled.div`
   color: ${props => props.theme.white};
@@ -86,6 +91,12 @@ const Footer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 0;
+  @media screen and (max-width: 500px) {
+    line-height: 1rem;
+  }
+  @media screen and (max-width: 400px) {
+    line-height: .6rem;
+  }
 `
 const SubTitle = styled.div`
   font-size: .6rem;

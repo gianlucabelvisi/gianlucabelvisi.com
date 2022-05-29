@@ -35,6 +35,10 @@ const Wrapper = styled.div`
   @media screen and (max-width: 700px) {
     height: 30rem;
   }
+
+  @media screen and (max-width: 400px) {
+    height: 50rem;
+  }
   
   --font-size-emoji: clamp(1rem, 7vw, 4rem);
   --font-size-title: clamp(1rem, 5vw, 3rem);
@@ -78,6 +82,9 @@ const Overlay = styled.div`
   }
   @media screen and (max-width: 700px) {
     top: 50%;
+  }
+  @media screen and (max-width: 400px) {
+    top: 70%;
   }
 `
 const Title = styled.div`

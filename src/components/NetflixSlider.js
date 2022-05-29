@@ -132,11 +132,18 @@ const ProgressBar = styled.div`
   justify-content: flex-end;
   flex-wrap: wrap;
   flex: 1;
+  @media screen and (max-width: 600px) {
+    gap: .4rem
+  }
 `
 const ProgressElement = styled.div`
   width: 1.3rem;
   height: 0.3rem;
   background-color: ${({highlighted}) => (highlighted ? "var(--white)" : "gray")};
+  @media screen and (max-width: 600px) {
+      width: .7rem;
+    height: 0.2rem;
+  }
 `
 const SliderWrapper = styled.div`
   margin: 0;
