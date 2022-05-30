@@ -6,6 +6,7 @@ import DropdownMenu from "./DropdownMenu";
 import {useScrollPosition} from "./hooks/useScrollPosition";
 import DesktopMenu from "./DesktopMenu";
 import {useStaticQuery, graphql} from "gatsby"
+import Delayed from "./Delayed";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -60,30 +61,32 @@ const Header = () => {
     const version = data.allSite.edges[0].node.siteMetadata.version
 
     return (
-        <Nav path={path} sticky={sticky}>
-            <Logo>
-                <HomeLink to="/">
-                    <Title>Gianluca's</Title>
-                    <SubTitle>worthless piece of blog</SubTitle>
-                </HomeLink>
-                <Version to="/release-notes">
-                    Version: {version}
-                </Version>
-            </Logo>
-            <DesktopMenu/>
-            <MobileWrapper>
-                <Hamburger onClick={toggleDropdownOpen}/>
-                <DropdownMenu isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
-            </MobileWrapper>
-            <Background show={showBackground}/>
-        </Nav>
+        <Delayed>
+            <Nav path={path} sticky={sticky}>
+                <Logo>
+                    <HomeLink to="/">
+                        <Title>Gianluca's</Title>
+                        <SubTitle>worthless piece of blog</SubTitle>
+                    </HomeLink>
+                    <Version to="/release-notes">
+                        Version: {version}
+                    </Version>
+                </Logo>
+                <DesktopMenu/>
+                <MobileWrapper>
+                    <Hamburger onClick={toggleDropdownOpen}/>
+                    <DropdownMenu isDropdownOpen={isDropdownOpen} toggleDropdownOpen={toggleDropdownOpen}/>
+                </MobileWrapper>
+                <Background show={showBackground}/>
+            </Nav>
+        </Delayed>
     )
 }
 
 export default Header
 
 const Nav = styled.nav`
-  background: ${({path}) => (path !== "/" ? "var(--nav-background-color)" : "transparent")};
+  background: ${({path}) => (!path.includes("/index2") && path !== "/" ? "var(--nav-background-color)" : "transparent")};
   height: 80px;
   display: flex;
   width: 100%;

@@ -4,6 +4,8 @@ require('typeface-roboto')
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    --white: #fafafb;
+    --black: #131313;
     --primary-color: #e87c48;
     --primary-color-darker: #bd643a;
     --primary-color-lighter: #ff9664;
@@ -25,6 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
-  
+
+
 `

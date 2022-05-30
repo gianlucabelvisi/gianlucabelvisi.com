@@ -38,6 +38,34 @@ export const Pony = ({children}) => {
     );
 };
 
+export const Dialogue = ({children}) => {
+    return (
+        <div style={{
+            fontFamily: "Irish Grover",
+            fontSize: "1.5rem",
+            paddingBottom: "1.5rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem"
+        }}>
+            {children}
+        </div>
+    );
+};
+
+export const Formula = ({children}) => {
+    return (
+        <div style={{
+            width: "100%",
+            fontSize: "1.9rem",
+            paddingTop: "1.5rem",
+            paddingBottom: "1.7rem",
+            textAlign: "center"
+        }}>
+            {children}
+        </div>
+    );
+};
+
 export const NewLine = () => {
     return (
         <p style={{
@@ -83,7 +111,8 @@ export const FigureLabel = ({children}) => {
         <div style={{
             width: "100%",
             textAlign: "center",
-            marginBottom: "2rem"
+            marginBottom: "2rem",
+            marginTop: ".5rem"
         }}>
             <em>{children}</em>
         </div>

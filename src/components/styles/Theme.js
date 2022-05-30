@@ -1,5 +1,7 @@
 let Theme = {
-    bgColor: "#fafafb",
+    white: "var(--white)",
+    bgColor: "var(--white)",
+    bgColorDark: "var(--black)",
     textColor: "white",
     pTextColor: "black",
     borderRadius: "",

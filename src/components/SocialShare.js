@@ -14,7 +14,6 @@ import {
     WhatsappShareButton
 } from "react-share";
 import styled from "styled-components"
-import ReactTooltip from 'react-tooltip';
 
 
 const SocialShare = ({path}) => {
@@ -24,7 +23,6 @@ const SocialShare = ({path}) => {
     return (
         <ShareSection>
             <Wrapper>
-                <ReactTooltip effect="solid"/>
                 <FacebookShareButton url={url} data-tip="BoomerBook" data-place="left">
                     <FacebookIcon size={32} round={true}/>
                 </FacebookShareButton>

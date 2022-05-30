@@ -11,6 +11,8 @@ import styled from "styled-components";
 import {Link} from "gatsby";
 import Quote from "./Quote";
 import Spoiler from "./Spoiler";
+import Code from "./Code";
+import {ResponsiveEmbed} from "./ResponsiveEmbed";
 
 const Mdx = ({body}) => {
     return (
@@ -25,9 +27,11 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
+                pre: props => <Code {...props} />,
+                wrapper: ({ children }) => <>{children}</>,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
-                Col1, Col23, AiTwotonePushpin
+                Col1, Col23, AiTwotonePushpin, ResponsiveEmbed
                 //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
             }}
         >
@@ -70,7 +74,6 @@ const A = styled.a`
   color: ${props => props.theme.post.link.color};
   text-decoration: none;
   font-weight: bold;
-
 
   &:visited {
     color: ${props => props.theme.post.link.visited};

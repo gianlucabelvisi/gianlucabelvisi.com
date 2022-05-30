@@ -1,28 +1,31 @@
 import React from 'react';
 import styled from "styled-components"
 import {socialData} from "../data/SocialData";
+import Delayed from "./Delayed";
 
 const Social = () => {
     return (
-        <Container>
-            <Invite>Follow me on social media and stuff</Invite>
-            <Accordion>
-                {socialData.map((item, key) => (
-                    <Tab key={key}>
-                        <Label>
-                            <Icon>{item.icon}</Icon>
-                            <a href={item.link} target="_blank" rel="noreferrer">{item.title}
-                            <HoverIcon css={`background-color: ${item.bgColor}`}>{item.icon}</HoverIcon>
-                            </a>
-                        </Label>
-                        <Content>
-                            <Title>{item.title}</Title>
-                            <Desc>{item.desc}</Desc>
-                        </Content>
-                    </Tab>
-                ))}
-            </Accordion>
-        </Container>
+        <Delayed>
+            <Container>
+                <Invite>Follow me on social media and stuff</Invite>
+                <Accordion>
+                    {socialData.map((item, key) => (
+                        <Tab key={key}>
+                            <Label>
+                                <Icon>{item.icon}</Icon>
+                                <a href={item.link} target="_blank" rel="noreferrer">{item.title}
+                                    <HoverIcon css={`background-color: ${item.bgColor}`}>{item.icon}</HoverIcon>
+                                </a>
+                            </Label>
+                            <Content>
+                                <Title>{item.title}</Title>
+                                <Desc>{item.desc}</Desc>
+                            </Content>
+                        </Tab>
+                    ))}
+                </Accordion>
+            </Container>
+        </Delayed>
     );
 };
 
@@ -32,6 +35,7 @@ const Container = styled.div`
   background-color: ${props => props.theme.social.bgColor};
   border-radius: ${props => props.theme.social.borderRadius};
   width: 100%;
+
   * {
     margin: 0;
     padding: 0;
@@ -102,15 +106,19 @@ const Tab = styled.li`
   position: relative;
   margin: 0;
   transition: all 0.4s ease-in-out 0.1s;
+
   &:hover {
     width: 450px;
   }
+
   &:hover ${Icon} {
     margin-left: -100px;
   }
+
   &:hover ${HoverIcon} {
     margin-left: 0;
   }
+
   @media screen and (max-width: 970px) {
     display: block;
     border-bottom: 3px #333 solid;
@@ -138,6 +146,6 @@ const Content = styled.div`
   position: relative;
   padding: 50px 0 0 15px;
   @media screen and (max-width: 500px) {
-    padding: 10px 0 0 15px;     
+    padding: 10px 0 0 15px;
   }
 `

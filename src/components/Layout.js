@@ -13,16 +13,20 @@ import Footer from "./Footer";
 import {ThemeProvider} from "styled-components";
 import Theme from "./styles/Theme";
 import styled from "styled-components"
+import ReactTooltip from "react-tooltip";
 
-const Layout = ({children}) => {
+const Layout = ({children, isDark = false}) => {
 
     return (
         <>
             <GlobalStyle/>
             <ThemeProvider theme={Theme}>
-                <Header/>
-                <Main>{children}</Main>
-                <Footer/>
+                <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
+                <Container isDark={isDark}>
+                    <Header/>
+                    <Main>{children}</Main>
+                    <Footer/>
+                </Container>
             </ThemeProvider>
         </>
     )
@@ -30,15 +34,8 @@ const Layout = ({children}) => {
 
 export default Layout
 
-// const WiP = styled.div`
-//   position: fixed;
-//   bottom: 0;
-//   right: 0;
-//   opacity: .2;
-//   font-size: clamp(7rem, 3vw, 15rem);
-//   z-index: 10;
-//   pointer-events: none;
-// `
+const Container = styled.main`
+  background-color: ${props => props.isDark ? props.theme.bgColorDark : props.theme.bgColor};
+`
 const Main = styled.main`
-  background-color: ${props => props.theme.bgColor};
 `
