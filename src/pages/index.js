@@ -2,12 +2,12 @@ import React, {useEffect} from "react"
 
 import Seo from "../components/Seo"
 import Layout from "../components/Layout";
-import WhoAmI from "../components/WhoAmI";
-import Hero from "../components/Hero";
 import {graphql} from "gatsby";
-import styled, {keyframes} from "styled-components"
 import Aos from "aos";
-import BlogCard from "../components/BlogCard";
+import FeaturedPost from "../components/FeaturedPost";
+import NetflixSlider from "../components/NetflixSlider";
+import styled from "styled-components"
+import {containsHashtags} from "../components/blog/Hashtags";
 
 const Index = ({data}) => {
 
@@ -15,45 +15,52 @@ const Index = ({data}) => {
         Aos.init({})
     }, [])
 
+    const posts = data.allMdx.edges
+    const featured = posts[0]
+    const latest = posts.slice(1, 14)
+    const caterina = [...posts].filter(post => containsHashtags(post, 'caterina sforza')).reverse()
+    const food = [...posts].filter(post => containsHashtags(post, 'food', 'coffee', 'diet')).reverse()
+    const mindfulness = [...posts].filter(post => containsHashtags(post, 'mindfulness')).sort(() => Math.random() - 0.5).slice(0, 15)
+    const randomized = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
+    const chrono = [...posts].reverse()
+
     return (
-        <Layout>
-            <Seo title="Home"/>
-            <Hero/>
-            <BlogCardsContainer>
-
-                <BlogCardsHeading data-aos="flip-up"
-                                  data-aos-delay="500"
-                                  data-aos-duration="1500"
-                                  data-aos-easing="ease-in-sine">
-                    Latest blog posts
-                </BlogCardsHeading>
-
-                <BlogCards data-aos="fade-left"
-                           data-aos-delay="500"
-                           data-aos-duration="1500"
-                           data-aos-easing="ease-out-cubic">
-
-                    {data.allMdx.edges.map((edge, index) => {
-                        const fm = edge.node.frontmatter
-                        return (
-                            <BlogCard key={fm.path}
-                                      cardImage={fm.cardImage}
-                                      title={fm.title}
-                                      subTitle={fm.subTitle}
-                                      date={fm.date}
-                                      path={fm.path}
-                                      onHover={fm.onHover}
-                                      index={index}
-                                      data-aos="fade-left"
-                                      data-aos-delay="90"
-                                      data-aos-duration="1000"
-                            />
-                        )
-                    })}
-                </BlogCards>
-            </BlogCardsContainer>
-            <WhoAmI/>
-            {/*<Email/>*/}
+        <Layout isDark={true}>
+            <Seo title="Gianluca Belvisi 🦄"/>
+            <FeaturedPost post={featured}/>
+            <Sliders>
+                <Fader/>
+                <NetflixSlider
+                    title="Latest posts"
+                    subtitle="The more recent they are, the better written"
+                    posts={latest}
+                />
+                <NetflixSlider
+                    title="On Caterina Sforza"
+                    subtitle="This pentalogy is quite possibly the piece of writing I'm the most proud of"
+                    posts={caterina}
+                />
+                <NetflixSlider
+                    title="Because you like food"
+                    subtitle="We all do"
+                    posts={food}
+                />
+                <NetflixSlider
+                    title="You seem to be into mindfulness"
+                    subtitle="If you are one with Chaos"
+                    posts={mindfulness}
+                />
+                <NetflixSlider
+                    title="Random posts"
+                    subtitle="If you are one with Chaos"
+                    posts={randomized}
+                />
+                <NetflixSlider
+                    title="Chronological Order"
+                    subtitle="For the stalker type"
+                    posts={chrono}
+                />
+            </Sliders>
         </Layout>
 
     )
@@ -61,78 +68,30 @@ const Index = ({data}) => {
 
 export default Index
 
-const BlogCardsContainer = styled.div`
+const Sliders = styled.div`
+  margin-bottom: 4rem;
+  position: relative;
+`
+const Fader = styled.div`
   position: absolute;
-  bottom: 0;
-  padding: 5rem calc((100vw - 1300px) / 2);
-  color: ${props => props.theme.textColor};
+  top: -4rem;
   width: 100%;
-  z-index: 10;
-  
-  @media screen and (max-height: 1000px) {
-    padding-bottom: 1rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 0;
-    margin: 0;
-  }
-
+  height: 5rem;
+  background: linear-gradient(180deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, .2) 20%,
+  rgba(0, 0, 0, .4) 40%,
+  rgb(19, 19, 19) 100%
+  );
 `
 
-const BlogCardsHeading = styled.h2`
-  font-size: clamp(1.2rem, 5vw, 4rem);
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-  opacity: .5;
-
-  @media screen and (max-height: 1000px) {
-    margin-bottom: 0.5rem;
-  }
-`
-
-const fadeLeft = keyframes`
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
-const BlogCards = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  justify-items: center;
-  padding: 0 2rem;
-  //animation: 1s ease-in-out 0s 1 ${fadeLeft};
-  
-  @media screen and (max-width: 1100px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 499px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 75%;
-    height: auto;
-    font-size: .8rem;
-    grid-gap: 1rem;
-  }
-  @media screen and (max-width: 499px) {
-    width: 85%;
-  }
-`
 
 export const pageQuery = graphql`
-query BlogCardsQuery {
+query BlogCardsQuery2 {
   allMdx(
         sort: {fields: frontmatter___date, order: DESC}, 
         filter: {isFuture: {eq: false}, isHidden: {eq: false}},
-        skip: 0, 
-        limit: 3,
+        skip: 0 
     ) {
     edges {
       node {
@@ -142,7 +101,8 @@ query BlogCardsQuery {
           subTitle
           date(formatString: "MMMM DD, YYYY")
           author  
-          onHover  
+          onHover
+          hashtags  
           cardImage {
             childImageSharp {
                 gatsbyImageData(
@@ -150,6 +110,14 @@ query BlogCardsQuery {
                 )
             }
           }
+          featureImage {
+            childImageSharp {
+                gatsbyImageData(
+                    formats: [AUTO, WEBP, AVIF]
+                )
+            }
+          }
+          
         }
       }
     }

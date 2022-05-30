@@ -8,7 +8,7 @@ cardImage: "cover_small.jpg"
 featureImage: "cover_featured.jpg"
 onHover: "🍿&🥶"
 hashtags: "this blog"
-hidden: true
+hidden: false
 ---
 
 import YouTube from "../../../components/blog/YouTube";
@@ -16,9 +16,9 @@ import LinkButton from "../../../components/Button";
 import Poll from "../../../components/blog/Poll";
 import {FigureLabel, Pony} from "../../../components/blog/Text";
 
-I've been let know that my website is -- and I quote -- esthetically challenging, unpleasant to look at, uncanny valley-y. And don't get me wrong, it's ok for an **amateurish** work, but it's kinda frustrating, because it could have been good with just a little more effort.
+I've been let know that my blog is -- and I quote -- esthetically challenging, unpleasant to look at, and uncanny valley-y. Don't get me wrong, it's ok for an **amateurish** work, but it's kinda frustrating, because it could have been good with just a little more effort.
 
-Now, in front of this **harsh** but well worded feedback -- so rare these days! -- my only thought was:
+Now, in front of such **harsh** but well worded feedback -- so rare these days! -- my only thought was:
 
 <Pony>I need to cut ties with this person. 🦄</Pony>
 
@@ -36,7 +36,7 @@ When **change** is warranted, one must understand why that is, otherwise stuff w
 
 What is *not* working with my homepage?
 
-For starters, it seems to be coming straight from **2003**, what with that huge six seconds holiday video on repeat that doesn't even work on mobile, I suspect for battery reasons.
+For starters, it seems to be coming directly from **2003**, what with that huge six seconds holiday video on repeat that doesn't even work on mobile, I suspect for battery reasons.
 
 It has cool animations, and it does the job of giving you a glimpse on the most recent content, but are you feeling **compelled** to read a post?
 
@@ -52,11 +52,11 @@ It's not a rhetorical question. Please answer...
 
 With this in mind, what should the focus be? Why do people come here? Why would they do choose this website instead of literally anything else? Why, the **content** of course!
 
-The witty posts uncovering stories from [remote internet corners](r/place), the accounts of (in)famous [Renaissance heroes](caterina-sforza-1), the invaluable [investing advice](https://www.youtube.com/watch?v=dQw4w9WgXcQ). All well curated and written, with a self-deprecating sense of humor that comes across as cute, albeit tiresome at times.
+The witty posts uncovering stories from [remote internet corners](/r/place), the accounts of (in)famous [Renaissance heroes](/caterina-sforza-1), the invaluable [investing advice](https://www.youtube.com/watch?v=dQw4w9WgXcQ). All well curated and written, with a self-deprecating sense of humor that comes across as cute, albeit tiresome at times.
 
 And I'm not saying this, I'm just **quoting** your dms, or at least the parts that I can read without blushing, you silly pervs. 🙈
 
-Ok, cool. Content. I can subscribe to that! Looking at online venues where content is king 👑, my conclusion is that I need to turn my blog into **Netflix**. Only, you know, with good content!
+Ok, cool. Content. Looking at online venues where content is king 👑, my conclusion is that I need to turn my blog into **Netflix**. Only, you know, with good content!
 
 So let's take a peek at the streaming service...
 
@@ -113,7 +113,7 @@ const randomized    = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
 const chronological = [...posts].reverse()
 ```
 
-This only took me a glass of wine to complete, but only because, when I created my blog, I was forward-looking enough to implemented **hashtag** support even if not needed at the time. Amateurish my ass.
+This only took me a glass of wine to complete, but only because when I created my blog I was forward-looking enough to implemented **hashtag** support even if not needed at the time. Amateurish my ass.
 
 Now that we have the **CoNtEnT**, let's put it to use on an actual page. Based on the blueprint above, this is all there is to be...
 
@@ -165,7 +165,7 @@ Speaking of which, we need to talk about the button.
 
 ### We need to talk about the button
 
-The button I created for version 1.0 simply won't do with the new style. It's too noisy, too cringe, too unnecessary in the way it expands when hovering it. What was I thinking? Why didn't you say anything? And why did I cut ties with those that did?
+The button I created for version 1.0 simply won't do with the new style. It's too noisy, too unnecessary in the way it expands when hovering it. What was I thinking? Why didn't you say anything? And why did I cut ties with those who did?
 
 <p></p>
 
@@ -191,6 +191,7 @@ Here's the final layout. It's a bit of a **doozy**, but you are not dumb, silly 
 
 ```jsx copy
 <Container>
+
     <Header>
         <TitleWrapper>
             <Title data-tip={subtitle} data-place="top">
@@ -205,7 +206,9 @@ Here's the final layout. It's a bit of a **doozy**, but you are not dumb, silly 
             })}
         </ProgressBar>
     </Header>
+
     <SliderWrapper>
+
         <LeftHandle
             disabled={sliderIndex <= 0}
             onClick={e => setSliderIndex(sliderIndex - 1)}>
@@ -213,6 +216,7 @@ Here's the final layout. It's a bit of a **doozy**, but you are not dumb, silly 
                 <BsChevronCompactLeft/>
             </Arrow>
         </LeftHandle>
+
         <Slider index={sliderIndex}>
             {posts.map((post, index) => {
                 const fm = post.node.frontmatter
@@ -233,6 +237,7 @@ Here's the final layout. It's a bit of a **doozy**, but you are not dumb, silly 
                 )
             })}
         </Slider>
+
         <RightHandle
             disabled={sliderIndex >= calculatePages() - 1}
             onClick={e => setSliderIndex(sliderIndex + 1)}>
@@ -242,6 +247,7 @@ Here's the final layout. It's a bit of a **doozy**, but you are not dumb, silly 
         </RightHandle>
 
     </SliderWrapper>
+
 </Container>
 ```
 
@@ -253,7 +259,7 @@ Let's tackle it bit by bit.
 
 ![](slider_header.jpg)
 
-We have a title on the left, and a subtitle that I choose to render as **tooltip** in order to reduce visual overload. On the right, a progress bar reports the number of pages and the one you are currently sitting on.
+I have a title on the left, and a subtitle that I choose to render as **tooltip** in order to reduce visual overload. On the right, a progress bar reports the number of pages and the one you are currently sitting on.
 
 In order to render the progress bar, I need to know the number of pages. How to calculate it? **Easy-peasy**:
 
@@ -263,7 +269,7 @@ Math.ceil(posts.length / itemsPerScreen(width))
 
 But how many items should I display on screen? Well, it depends on its **size**. Let's say 5 items for a width of 1200 pixels and above, then progressively fewer, with a minimum of 2 if you are in the bathroom looking at your phone.
 
-But this cannot be a static assignment, because you **assholes** continuously change the screen size, which means that I have to subscribe to the window resize event and update my number of items every time you mess with my layout.
+But this cannot be a static assignment, because you **assholes** continuously change the screen shape, which means that I have to subscribe to the window resize event and update my number of items every time you mess with my layout.
 
 ### The Slider Body
 
@@ -286,8 +292,8 @@ Here is the **final result**. Notice how smooth is the sliding effect! Notice ho
 
 <YouTube source="KpkUzVVvosk"/>
 
-For the whole experience, you can visit the [new index page](gianlucabelvisi.com), unless you are coming from there, in which case you got the ending spoiled, and I feel sorry for you. 😞
+For the whole experience, you can visit the [new index page](/), unless you are coming from there, in which case you got the ending spoiled, and I feel sorry for you. 😞
 
 I'm sure different browsers and devices will lead to bugs. Please report them in the comments, and I will **Paypal** you a reward. <small>(Might be a lie.)</small>
 
-In case you prefer the old page, it's still there at [index-cringe](index-cringe), but know that I'll be monitoring ip addresses and cut ties with whoever visits it.
+In case you prefer the old page, it's still there at [index-cringe](/index-cringe), but know that I'll be monitoring ip addresses and cut ties with whoever visits it.

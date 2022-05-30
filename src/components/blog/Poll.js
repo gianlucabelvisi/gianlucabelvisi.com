@@ -124,11 +124,12 @@ const Answers = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
 `
 const AnswerContainer = styled.div`
   height: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `
 const Dot = styled(GoPrimitiveDot)`
   margin-left: 1rem;
@@ -143,7 +144,7 @@ const Answer = styled.h4`
   padding-right: 5rem;
 
   &:hover {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 `
 const Results = styled.div`
