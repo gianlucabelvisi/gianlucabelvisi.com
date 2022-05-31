@@ -26,7 +26,7 @@ const Index = ({data}) => {
 
     return (
         <Layout isDark={true}>
-            <Seo title="Gianluca Belvisi 🦄"/>
+            <Seo title="Gianluca Belvisi 🦄" isDark={true}/>
             <FeaturedPost post={featured}/>
             <Sliders>
                 <Fader/>
@@ -73,6 +73,7 @@ const Sliders = styled.div`
   position: relative;
 `
 const Fader = styled.div`
+  pointer-events: none;
   position: absolute;
   top: -4rem;
   width: 100%;

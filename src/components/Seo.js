@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, isDark = false }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -69,9 +70,15 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <Background isDark={isDark} />
+    </Helmet>
   )
 }
+
+const Background = styled.div`
+  background-color: ${({isDark}) => (isDark? "#131313" : "#13529")};
+`
 
 Seo.defaultProps = {
   lang: `en`,

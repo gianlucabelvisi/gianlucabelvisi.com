@@ -9,6 +9,7 @@ let Theme = {
     header: {
         height: "80px",
         bgColor: "var(--secondary-color)",
+        bgColorDark: "var(--black)",
         bgColorHome: "var(--secondary-color)",
     },
     card: {
