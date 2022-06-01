@@ -99,7 +99,7 @@ const Container = styled.div`
   margin: 0;
   box-sizing: border-box;
 
-  --handle-width: 2em;
+  --handle-width: 2.5em;
   --slider-padding: 2rem;
   --card-gap: .25rem;
   --items-per-screen: 5;
@@ -163,7 +163,7 @@ const Slider = styled.div`
   padding: 0 var(--card-gap);
 `
 const Arrow = styled.div`
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
 `
 const Handle = styled.button`
