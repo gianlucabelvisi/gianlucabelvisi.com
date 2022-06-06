@@ -107,11 +107,10 @@ const Header = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
-  padding: 0 calc(var(--card-gap) * 2 + var(--handle-width));
+  padding: 0 var(--slider-padding);
   color: ${props => props.theme.white};
   margin-top: 1rem;
   margin-bottom: .5rem;
-  gap: 1rem;
 `
 const Title = styled.h2`
   position: relative;
