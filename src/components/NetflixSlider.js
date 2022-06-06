@@ -61,8 +61,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                         {posts.map((post, index) => {
                             const fm = post.node.frontmatter
                             let itemsPerScreen = calculateItemsPerScreen(width);
-                            // console.log("items per screen", itemsPerScreen)
-                            let isLast = index + 1 === itemsPerScreen
+                            let isLast = (index + 1) % itemsPerScreen === 0
                             return (
                                 <CardContainer key={fm.path} itemsPerScreen={itemsPerScreen} isLast={isLast}>
                                     <NetflixCard
@@ -101,7 +100,7 @@ const Container = styled.div`
 
   --handle-width: 2.5em;
   --slider-padding: 2rem;
-  --card-gap: .25rem;
+  --card-gap: 0;
   --items-per-screen: 5;
 `
 const Header = styled.div`
@@ -151,7 +150,6 @@ const SliderWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  overflow-x: clip;
 `
 const Slider = styled.div`
   display: flex;
@@ -202,7 +200,6 @@ const RightHandle = styled(Handle)`
 const CardContainer = styled.div`
   --items-per-screen: calc(100% / ${props => props.itemsPerScreen});
   flex: 0 0 var(--items-per-screen);
-  border-radius: .5rem;
   min-width: var(--items-per-screen);
   width: var(--items-per-screen);
   aspect-ratio: 5 / 4;

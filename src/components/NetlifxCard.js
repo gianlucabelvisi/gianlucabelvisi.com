@@ -30,10 +30,13 @@ const NetflixCard = ({cardImage, title, subTitle, path, date, onHover, index}) =
 export default NetflixCard;
 
 const Image = styled(GatsbyImage)`
-  width: 100%;
+  --gap: 4px;
+  
+  width: calc(100% - var(--gap));
   height: 100%;
   background-size: inherit;
-  overflow: visible;
+  border-radius: 4px;
+  transition: width 1s ease;
 `
 const Header = styled.div`
   color: ${props => props.theme.white};
@@ -121,7 +124,9 @@ const Card = styled.div`
       transition: padding-top 1s ease;
       padding-top: 1rem;
     }
-
+    ${Image} {
+      width: 100%;
+    }
   }
   &:hover {
     ${Content} {
