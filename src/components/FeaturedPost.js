@@ -58,10 +58,11 @@ const Overlay = styled.div`
   padding: 1rem;
   border-radius: 12px;
   width: 60%;
-  background: linear-gradient(hsl(0 0% 0% / .8),
-  hsl(0 0% 0% / .7) 60%,
-  hsl(0 0% 0% / .6) 40%,
-  hsl(0 0% 0% / .2));
+  background: linear-gradient(
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0.5) 35%,
+  rgba(0, 0, 0, 0.1) 100%
+  );
 
   transition: all 500ms ease;
 
@@ -95,7 +96,7 @@ const SubTitle = styled.div`
   font-size: var(--font-size-subtitle);
   margin-top: 2rem;
   margin-bottom: 2rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
 `
 const Button = styled(NetflixButton)`
   margin-top: 2rem;
