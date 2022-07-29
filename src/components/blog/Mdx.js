@@ -27,6 +27,9 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
+                tr: TR,
+                th: TH,
+                td: TD,
                 pre: props => <Code {...props} />,
                 wrapper: ({ children }) => <>{children}</>,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
@@ -84,4 +87,11 @@ const A = styled.a`
   }
 
   transition: color 0.5s ease-in-out;
+`
+
+const TR = styled.tr`
+`
+const TH = styled.th`
+`
+const TD = styled.td`
 `
