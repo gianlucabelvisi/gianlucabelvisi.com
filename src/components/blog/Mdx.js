@@ -93,7 +93,11 @@ const A = styled.a`
 `
 
 const Table = styled.table`
-  border-spacing: 4px 7px;  
+  border-spacing: 4px 7px;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
 `
 const THead = styled.thead`
   background-color: ${props => props.theme.accentColor};
