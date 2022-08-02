@@ -12,7 +12,14 @@ const Nsfw = ({children}) => {
     return (
         <Wrapper>
             <Cover onClick={e => toggleVisibility()} isVisible={isVisible}>
-                <Warning>NSFW!</Warning>
+                <Warning>
+                    <Title>
+                        NSFW!
+                    </Title>
+                    <Subtitle>
+                        Click at your own peril!
+                    </Subtitle>
+                </Warning>
             </Cover>
 
             <Content>
@@ -26,7 +33,6 @@ const Wrapper = styled.div`
   position: relative;
   margin-bottom: 1rem;
 `
-
 const Cover = styled.label`
   position: absolute;
   cursor: pointer;
@@ -42,11 +48,17 @@ const Warning = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  color: ${props => props.theme.button.bgColor};
+  transform: translate(-50%, -50%);
   font-size: 2rem;
 `
 const Content = styled.div`
   padding: 1rem;
+`
+const Title = styled.div`
+  color: ${props => props.theme.button.bgColor};
+`
+const Subtitle = styled.div`
+  color: ${props => props.theme.button.bgColor};
 `
 
 export default Nsfw;
