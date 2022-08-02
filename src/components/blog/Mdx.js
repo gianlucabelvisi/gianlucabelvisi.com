@@ -27,8 +27,14 @@ const Mdx = ({body}) => {
                 h3: H3,
                 h4: H4,
                 a: A,
+                table: Table,
+                tr: TR,
+                thead: THead,
+                tbody: TBody,
+                th: TH,
+                td: TD,
                 pre: props => <Code {...props} />,
-                wrapper: ({ children }) => <>{children}</>,
+                wrapper: ({children}) => <>{children}</>,
                 Spoiler, YouTube, YouTubeAudio, Song, Question, Break, Link, Quote,
                 FigureLabel, TextBox, NewLine, Indented, ThreeColumns,
                 Col1, Col23, AiTwotonePushpin, ResponsiveEmbed
@@ -84,4 +90,34 @@ const A = styled.a`
   }
 
   transition: color 0.5s ease-in-out;
+`
+
+const Table = styled.table`
+  border-spacing: 4px 7px;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+`
+const THead = styled.thead`
+  background-color: ${props => props.theme.accentColor};
+  color: white;
+`
+const TBody = styled.tbody`
+`
+const TR = styled.tr`
+  background-color: rgba(0, 0, 0, 0.05);
+  &:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+`
+const TH = styled.th`
+  text-transform: uppercase;
+  padding: .25em .5em;
+  text-align: center;
+`
+const TD = styled.td`
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-block: 0.7rem;
 `

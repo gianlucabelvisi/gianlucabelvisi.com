@@ -4,7 +4,7 @@ let Theme = {
     bgColorDark: "var(--black)",
     textColor: "white",
     pTextColor: "black",
-    borderRadius: "",
+    borderRadius: "10px",
     accentColor: "var(--primary-color-lighter)",
     header: {
         height: "80px",

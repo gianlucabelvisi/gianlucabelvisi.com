@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ReactPlayer from "react-player/lazy";
 import styled from "styled-components"
 import {FaPlay, FaPause} from "react-icons/fa";
+import {GiSpeaker} from "react-icons/gi";
 
 
 const YouTubeAudio = ({url}) => {
@@ -76,9 +77,29 @@ const Icon = styled.div`
 const Warning = styled.p`
   width: 50%;
   display: none;
-  @media (pointer:none), (pointer:coarse) {
+  @media (pointer: none), (pointer: coarse) {
     display: block;
   }
 `
 
 export default YouTubeAudio;
+
+
+const Listen = ({url}) => {
+    return (
+        <ListenWrapper>
+            <MiniLink href={url} target="_blank"><GiSpeaker/></MiniLink>
+        </ListenWrapper>
+    )
+}
+
+const ListenWrapper = styled.span`
+    margin-left: 0.5rem;
+`
+const MiniLink = styled.a`
+  vertical-align: middle;
+  font-size: 1.2rem;
+  
+
+`
+export {Listen}
