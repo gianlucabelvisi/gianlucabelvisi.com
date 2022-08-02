@@ -41,8 +41,31 @@ export const Col1 = styled.div`
   margin-right: 1rem;
   background: url(${(props) => props.source || ""});
 `
+export const Col123 = styled.div`
+  grid-column: 1 / 4;
+  width: 100%;
+  position: relative;
+  min-width: 9rem;
+  margin-right: 1rem;
+  background: url(${(props) => props.source || ""});
+`
+export const Col23 = styled.div`
+  grid-column: 2 / 4;
+  width: 100%;
+  position: relative;
+`
+
 export const BoxPic = styled(Col1)`
   min-height: 9rem;
+  @media screen and (max-width: 500px) {
+    background-size: cover;
+    min-height: 16rem;
+  }
+`
+export const Pic = styled(Col123)`
+  min-height: 19rem;
+  width: 100%;
+  height: 100%;
   @media screen and (max-width: 500px) {
     background-size: cover;
     min-height: 16rem;
@@ -92,11 +115,7 @@ export const Truth = styled(BoxPic)`
   background: url(${TruthPic}) center no-repeat;
   background-size: contain;
 `
-export const Col23 = styled.div`
-  grid-column: 2 / 4;
-  width: 100%;
-  position: relative;
-`
+
 
 
 

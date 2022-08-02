@@ -88,18 +88,18 @@ export default YouTubeAudio;
 const Listen = ({url}) => {
     return (
         <ListenWrapper>
-            <MiniLink href={url} target="_blank"><GiSpeaker/></MiniLink>
+            <MiniLink href={url} target="_blank"><Speaker/></MiniLink>
         </ListenWrapper>
     )
 }
-
 const ListenWrapper = styled.span`
     margin-left: 0.5rem;
 `
 const MiniLink = styled.a`
   vertical-align: middle;
   font-size: 1.2rem;
-  
-
+`
+const Speaker = styled(GiSpeaker)`
+    color: ${props => props.theme.accentColor};
 `
 export {Listen}
