@@ -25,6 +25,7 @@ export default ThreeColumns;
 const Grid3Col = styled.div`
   display: grid;
   width: 100%;
+  gap: .7rem;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   @media screen and (max-width: 500px) {

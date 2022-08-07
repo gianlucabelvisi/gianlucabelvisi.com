@@ -5,13 +5,13 @@ import {graphql} from 'gatsby'
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {Disqus} from 'gatsby-plugin-disqus';
-import Newsletter from "../components/Newsletter";
 import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
 import ViewCounter from "../components/ViewCounter";
 import Reactions from "../components/Reactions";
+import MailchimpFormContainer from "../components/MailChimp";
 
 const BlogTemplate = ({data}) => {
 
@@ -57,10 +57,10 @@ const BlogTemplate = ({data}) => {
                             by <strong>{frontmatter.author}</strong>
                         </Author>
                         <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
-                        <Subscribe>
-                            <Newsletter/>
-                        </Subscribe>
                     </BlogActions>
+
+                    <MailchimpFormContainer/>
+
 
                     <Comments data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
                         <Disqus
@@ -74,6 +74,7 @@ const BlogTemplate = ({data}) => {
                             }}
                         />
                     </Comments>
+
 
                 </Content>
             </Wrapper>
@@ -173,29 +174,16 @@ const BlogActions = styled.div`
 const Author = styled.div`
   flex-basis: 40%;
   flex-grow: 1;
-  //background-color: lightcoral;
 `
 const MorePosts = styled(Link)`
   flex-basis: 20%;
   flex-grow: 1;
   color: ${props => props.theme.post.link.color};
-  text-align: center;
-  //text-decoration: none;
-  //background-color: lightcyan;
+  text-align: end;
   @media screen and (max-width: 550px) {
     text-align: left;
   }
 `
-const Subscribe = styled.div`
-  flex-basis: 40%;
-  flex-grow: 1;
-  text-align: right;
-  //background-color: lightblue;
-  @media screen and (max-width: 550px) {
-    text-align: left;
-  }
-`
-
 export const pageQuery = graphql`
     query BlogPostQuery($id: String!) {
         mdx(id: {eq: $id}) {
