@@ -160,9 +160,15 @@ const Post = styled.div`
 const Comments = styled.div`
 `
 const PostFooter = styled.div`
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    justify-items: start;
+    gap: 0.7rem;
+  }
 `
-
 const BlogActions = styled.div`
   margin-top: 2rem;
   display: flex;
@@ -204,7 +210,7 @@ export const pageQuery = graphql`
                 featureImage {
                     childImageSharp {
                         gatsbyImageData(
-                            formats: [AUTO, WEBP, AVIF], 
+                            formats: [AUTO, WEBP, AVIF],
                             quality: 100
                         )
                     }
