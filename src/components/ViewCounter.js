@@ -30,12 +30,8 @@ const ViewCounter = ({id}) => {
 };
 
 const Wrapper = styled.small`
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: flex-end;
+  display: inline-block;
+  text-align: center;
 `
 
 export default ViewCounter;

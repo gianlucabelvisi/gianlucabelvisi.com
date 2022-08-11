@@ -163,7 +163,10 @@ const PostFooter = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   @media screen and (max-width: 550px) {
+    display: block;
     flex-direction: column;
     justify-items: start;
     gap: 0.7rem;

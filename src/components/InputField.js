@@ -57,7 +57,6 @@ const InputField = props => {
 
 const Label = styled.label`
   display: inline-block;
-  margin: 10px 0;
 `
 const Input = styled.input`
   padding-left: .3rem;
@@ -67,7 +66,6 @@ const Input = styled.input`
   border: 1px solid #484848;
 `
 const Submit = styled.input`
-  margin-top: 1rem;
   height: 2rem;
   padding-left: 10px;
   padding-right: 10px;
@@ -88,6 +86,5 @@ const Row = styled.div`
     padding-right: 0;
   }
 `
-
 
 export default React.memo(InputField);

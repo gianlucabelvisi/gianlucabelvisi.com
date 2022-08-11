@@ -15,6 +15,7 @@ const Reactions = ({id}) => {
 
 const Wrapper = styled.div`
   display: flex;
+  margin-bottom: .5rem;
 `
 
 export default Reactions;
