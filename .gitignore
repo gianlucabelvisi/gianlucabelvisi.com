@@ -61,26 +61,13 @@ public
 # Mac files
 .DS_Store
 
+# Photoshop
+*.psd
+
 # Yarn
 yarn-error.log
 .pnp/
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-/src/posts/2021/sforza-1/map.psd
-/src/posts/2021/sforza-3/cover.psd
-/src/posts/2021/sforza-4/cover.psd
-/src/posts/2021/sforza-4/doge.psd
-/src/posts/2021/king/games.psd
-/src/posts/2021/impostor/imposter.psd
-/src/posts/2021/impostor/imposter2.psd
-/src/posts/2021/impostor/ezio.psd
-/src/posts/2022/sforza-5/cover.psd
 /firebase.json
-/src/posts/2022/investing/cover.psd
-/src/posts/2022/investing/social.png
-/src/posts/2022/investing/tops.psd
-/src/posts/2022/habits/slap.psd
-/src/posts/2022/habits/croissants-orig.jpg
-/src/posts/2022/films/cover-orig.png
-/src/posts/2022/netflix/cover_orig.png
