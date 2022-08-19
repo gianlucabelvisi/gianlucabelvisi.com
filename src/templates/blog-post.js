@@ -47,7 +47,7 @@ const BlogTemplate = ({data}) => {
                         <Mdx body={data.mdx.body}/>
                     </Post>
 
-                    <PostFooter data-aos="fade-up" data-aos-delay="30" data-aos-duration="400">
+                    <PostFooter data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
                         <Reactions id={frontmatter.path}/>
                         <ViewCounter id={frontmatter.path}/>
                     </PostFooter>
@@ -59,10 +59,12 @@ const BlogTemplate = ({data}) => {
                         <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
                     </BlogActions>
 
-                    <MailchimpFormContainer/>
+                    <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
+                        <MailchimpFormContainer />
+                    </div>
 
 
-                    <Comments data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                    <Comments data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
                         <Disqus
                             style={{
                                 marginTop: "3rem"
