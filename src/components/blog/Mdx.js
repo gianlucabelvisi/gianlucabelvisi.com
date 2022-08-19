@@ -98,6 +98,8 @@ const Table = styled.table`
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
+  width: 100%;
+  text-align: center;
 `
 const THead = styled.thead`
   background-color: ${props => props.theme.accentColor};
