@@ -72,8 +72,6 @@ const Ongoing = styled.div`
 `
 const SeenOn = styled.div`
 `
-const Starring = styled.div`
-`
 const Emoji = styled.div`
 `
 const Header = styled.div`
