@@ -36,7 +36,6 @@ export default Layout
 
 const Container = styled.main`
   background-color: ${props => props.isDark ? props.theme.bgColorDark : props.theme.bgColor};
-  overflow: hidden;
 `
 const Main = styled.main`
 `
