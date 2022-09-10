@@ -121,6 +121,7 @@ const Title = styled.h2`
 `
 const TitleWrapper = styled.div`
   display: inline-block;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 `
 const ProgressBar = styled.div`
   position: relative;

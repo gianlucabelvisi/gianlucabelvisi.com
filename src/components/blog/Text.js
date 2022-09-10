@@ -125,6 +125,7 @@ export const Indented = ({children}) => {
             width: "100%",
             paddingLeft: "2rem",
             paddingRight: "2rem",
+            marginTop: "2rem",
             marginBottom: "2rem",
             lineHeight: "1.6rem"
         }}>
