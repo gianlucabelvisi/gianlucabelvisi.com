@@ -47,7 +47,7 @@ const Index = ({data}) => {
                 />
                 <NetflixSlider
                     title="You seem to be into mindfulness"
-                    subtitle="If you are one with Chaos"
+                    subtitle="If you are one with Calm"
                     posts={mindfulness}
                 />
                 <NetflixSlider
