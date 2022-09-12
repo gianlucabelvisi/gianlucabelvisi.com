@@ -45,19 +45,21 @@ const Wrapper = styled.div`
   --font-size-subtitle: clamp(0.8rem, 3vw, 1.5rem);
 `
 const Background = styled(GatsbyImage)`
-  width: 100%;
   height: 100%;
   background-size: cover;
   background-blend-mode: darken;
+  background-position: left;
 `
 const Overlay = styled.div`
   position: absolute;
-  top: 50%;
+  
+  top: 40%;
   right: 0;
   color: ${props => props.theme.white};
   padding: 1rem;
   border-radius: 12px;
   width: 60%;
+  
   background: linear-gradient(
   rgba(0, 0, 0, 0.5) 0%,
   rgba(0, 0, 0, 0.5) 35%,
@@ -70,7 +72,11 @@ const Overlay = styled.div`
   &:focus-within {
     transform: scale(1.05);
   }
-
+  
+  @media screen and (max-width: 1200px) {
+    top: 30%;
+    width: 50%;
+  }
   @media screen and (max-width: 1000px) {
     top: 35%;
     width: 70%;
