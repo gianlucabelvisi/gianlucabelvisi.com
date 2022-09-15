@@ -5,45 +5,23 @@ const TvCard = ({seenOn, seasons, ongoing, emoji}) => {
     return (
         <Wrapper>
             <Content>
-
                 <SeenOn>
-                    <Header>
-                        Seen on
-                    </Header>
-                    <Footer>
-                        {seenOn}
-                    </Footer>
+                    <Header>Seen on</Header>
+                    <Footer>{seenOn}</Footer>
                 </SeenOn>
-
                 <Seasons>
-                    <Header>
-                        Seasons
-                    </Header>
-                    <Footer>
-                        {seasons}
-                    </Footer>
+                    <Header>Seasons</Header>
+                    <Footer>{seasons}</Footer>
                 </Seasons>
-
                 <Ongoing>
-                    <Header>
-                        Ongoing
-                    </Header>
-                    <Footer>
-                        {ongoing}
-                    </Footer>
+                    <Header>Ongoing</Header>
+                    <Footer>{ongoing}</Footer>
                 </Ongoing>
-
                 <Emoji>
-                    <Header>
-                        Emoji
-                    </Header>
-                    <Footer>
-                        {emoji}
-                    </Footer>
+                    <Header>Emoji</Header>
+                    <Footer>{emoji}</Footer>
                 </Emoji>
-
             </Content>
-
         </Wrapper>
     );
 };
@@ -59,27 +37,42 @@ const Wrapper = styled.div`
 `
 const Content = styled.div`
   display: flex;
-  gap: 1rem;
   justify-content: space-between;
   width: 100%;
+  flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: 410px) {
+    & > div {
+      flex: 1 0 50%;
+      margin-bottom: 1rem;
+    }
+
+    & > div:nth-child(2) {
+      align-items: end;
+    }
+    & > div:nth-child(4) {
+      align-items: end;
+    }
+  }
 `
-const Seasons = styled.div`
+const Item = styled.div`
   display: flex;
   flex-direction: column;
 `
-const Ongoing = styled.div`
+const Seasons = styled(Item)`
 `
-const SeenOn = styled.div`
+const Ongoing = styled(Item)`
 `
-const Emoji = styled.div`
+const SeenOn = styled(Item)`
+`
+const Emoji = styled(Item)`
 `
 const Header = styled.div`
   padding-bottom: .7rem;
   color: ${props => props.theme.accentColor};
   text-transform: uppercase;
   font-weight: bold;
-  
 `
 const Footer = styled.div`
 `
