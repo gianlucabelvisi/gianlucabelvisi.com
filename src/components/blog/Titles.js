@@ -47,6 +47,11 @@ const Icon = styled.div`
   transform: all(0, 0, 0);
   animation: 2s ease-in-out 0s 1 ${Pulse};
   animation-iteration-count: infinite;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 0;
 `
 
 const Shake = keyframes`
