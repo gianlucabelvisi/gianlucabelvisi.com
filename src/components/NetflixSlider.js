@@ -5,6 +5,7 @@ import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import Aos from "aos";
 import Delayed from "./Delayed";
+import {useSwipeable} from "react-swipeable";
 
 const NetflixSlider = ({title, subtitle, posts}) => {
 
@@ -32,6 +33,18 @@ const NetflixSlider = ({title, subtitle, posts}) => {
         return Math.ceil(posts.length / calculateItemsPerScreen(width))
     }
 
+    const swipes = useSwipeable({
+        onSwipedLeft: (eventData) => {
+            if (sliderIndex < calculatePages() - 1)
+                setSliderIndex(sliderIndex + 1)
+        },
+        onSwipedRight: (eventData) => {
+            if (sliderIndex > 0)
+                setSliderIndex(sliderIndex - 1)
+        },
+        preventScrollOnSwipe: true
+    })
+
     return (
         <Delayed>
             <Container>
@@ -49,7 +62,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                         })}
                     </ProgressBar>
                 </Header>
-                <SliderWrapper>
+                <SliderWrapper {...swipes}>
                     <LeftHandle
                         disabled={sliderIndex <= 0}
                         onClick={e => setSliderIndex(sliderIndex - 1)}>
