@@ -33,9 +33,15 @@ const NetflixSlider = ({title, subtitle, posts}) => {
         return Math.ceil(posts.length / calculateItemsPerScreen(width))
     }
 
-    const handlers = useSwipeable({
-        onSwipedLeft: (eventData) => setSliderIndex(sliderIndex + 1),
-        onSwipedRight: (eventData) => setSliderIndex(sliderIndex - 1),
+    const swipes = useSwipeable({
+        onSwipedLeft: (eventData) => {
+            if (sliderIndex < calculatePages() - 1)
+                setSliderIndex(sliderIndex + 1)
+        },
+        onSwipedRight: (eventData) => {
+            if (sliderIndex > 0)
+                setSliderIndex(sliderIndex - 1)
+        },
         preventScrollOnSwipe: true
     })
 
@@ -56,7 +62,7 @@ const NetflixSlider = ({title, subtitle, posts}) => {
                         })}
                     </ProgressBar>
                 </Header>
-                <SliderWrapper {...handlers}>
+                <SliderWrapper {...swipes}>
                     <LeftHandle
                         disabled={sliderIndex <= 0}
                         onClick={e => setSliderIndex(sliderIndex - 1)}>
