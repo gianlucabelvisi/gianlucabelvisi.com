@@ -6,8 +6,8 @@ import Reaction from "./Reaction";
 const Reactions = ({id}) => {
     return (
         <Wrapper>
-            {reactionData.map((item, key) => (
-                <Reaction id={id} item={item} key={key}/>
+            {reactionData.map((item, index) => (
+                <Reaction id={id} item={item} key={index}/>
             ))}
         </Wrapper>
     );

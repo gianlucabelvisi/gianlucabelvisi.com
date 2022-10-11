@@ -3,7 +3,7 @@ import app from 'gatsby-plugin-firebase-v9.0'
 import {getDatabase, ref, runTransaction} from "firebase/database";
 import styled, {keyframes} from "styled-components";
 
-const Reaction = ({id, item, key}) => {
+const Reaction = ({id, item}) => {
 
     const [reaction, setReaction] = useState(0);
 
@@ -36,7 +36,7 @@ const Reaction = ({id, item, key}) => {
     }, [id, item.name]);
 
     return (
-        <div key={key}>
+        <div>
             <EmoteBox data-tip={item.tooltip} data-place="bottom" onClick={e => increaseCount()}>
                 <Emote>
                     <DisplayEmote>
