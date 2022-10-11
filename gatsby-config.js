@@ -48,13 +48,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `music`,
-        path: `${__dirname}/src/assets/music`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
       },
@@ -64,14 +57,6 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-copy-files-enhanced',
-      options: {
-        source: `${__dirname}/src/assets/music`,
-        destination: '/music',
-        purge: false,
       },
     },
     {
