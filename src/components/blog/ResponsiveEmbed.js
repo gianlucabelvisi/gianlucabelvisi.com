@@ -7,7 +7,8 @@ const divStyle = {
     position: 'relative',
     height: 0,
     overflow: 'hidden',
-    maxWidth: '100%'
+    maxWidth: '100%',
+    marginBottom: '1rem'
 }
 
 const iframeStyle = {
