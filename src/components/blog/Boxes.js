@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled, {keyframes} from "styled-components";
 import {BiPlusMedical} from "react-icons/bi";
 
-const TextBox = ({children, title, closeable = false}) => {
+const TextBox = ({children, title, closeable = false, closeButtonCaption = ""}) => {
 
     const [isVisible, setIsVisible] = useState(true)
     const doClose = () => {
@@ -18,6 +18,11 @@ const TextBox = ({children, title, closeable = false}) => {
                 <strong>{title}</strong>
             </Title>
             {children}
+            {closeButtonCaption !== "" &&
+                <CloseButton onClick={ () => doClose() }>
+                    {closeButtonCaption}
+                </CloseButton>
+            }
         </Wrapper>
     );
 };
@@ -43,10 +48,29 @@ const Close = styled(BiPlusMedical)`
     transform: scale(1.2) rotate(45deg);
   }
 `
-
 const Title = styled.div`
   text-transform: uppercase;
   padding-bottom: 1rem;
+`
+const CloseButton = styled.button`
+  background-color: ${props => props.theme.accentColor};
+  height: 3rem;
+  width: 8rem;
+  border: none;
+  color: ${props => props.theme.bgColor};
+  text-decoration: none;
+  padding: .5rem;
+  display: flex;
+  margin: 0 .5rem 0 .5rem;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 300ms ease;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 export default TextBox
