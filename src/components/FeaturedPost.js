@@ -30,7 +30,6 @@ export default FeaturedPost;
 
 const Wrapper = styled.div`
   position: relative;
-  overflow: hidden;
 
   @media screen and (max-width: 700px) {
     height: 30rem;
@@ -46,6 +45,7 @@ const Wrapper = styled.div`
 `
 const Background = styled(GatsbyImage)`
   height: 100%;
+  width: 100%;
   background-size: cover;
   background-blend-mode: darken;
   background-position: left;
@@ -53,12 +53,9 @@ const Background = styled(GatsbyImage)`
 const Overlay = styled.div`
   position: absolute;
   
-  top: 40%;
-  right: 0;
   color: ${props => props.theme.white};
   padding: 1rem;
   border-radius: 12px;
-  width: 60%;
   
   background: linear-gradient(
   rgba(0, 0, 0, 0.5) 0%,
@@ -72,17 +69,27 @@ const Overlay = styled.div`
   &:focus-within {
     transform: scale(1.05);
   }
+  right: 0;
+
+
+  top: 60%;
+  width: 35%;
+
+  @media screen and (max-width: 2000px) {
+    top: 40%;
+    width: 40%;
+  }
   
   @media screen and (max-width: 1200px) {
     top: 30%;
-    width: 50%;
+    width: 40%;
   }
   @media screen and (max-width: 1000px) {
-    top: 35%;
+    top: 30%;
     width: 70%;
   }
   @media screen and (max-width: 800px) {
-    top: 30%;
+    top: 20%;
     width: 80%;
   }
   @media screen and (max-width: 700px) {

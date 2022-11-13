@@ -35,6 +35,7 @@ const Layout = ({children, isDark = false}) => {
 export default Layout
 
 const Container = styled.main`
+  overflow: ${props => props.isDark ? "hidden" : "visible"};
   background-color: ${props => props.isDark ? props.theme.bgColorDark : props.theme.bgColor};
 `
 const Main = styled.main`

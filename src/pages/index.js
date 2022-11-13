@@ -69,9 +69,9 @@ const Index = ({data}) => {
 export default Index
 
 const Sliders = styled.div`
+  margin-top: 2rem;
   margin-bottom: 4rem;
   position: relative;
-  overflow: hidden;
 `
 const Fader = styled.div`
   pointer-events: none;
