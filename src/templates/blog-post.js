@@ -12,6 +12,7 @@ import Mdx from "../components/blog/Mdx";
 import ViewCounter from "../components/ViewCounter";
 import Reactions from "../components/Reactions";
 import MailchimpFormContainer from "../components/MailChimp";
+import {ImQuotesLeft, ImQuotesRight} from "react-icons/im";
 
 const BlogTemplate = ({data}) => {
 
@@ -44,6 +45,9 @@ const BlogTemplate = ({data}) => {
 
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
+                        <SubTitle>
+                            <GlyphLeft/> {frontmatter.subTitle} <GlyphRight/>
+                        </SubTitle>
                         <Mdx body={data.mdx.body}/>
                     </Post>
 
@@ -123,6 +127,12 @@ const FeatureImageWrapper = styled.div`
     grid-column: 2 / span 6;
   }
 `
+const GlyphLeft = styled(ImQuotesLeft)`
+    color: ${props => props.theme.accentColor};;
+`
+const GlyphRight = styled(ImQuotesRight)`
+    color: ${props => props.theme.accentColor};;
+`
 const FeatureImage = styled(GatsbyImage)`
   position: absolute;
   top: 0;
@@ -134,6 +144,12 @@ const FeatureImage = styled(GatsbyImage)`
 `
 const Title = styled.h1`
   margin-bottom: 2rem;
+`
+const SubTitle = styled.div`
+  margin-bottom: 2rem;
+  text-align: left;
+  font-size: larger;
+  //color: ${props => props.theme.accentColor};
 `
 const Content = styled.div`
   position: relative;
