@@ -119,6 +119,13 @@ query BlogCardsQuery2 {
                 )
             }
           }
+          featureImagePhone {
+            childImageSharp {
+                gatsbyImageData(
+                    formats: [AUTO, WEBP, AVIF]
+                )
+            }
+          }
           
         }
       }

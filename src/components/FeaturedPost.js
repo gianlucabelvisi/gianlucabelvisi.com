@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import Aos from "aos";
 import {NetflixButton} from "./NetflixButton";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 
 const FeaturedPost = ({post}) => {
 
@@ -10,10 +11,19 @@ const FeaturedPost = ({post}) => {
         Aos.init({})
     }, [])
 
+    const {width} = useWindowDimensions()
+
+
     const content = post.node.frontmatter
     return (
         <Wrapper data-aos="fade-up" data-aos-duration="1000">
-            <Background image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
+
+            {width > 500 &&
+                <Bg image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
+            }
+            {width <= 500 &&
+                <Bg image={getImage(content.featureImagePhone)} alt="background" data-aos="fade-up"/>
+            }
             <Overlay>
                 <Title>{content.title}</Title>
                 <SubTitle>{content.subTitle}</SubTitle>
@@ -43,25 +53,19 @@ const Wrapper = styled.div`
   --font-size-title: clamp(1rem, 5vw, 3rem);
   --font-size-subtitle: clamp(0.8rem, 3vw, 1.5rem);
 `
-const Background = styled(GatsbyImage)`
+const Bg = styled(GatsbyImage)`
   height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-blend-mode: darken;
-  background-position: left;
 `
 const Overlay = styled.div`
   position: absolute;
-  
+
   color: ${props => props.theme.white};
   padding: 1rem;
   border-radius: 12px;
-  
-  background: linear-gradient(
-  rgba(0, 0, 0, 0.5) 0%,
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%,
   rgba(0, 0, 0, 0.5) 35%,
-  rgba(0, 0, 0, 0.1) 100%
-  );
+  rgba(0, 0, 0, 0.1) 100%);
 
   transition: all 500ms ease;
 
@@ -69,6 +73,7 @@ const Overlay = styled.div`
   &:focus-within {
     transform: scale(1.05);
   }
+
   right: 0;
 
 
@@ -79,7 +84,7 @@ const Overlay = styled.div`
     top: 40%;
     width: 40%;
   }
-  
+
   @media screen and (max-width: 1200px) {
     top: 30%;
     width: 40%;

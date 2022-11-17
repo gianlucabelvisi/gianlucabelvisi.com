@@ -236,6 +236,14 @@ export const pageQuery = graphql`
                         )
                     }
                 }
+                featureImagePhone {
+                    childImageSharp {
+                        gatsbyImageData(
+                            formats: [AUTO, WEBP, AVIF],
+                            quality: 100
+                        )
+                    }
+                }
             }
         }
     }
