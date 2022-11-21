@@ -4,6 +4,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import Aos from "aos";
 import {NetflixButton} from "./NetflixButton";
 import useWindowDimensions from "./hooks/useWindowDimensions";
+import Delayed from "./Delayed";
 
 const FeaturedPost = ({post}) => {
 
@@ -16,23 +17,25 @@ const FeaturedPost = ({post}) => {
 
     const content = post.node.frontmatter
     return (
-        <Wrapper data-aos="fade-up" data-aos-duration="1000">
+        <Delayed>
+            <Wrapper data-aos="fade-up" data-aos-duration="1000">
 
-            {width > 500 &&
-                <Bg image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
-            }
-            {width <= 500 &&
-                <Bg image={getImage(content.featureImagePhone)} alt="background" data-aos="fade-up"/>
-            }
-            <Overlay>
-                <Title>{content.title}</Title>
-                <SubTitle>{content.subTitle}</SubTitle>
-                <Button to={content.path} big={true}>Read</Button>
-                <Emoji>
-                    {content.onHover}
-                </Emoji>
-            </Overlay>
-        </Wrapper>
+                {width > 500 &&
+                    <Bg image={getImage(content.featureImage)} alt="background" data-aos="fade-up"/>
+                }
+                {width <= 500 &&
+                    <Bg image={getImage(content.featureImagePhone)} alt="background" data-aos="fade-up"/>
+                }
+                <Overlay>
+                    <Title>{content.title}</Title>
+                    <SubTitle>{content.subTitle}</SubTitle>
+                    <Button to={content.path} big={true}>Read</Button>
+                    <Emoji>
+                        {content.onHover}
+                    </Emoji>
+                </Overlay>
+            </Wrapper>
+        </Delayed>
     );
 };
 
