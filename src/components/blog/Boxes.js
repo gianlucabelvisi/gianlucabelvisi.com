@@ -1,52 +1,32 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled, {keyframes} from "styled-components";
-import {BiPlusMedical} from "react-icons/bi";
+import Closeable from "../Closeable";
 
 const TextBox = ({children, title, closeable = false, closeButtonCaption = ""}) => {
 
-    const [isVisible, setIsVisible] = useState(true)
-    const doClose = () => {
-        setIsVisible(false)
-    }
-
     return (
-        <Wrapper isVisible={isVisible}>
-            {closeable && (
-                <Close onClick={() => doClose()}/>
-            )}
-            <Title>
-                <strong>{title}</strong>
-            </Title>
-            {children}
-            {closeButtonCaption !== "" &&
-                <CloseButton onClick={ () => doClose() }>
-                    {closeButtonCaption}
-                </CloseButton>
-            }
-        </Wrapper>
+        <Closeable enabled={closeable}>
+            <Wrapper>
+                <Title>
+                    <strong>{title}</strong>
+                </Title>
+                {children}
+                {closeButtonCaption !== "" &&
+                    <CloseButton onClick={() => closeButtonCaption = "k thx"}>
+                        {closeButtonCaption}
+                    </CloseButton>
+                }
+            </Wrapper>
+        </Closeable>
     );
 };
 
 const Wrapper = styled.div`
-  position: relative;
   background-color: rgba(0, 0, 0, 0.1);
   border-left: ${props => props.theme.accentColor} 3px solid;
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  display: ${({isVisible}) => (isVisible ? "block" : "none")};
-`
-const Close = styled(BiPlusMedical)`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  color: ${props => props.theme.accentColor};
-  font-size: 1.6rem;
-  transition: all 400ms ease-in;
-  transform: rotate(45deg);
-  &:hover {
-    transform: scale(1.2) rotate(45deg);
-  }
 `
 const Title = styled.div`
   text-transform: uppercase;
@@ -68,6 +48,7 @@ const CloseButton = styled.button`
   justify-content: center;
   border-radius: 8px;
   transition: all 300ms ease;
+
   &:hover {
     transform: scale(1.2);
   }

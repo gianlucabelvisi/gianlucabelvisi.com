@@ -46,7 +46,7 @@ const BlogTemplate = ({data}) => {
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
                         <SubTitle>
-                            <GlyphLeft/> {frontmatter.subTitle} <GlyphRight/>
+                            <GlyphLeft/>{frontmatter.subTitle} <GlyphRight/>
                         </SubTitle>
                         <Mdx body={data.mdx.body}/>
                     </Post>
@@ -64,7 +64,7 @@ const BlogTemplate = ({data}) => {
                     </BlogActions>
 
                     <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
-                        <MailchimpFormContainer />
+                        <MailchimpFormContainer/>
                     </div>
 
 
@@ -128,10 +128,12 @@ const FeatureImageWrapper = styled.div`
   }
 `
 const GlyphLeft = styled(ImQuotesLeft)`
-    color: ${props => props.theme.accentColor};;
+  color: ${props => props.theme.accentColor};
+  margin-right: .5rem;
 `
 const GlyphRight = styled(ImQuotesRight)`
-    color: ${props => props.theme.accentColor};;
+  color: ${props => props.theme.accentColor};
+  margin-left: .5rem;
 `
 const FeatureImage = styled(GatsbyImage)`
   position: absolute;
@@ -149,7 +151,6 @@ const SubTitle = styled.div`
   margin-bottom: 2rem;
   text-align: left;
   font-size: larger;
-  //color: ${props => props.theme.accentColor};
 `
 const Content = styled.div`
   position: relative;
