@@ -39,36 +39,27 @@ export const Books2022 = () => {
 
 const PhotoStack = ({photos}) => {
 
-
-    const handleClick = () => {
-    }
-
     const random = (min, max) => {
-        const result = Math.random() * (max - min) + min
-        return result
+        return Math.random() * (max - min) + min
     }
 
     return (
-        <Wrapper onClick={handleClick}>
-
-
+        <Wrapper>
             {photos.map((elem, index) => {
-                console.log("Index", index)
-                const p =
+                const placement =
                     {
                         z_index: 1000 - index,
-                        delay: 5 * index + 1 + "s",
+                        delay: 4 * index + 1 + "s",
                         rot: random(-45, 45) + "deg",
                         x_delta: random(-10, 10) + "px",
                         y_delta: random(-10, 10) + "px"
                     }
-                console.log("placement", p)
                 return (
                     <Photo
                         key={index}
                         image={getImage(elem)}
                         alt={"Photo " + index}
-                        placement={p}
+                        placement={placement}
 
                     />
                 )
@@ -81,27 +72,52 @@ const anim = keyframes`
   0% {
     rotate(${props => props.placement.rot})
   }
-  25% {
+  20% {
     transform: rotate(0deg);
   }
-  50% {
+  40% {
+    transform: scale(1.21);
+  }
+  43% {
     transform: scale(1.2);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1.19);
+    opacity: 1;
+  }
+  47% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.2) translateX(200%);
+    opacity: 1;
+  }
+  95% {
+    transform: scale(1.2) translateX(200%);
+    opacity: 0.5;
+  }
+  99% {
+    transform: scale(1.2) translateX(200%);
+    opacity: 0.2;
+    visibility: hidden;
   }
   100% {
-    transform: scale(1.2) translateX(500%);
+    transform: scale(1) translateX(0);
+    opacity: 0.1;
+    visibility: hidden;
   }
 `
-
 const Wrapper = styled.div`
   position: relative;
   height: 40rem;
 `
-
 const Photo = styled(GatsbyImage)`
   position: absolute;
   z-index: ${props => props.placement.z_index};
   top: calc(10% + ${props => props.placement.y_delta});
   left: calc(25% + ${props => props.placement.x_delta});
   transform: rotate(${props => props.placement.rot});
-  animation: ${anim} 10s ease-in-out ${props => props.placement.delay} forwards;
+  animation: ${anim} 7s ease-out ${props => props.placement.delay} forwards;
 `
