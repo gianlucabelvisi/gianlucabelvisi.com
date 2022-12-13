@@ -91,21 +91,12 @@ const anim = keyframes`
     opacity: 1;
   }
   80% {
-    transform: scale(1.2) translateX(200%);
+    transform: scale(1.2) translateY(300%) rotate(25deg);
     opacity: 1;
   }
-  95% {
-    transform: scale(1.2) translateX(200%);
-    opacity: 0.5;
-  }
-  99% {
-    transform: scale(1.2) translateX(200%);
-    opacity: 0.2;
-    visibility: hidden;
-  }
   100% {
-    transform: scale(1) translateX(0);
-    opacity: 0.1;
+    transform: scale(0) translateY(1000%) rotate(720deg);
+    opacity: 0;
     visibility: hidden;
   }
 `
