@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useRef} from 'react';
+import styled, {keyframes} from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
-
+import Anime from "react-anime";
 
 export const Books2022 = () => {
 
@@ -39,47 +39,76 @@ export const Books2022 = () => {
 
 const PhotoStack = ({photos}) => {
 
-    function getRandomArbitrary(min, max) {
-        const result = Math.random() * (max - min) + min
-        console.log("result", result)
-        return result
+    const random = (min, max) => {
+        return Math.random() * (max - min) + min
     }
 
     return (
         <Wrapper>
-
             {photos.map((elem, index) => {
+                const placement =
+                    {
+                        z_index: 1000 - index,
+                        delay: 4 * index + 1 + "s",
+                        rot: random(-45, 45) + "deg",
+                        x_delta: random(-10, 10) + "px",
+                        y_delta: random(-10, 10) + "px"
+                    }
                 return (
                     <Photo
                         key={index}
                         image={getImage(elem)}
                         alt={"Photo " + index}
-                        placement={
-                            {
-                                rot: getRandomArbitrary(-10, 10) + "deg",
-                                x_delta: getRandomArbitrary(-10, 10) + "px",
-                                y_delta: getRandomArbitrary(-10, 10) + "px"
-                            }
-                        }
+                        placement={placement}
 
                     />
                 )
             })}
-
         </Wrapper>
-    );
-};
+    )
+}
 
+const anim = keyframes`
+  0% {
+    rotate(${props => props.placement.rot})
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: scale(1.21);
+  }
+  43% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1.19);
+    opacity: 1;
+  }
+  47% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.2) translateY(300%) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translateY(1000%) rotate(720deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+`
 const Wrapper = styled.div`
   position: relative;
   height: 40rem;
 `
-
 const Photo = styled(GatsbyImage)`
   position: absolute;
+  z-index: ${props => props.placement.z_index};
   top: calc(10% + ${props => props.placement.y_delta});
-  left: 50%;
-  transform: 
-          rotate(${props => props.placement.rot}) 
-          translate(calc(-50% + ${props => props.placement.x_delta}), 0);
+  left: calc(25% + ${props => props.placement.x_delta});
+  transform: rotate(${props => props.placement.rot});
+  animation: ${anim} 7s ease-out ${props => props.placement.delay} forwards;
 `
