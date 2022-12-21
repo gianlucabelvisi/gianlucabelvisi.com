@@ -51,24 +51,24 @@ const BlogTemplate = ({data}) => {
                         <Mdx body={data.mdx.body}/>
                     </Post>
 
-                    <PostFooter data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
+                    <PostFooter>
                         <Reactions id={frontmatter.path}/>
                         <ViewCounter id={frontmatter.path}/>
                     </PostFooter>
 
-                    <BlogActions data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
+                    <BlogActions>
                         <Author>
                             by <strong>{frontmatter.author}</strong>
                         </Author>
                         <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
                     </BlogActions>
 
-                    <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
+                    <div>
                         <MailchimpFormContainer/>
                     </div>
 
 
-                    <Comments data-aos="fade-up" data-aos-delay="50" data-aos-duration="400">
+                    <Comments>
                         <Disqus
                             style={{
                                 marginTop: "3rem"
