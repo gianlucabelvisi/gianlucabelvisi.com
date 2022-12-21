@@ -55,13 +55,12 @@ const PhotoStack = ({photos}) => {
                         y_delta: random(-10, 10) + "px"
                     }
                 return (
-                    <Photo
-                        key={index}
-                        image={getImage(elem)}
-                        alt={"Photo " + index}
-                        placement={placement}
-
-                    />
+                    <PhotoWrapper key={index} placement={placement}>
+                        <Photo
+                            image={getImage(elem)}
+                            alt={"Photo " + index}
+                        />
+                    </PhotoWrapper>
                 )
             })}
         </Wrapper>
@@ -104,11 +103,14 @@ const Wrapper = styled.div`
   position: relative;
   height: 40rem;
 `
-const Photo = styled(GatsbyImage)`
+const PhotoWrapper = styled.div`
   position: absolute;
   z-index: ${props => props.placement.z_index};
   top: calc(10% + ${props => props.placement.y_delta});
   left: calc(25% + ${props => props.placement.x_delta});
   transform: rotate(${props => props.placement.rot});
   animation: ${anim} 7s ease-out ${props => props.placement.delay} forwards;
+`
+
+const Photo = styled(GatsbyImage)`
 `
