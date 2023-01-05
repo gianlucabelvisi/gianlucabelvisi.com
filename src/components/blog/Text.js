@@ -18,6 +18,7 @@ const SongWrapper = styled.div`
   font-family: "Indie Flower", sans-serif;
   padding-left: 4rem;
   font-size: 1.4rem;
+  margin-bottom: 1rem;
   @media screen and (max-width: 500px) {
     padding-left: 2rem;
     font-size: 1.1rem;

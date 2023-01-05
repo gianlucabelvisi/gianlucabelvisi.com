@@ -8,7 +8,7 @@ const divStyle = {
     height: 0,
     overflow: 'hidden',
     maxWidth: '100%',
-    marginBottom: '1rem'
+    marginBottom: '2rem'
 }
 
 const iframeStyle = {
