@@ -57,8 +57,12 @@ const Wrapper = styled.div`
   --font-size-subtitle: clamp(0.8rem, 3vw, 1.5rem);
 `
 const Bg = styled(GatsbyImage)`
-  width: 100%;
-  background-size: cover;
+  height: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: 100%;
+    background-size: cover;
+  }
 `
 const Overlay = styled.div`
   position: absolute;
