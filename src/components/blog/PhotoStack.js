@@ -91,7 +91,7 @@ const anim = keyframes`
     opacity: 1;
   }
   80% {
-    transform: scale(1.2) translateY(300%) rotate(25deg);
+    transform: scale(1.2) translateY(400%) rotate(25deg);
     opacity: 1;
   }
   100% {
@@ -108,13 +108,14 @@ const Wrapper = styled.div`
 const PhotoWrapper = styled.div`
   position: absolute;
   z-index: ${props => props.placement.z_index};
-  top: calc(30% + ${props => props.placement.y_delta});
+  top: calc(40% + ${props => props.placement.y_delta});
   left: calc(25% + ${props => props.placement.x_delta});
   transform: rotate(${props => props.placement.rot});
   animation: ${anim} 7s ease-out ${props => props.placement.delay} forwards;
   scale: 1;
   transition: all 500ms ease;
   @media screen and (max-width: 1000px) {
+    top: calc(40% + ${props => props.placement.y_delta});
     scale: .9;
   }
   @media screen and (max-width: 600px) {
