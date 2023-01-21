@@ -2,8 +2,9 @@ import React from 'react';
 import styled, {keyframes} from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import BlogImage from "./BlogImage";
 
-export const Books2022 = () => {
+export const Books2022 = ({background}) => {
 
     const data = useStaticQuery(graphql`
         query Books2022Query {
@@ -31,12 +32,12 @@ export const Books2022 = () => {
     console.log("covers:", covers)
 
     return (
-        <PhotoStack photos={covers}/>
+        <PhotoStack photos={covers} background={background}/>
     );
 };
 
 
-const PhotoStack = ({photos}) => {
+const PhotoStack = ({photos, background}) => {
 
     const random = (min, max) => {
         return Math.random() * (max - min) + min
@@ -44,6 +45,7 @@ const PhotoStack = ({photos}) => {
 
     return (
         <Wrapper>
+            <BlogImage imageName={background}/>
             {photos.map((elem, index) => {
                 const placement =
                     {
@@ -89,7 +91,7 @@ const anim = keyframes`
     opacity: 1;
   }
   80% {
-    transform: scale(1.2) translateY(300%) rotate(25deg);
+    transform: scale(1.2) translateY(400%) rotate(25deg);
     opacity: 1;
   }
   100% {
@@ -100,15 +102,38 @@ const anim = keyframes`
 `
 const Wrapper = styled.div`
   position: relative;
-  height: 40rem;
+  height: auto;
+  margin-bottom: 2rem;
 `
 const PhotoWrapper = styled.div`
   position: absolute;
   z-index: ${props => props.placement.z_index};
-  top: calc(10% + ${props => props.placement.y_delta});
+  top: calc(40% + ${props => props.placement.y_delta});
   left: calc(25% + ${props => props.placement.x_delta});
   transform: rotate(${props => props.placement.rot});
   animation: ${anim} 7s ease-out ${props => props.placement.delay} forwards;
+  scale: 1;
+  transition: all 500ms ease;
+  @media screen and (max-width: 1000px) {
+    top: calc(40% + ${props => props.placement.y_delta});
+    scale: .9;
+  }
+  @media screen and (max-width: 600px) {
+    scale: .8;
+  }
+  @media screen and (max-width: 550px) {
+    left: calc(20% + ${props => props.placement.x_delta});
+    scale: .6;
+  }
+  @media screen and (max-width: 470px) {
+    left: calc(10% + ${props => props.placement.x_delta});
+    scale: .5;
+  }
+  @media screen and (max-width: 400px) {
+    top: calc(20% + ${props => props.placement.y_delta});
+    left: calc(10% + ${props => props.placement.x_delta});
+    scale: .5;
+  }
 `
 
 const Photo = styled(GatsbyImage)`
