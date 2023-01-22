@@ -27,6 +27,16 @@ export const menuData = [
         link: "/about",
         subMenu: []
     },
+    {
+        title: "Books",
+        link: "/books",
+        subMenu: []
+    },
+    {
+        title: "Trello",
+        link: "/trello",
+        subMenu: []
+    },
     // {
     //     title: "Contact",
     //     link: "/contact",
