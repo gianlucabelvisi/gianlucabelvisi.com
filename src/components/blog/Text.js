@@ -113,7 +113,9 @@ export const FigureLabel = ({children}) => {
             width: "100%",
             textAlign: "center",
             marginBottom: "2rem",
-            marginTop: ".5rem"
+            marginTop: ".5rem",
+            paddingLeft: "4rem",
+            paddingRight: "4rem"
         }}>
             <em>{children}</em>
         </div>
@@ -131,6 +133,18 @@ export const Indented = ({children}) => {
             lineHeight: "1.6rem"
         }}>
             <em>{children}</em>
+        </div>
+    );
+};
+
+
+export const Center = ({children}) => {
+    return (
+        <div style={{
+            alignContent: "center",
+            alignItems: "center"
+        }}>
+            {children}
         </div>
     );
 };
