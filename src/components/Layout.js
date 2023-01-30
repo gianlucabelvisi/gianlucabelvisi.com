@@ -15,7 +15,7 @@ import Theme from "./styles/Theme";
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip";
 
-const Layout = ({children, isDark = false}) => {
+const Layout = ({children, fullScreen = false, isDark = false}) => {
 
     return (
         <>
@@ -23,9 +23,9 @@ const Layout = ({children, isDark = false}) => {
             <ThemeProvider theme={Theme}>
                 <ReactTooltip effect="solid" backgroundColor="#ff9664"/>
                 <Container isDark={isDark}>
-                    <Header/>
+                    {fullScreen ? null : <Header/>}
                     <Main>{children}</Main>
-                    <Footer/>
+                    {fullScreen ? null : <Footer/>}
                 </Container>
             </ThemeProvider>
         </>
