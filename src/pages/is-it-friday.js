@@ -44,7 +44,7 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   color: white;
-  background-color: ${props => props.isFriday ? "green" : "red"};
+  background-color: ${props => props.isFriday ? "#26bf2e" : "#d6220b"};
 `
 
 
