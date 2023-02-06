@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import {useQueryParamString} from 'react-use-query-param-string';
@@ -14,10 +14,8 @@ const IsItFriday = () => {
     const isFriday = day === 'friday'
 
     console.log("Day: ", day)
-    console.log("Time: ",  time)
-    console.log(minimalistic === "true" ? "minimalistic" : "not minimalistic" )
-
-
+    console.log("Time: ", time)
+    console.log(minimalistic === "true" ? "minimalistic" : "not minimalistic")
 
     return (
         <Layout fullScreen={true}>
@@ -44,6 +42,7 @@ const Container = styled.div`
 const Day = styled.div`
   height: 100vh;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 `
@@ -65,33 +64,67 @@ const Qualifier = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  //background-color: blue;
-  height: 40%;
   font-size: clamp(1rem, 5vw, 10rem);
+`
+
+const Quote = styled.div`
+  margin-bottom: 4rem;
+  position: relative;
+`
+
+const Author = styled.div`
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
 `
 
 
 const Friday = () => {
     return (
-        <FridayWrapper>
+        <Day>
             <YesNo>Yes</YesNo>
             <Qualifier>It is Friday!</Qualifier>
-        </FridayWrapper>
+        </Day>
     );
 };
-
-const FridayWrapper = styled(Day)`
-`
 
 const OtherDay = () => {
+
+    const [quote, setQuote] = useState('')
+    const [author, setAuthor] = useState('')
+
+    useEffect(() => {
+        const url = 'https://quotes.rest/qod?language=en'
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                console.log(json);
+
+                setQuote(json["contents"]["quotes"][0]["quote"])
+                setAuthor(json["contents"]["quotes"][0]["author"])
+            } catch (error) {
+                console.log("error", error);
+            }
+        };
+        fetchData()
+
+    }, [])
+
+    console.log(quote)
+    console.log(author)
+
+
     return (
-        <OtherDayWrapper>
+        <Day>
             <YesNo>NO</YesNo>
             <Qualifier>It is not Friday.</Qualifier>
-        </OtherDayWrapper>
+            <Quote>
+                {quote}
+                <Author>{author}</Author>
+            </Quote>
+        </Day>
     );
 };
 
-const OtherDayWrapper = styled(Day)`
-`
 
