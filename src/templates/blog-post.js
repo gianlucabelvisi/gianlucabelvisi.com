@@ -11,7 +11,7 @@ import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
 import ViewCounter from "../components/ViewCounter";
 import Reactions from "../components/Reactions";
-import MailchimpFormContainer from "../components/MailChimp";
+import MailchimpForm from "../components/MailChimp";
 import {ImQuotesLeft, ImQuotesRight} from "react-icons/im";
 
 const BlogTemplate = ({data}) => {
@@ -38,15 +38,13 @@ const BlogTemplate = ({data}) => {
                 <Content>
 
                     <SideBar data-aos="fade-right" data-aos-delay="180" data-aos-duration="1000">
-                        <SocialShare
-                            path={frontmatter.path}
-                        />
+                        <SocialShare path={frontmatter.path}/>
                     </SideBar>
 
                     <Post data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
                         <Title>{frontmatter.title}</Title>
                         <SubTitle>
-                            <GlyphLeft/>{frontmatter.subTitle} <GlyphRight/>
+                            <GlyphLeft/>{frontmatter.subTitle}<GlyphRight/>
                         </SubTitle>
                         <Mdx body={data.mdx.body}/>
                     </Post>
@@ -63,10 +61,7 @@ const BlogTemplate = ({data}) => {
                         <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
                     </BlogActions>
 
-                    <div>
-                        <MailchimpFormContainer/>
-                    </div>
-
+                    <MailchimpForm/>
 
                     <Comments>
                         <Disqus
@@ -80,7 +75,6 @@ const BlogTemplate = ({data}) => {
                             }}
                         />
                     </Comments>
-
 
                 </Content>
             </Wrapper>

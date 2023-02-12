@@ -117,7 +117,7 @@ const Form = styled.form`
 `
 
 
-const MailchimpFormContainer = props => {
+const MailchimpForm = props => {
 
     const postUrl = `https://gianlucabelvisi.us20.list-manage.com/subscribe/post?u=${process.env.GATSBY_MAILCHIMP_U}&id=${process.env.GATSBY_MAILCHIMP_ID}`
 
@@ -137,4 +137,4 @@ const MailchimpFormContainer = props => {
     );
 };
 
-export default MailchimpFormContainer;
+export default MailchimpForm;

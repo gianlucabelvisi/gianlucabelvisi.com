@@ -21,8 +21,9 @@ const Index = ({data}) => {
     const caterina = [...posts].filter(post => containsHashtags(post, 'caterina sforza')).reverse()
     const food = [...posts].filter(post => containsHashtags(post, 'food', 'coffee', 'diet')).reverse()
     const mindfulness = [...posts].filter(post => containsHashtags(post, 'mindfulness')).sort(() => Math.random() - 0.5).slice(0, 15)
+    const books = [...posts].filter(post => containsHashtags(post, 'books')).sort(() => Math.random() - 0.5).slice(0, 15)
     const randomized = [...posts].sort(() => Math.random() - 0.5).slice(0, 15)
-    const chrono = [...posts].reverse()
+    const chronological = [...posts].reverse()
 
     return (
         <Layout isDark={true}>
@@ -45,6 +46,11 @@ const Index = ({data}) => {
                     subtitle="We all do"
                     posts={food}
                 />
+                {/*<NetflixSlider*/}
+                {/*    title="For the book worms"*/}
+                {/*    subtitle="This is how I know that you are hot"*/}
+                {/*    posts={books}*/}
+                {/*/>*/}
                 <NetflixSlider
                     title="You seem to be into mindfulness"
                     subtitle="If you are one with Calm"
@@ -58,7 +64,7 @@ const Index = ({data}) => {
                 <NetflixSlider
                     title="Chronological Order"
                     subtitle="For the stalker type"
-                    posts={chrono}
+                    posts={chronological}
                 />
             </Sliders>
         </Layout>
