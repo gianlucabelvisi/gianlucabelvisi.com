@@ -14,7 +14,6 @@ const FeaturedPost = ({post}) => {
 
     const {width} = useWindowDimensions()
 
-
     const content = post.node.frontmatter
     return (
         <Delayed>
@@ -71,9 +70,11 @@ const Overlay = styled.div`
   padding: 1rem;
   border-radius: 12px;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%,
-  rgba(0, 0, 0, 0.5) 35%,
-  rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 35%,
+      rgba(0, 0, 0, 0.1) 100%
+  );
 
   transition: all 500ms ease;
 
@@ -83,8 +84,6 @@ const Overlay = styled.div`
   }
 
   right: 0;
-
-
   top: 60%;
   width: 35%;
 

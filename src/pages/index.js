@@ -82,14 +82,14 @@ const Sliders = styled.div`
 const Fader = styled.div`
   pointer-events: none;
   position: absolute;
-  top: -4rem;
+  top: -7rem;
   width: 100%;
   height: 5rem;
   background: linear-gradient(180deg,
   rgba(0, 0, 0, 0) 0%,
-  rgba(0, 0, 0, .2) 20%,
-  rgba(0, 0, 0, .4) 40%,
-  rgb(19, 19, 19) 100%
+  rgba(19, 19, 19, .1) 40%,
+  rgba(19, 19, 19, .7) 80%,
+  rgba(19, 19, 19, 1) 100%
   );
 `
 
