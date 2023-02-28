@@ -5,14 +5,12 @@ import {graphql} from 'gatsby'
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {Disqus} from 'gatsby-plugin-disqus';
-import Link from "gatsby-link";
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
-import ViewCounter from "../components/ViewCounter";
-import Reactions from "../components/Reactions";
 import MailchimpForm from "../components/MailChimp";
 import {ImQuotesLeft, ImQuotesRight} from "react-icons/im";
+import PostFooter from "../components/PostFooter";
 
 const BlogTemplate = ({data}) => {
 
@@ -49,17 +47,7 @@ const BlogTemplate = ({data}) => {
                         <Mdx body={data.mdx.body}/>
                     </Post>
 
-                    <PostFooter>
-                        <Reactions id={frontmatter.path}/>
-                        <ViewCounter id={frontmatter.path}/>
-                    </PostFooter>
-
-                    <BlogActions>
-                        <Author>
-                            by <strong>{frontmatter.author}</strong>
-                        </Author>
-                        <MorePosts to={"/blog-page1"}><strong>More Posts</strong></MorePosts>
-                    </BlogActions>
+                    <PostFooter path={frontmatter.path} author={frontmatter.author}/>
 
                     <MailchimpForm/>
 
@@ -172,40 +160,7 @@ const Post = styled.div`
 `
 const Comments = styled.div`
 `
-const PostFooter = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  @media screen and (max-width: 550px) {
-    display: block;
-    flex-direction: column;
-    justify-items: start;
-    gap: 0.7rem;
-  }
-`
-const BlogActions = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  @media screen and (max-width: 550px) {
-    flex-direction: column;
-    gap: 2rem;
-  }
-`
-const Author = styled.div`
-  flex-basis: 40%;
-  flex-grow: 1;
-`
-const MorePosts = styled(Link)`
-  flex-basis: 20%;
-  flex-grow: 1;
-  color: ${props => props.theme.post.link.color};
-  text-align: end;
-  @media screen and (max-width: 550px) {
-    text-align: left;
-  }
-`
+
 export const pageQuery = graphql`
     query BlogPostQuery($id: String!) {
         mdx(id: {eq: $id}) {
