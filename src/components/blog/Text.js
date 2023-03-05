@@ -137,6 +137,16 @@ export const Indented = ({children}) => {
     );
 };
 
+export const MarginBottom = ({size}) => {
+    return (
+        <div style={{
+            width: "100%",
+            marginBottom: size
+        }}>
+        </div>
+    );
+}
+
 
 export const Center = ({children}) => {
     return (
