@@ -53,6 +53,7 @@
     "react-minimal-pie-chart": "^8.2.0",
     "react-player": "^2.9.0",
     "react-share": "^4.4.0",
+    "react-spring": "^9.7.1",
     "react-swipeable": "^7.0.0",
     "react-tooltip": "^4.2.21",
     "react-transition-group": "^4.4.5",

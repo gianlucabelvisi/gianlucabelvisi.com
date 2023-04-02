@@ -1,6 +1,7 @@
 import React from 'react';
 import "@fontsource/pacifico"
 import styled from "styled-components";
+import {ImQuotesLeft, ImQuotesRight} from "react-icons/im";
 
 require('typeface-dancing-script')
 require('typeface-indie-flower')
@@ -25,30 +26,37 @@ const SongWrapper = styled.div`
   }
 `
 
-export const Pony = ({children}) => {
+export const Pony = ({children, fontSize = "1.4rem"}) => {
     return (
+
         <div style={{
             fontFamily: "Irish Grover",
-            fontSize: "1.9rem",
+            fontSize: fontSize,
             paddingBottom: "1.5rem",
-            paddingLeft: "2rem",
-            paddingRight: "2rem"
+            paddingLeft: "3rem",
+            paddingRight: "3rem"
         }}>
             {children}
         </div>
     );
 };
 
-export const Dialogue = ({children}) => {
+export const Dialogue = ({children, withQuotesBegin= true, withQuotesEnd= true}) => {
     return (
         <div style={{
-            fontFamily: "Irish Grover",
-            fontSize: "1.5rem",
-            paddingBottom: "1.5rem",
-            paddingLeft: "1rem",
-            paddingRight: "1rem"
+            // fontSize: "1.1rem",
+            // paddingBottom: "1.5rem",
+            // paddingLeft: "1rem",
+            // paddingRight: "1rem",
+            lineHeight: "1.9rem"
         }}>
+            <span style={{
+                marginLeft: "1.5rem"
+            }}/>
+            {withQuotesBegin && <GlyphLeft/>}
             {children}
+            {withQuotesEnd && <GlyphRight/>}
+            {withQuotesEnd && <MarginBottom size={"1.5rem"}/>}
         </div>
     );
 };
@@ -137,6 +145,16 @@ export const Indented = ({children}) => {
     );
 };
 
+export const MarginBottom = ({size}) => {
+    return (
+        <div style={{
+            width: "100%",
+            marginBottom: size
+        }}>
+        </div>
+    );
+}
+
 
 export const Center = ({children}) => {
     return (
@@ -148,4 +166,28 @@ export const Center = ({children}) => {
         </div>
     );
 };
+
+export const BlogSubTitle = ({children}) => {
+    return (
+        <div>
+            <SubTitle>
+                <GlyphLeft/>{children}<GlyphRight/>
+            </SubTitle>
+        </div>
+    );
+};
+
+const GlyphLeft = styled(ImQuotesLeft)`
+  color: ${props => props.theme.accentColor};
+  margin-right: .5rem;
+`
+const GlyphRight = styled(ImQuotesRight)`
+  color: ${props => props.theme.accentColor};
+  margin-left: .5rem;
+`
+const SubTitle = styled.div`
+  margin-bottom: 2rem;
+  text-align: left;
+  font-size: larger;
+`
 
