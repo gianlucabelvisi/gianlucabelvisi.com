@@ -7,10 +7,10 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {Disqus} from 'gatsby-plugin-disqus';
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
-import Mdx from "../components/blog/Mdx";
 import MailchimpForm from "../components/MailChimp";
 import {ImQuotesLeft, ImQuotesRight} from "react-icons/im";
 import PostFooter from "../components/PostFooter";
+import {Mdx} from "../components/blog/Mdx";
 
 const BlogTemplate = ({data}) => {
 
@@ -44,7 +44,7 @@ const BlogTemplate = ({data}) => {
                         <SubTitle>
                             <GlyphLeft/>{frontmatter.subTitle}<GlyphRight/>
                         </SubTitle>
-                        <Mdx body={data.mdx.body}/>
+                        <Mdx mdx={data.mdx}/>
                     </Post>
 
                     <PostFooter path={frontmatter.path} author={frontmatter.author}/>
@@ -164,7 +164,6 @@ const Comments = styled.div`
 export const pageQuery = graphql`
     query BlogPostQuery($id: String!) {
         mdx(id: {eq: $id}) {
-            body
             frontmatter {
                 path
                 date(formatString: "MMMM DD, YYYY")

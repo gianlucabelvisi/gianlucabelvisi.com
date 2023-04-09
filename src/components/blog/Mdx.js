@@ -5,7 +5,6 @@ import {Break, FigureLabel, Indented, NewLine, Question, Song} from "./Text";
 import TextBox from "./Boxes";
 import ThreeColumns, {Col1, Col23} from "./Grids";
 import {AiTwotonePushpin} from "react-icons/ai";
-import {MDXRenderer} from "gatsby-plugin-mdx";
 import {MDXProvider} from "@mdx-js/react";
 import styled from "styled-components";
 import {Link} from "gatsby";
@@ -14,7 +13,7 @@ import Spoiler from "./Spoiler";
 import Code from "./Code";
 import {ResponsiveEmbed} from "./ResponsiveEmbed";
 
-const Mdx = ({body}) => {
+export const Mdx = ({mdx}) => {
     return (
         <MDXProvider
             components={{
@@ -41,15 +40,10 @@ const Mdx = ({body}) => {
                 //p: props => <p {...props} style={{color: "rebeccapurple"}}/>,
             }}
         >
-            <MDXRenderer>
-                {body}
-            </MDXRenderer>
+            {mdx}
         </MDXProvider>
     );
 };
-
-export default Mdx;
-
 const P = styled.p`
   margin-bottom: 1rem;
   line-height: 1.5rem;
