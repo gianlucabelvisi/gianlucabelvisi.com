@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-const LandscapeImageSpanner = ({ images }) => (
+const CardsImageSpanner = ({ images }) => (
     <Background>
         <Gallery>
             {images.map((image, index) => (
@@ -14,7 +14,7 @@ const LandscapeImageSpanner = ({ images }) => (
     </Background>
 );
 
-export default LandscapeImageSpanner;
+export default CardsImageSpanner;
 
 const Background = styled.span`
   display: grid;

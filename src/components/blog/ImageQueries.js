@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import PortraitImageSpanner from '../PortraitImageSpanner';
-import LandscapeImageSpanner from "../LandscapeImageSpanner";
+import PortraitImageSpanner from '../Images/PortraitImageSpanner';
+import CardsImageSpanner from "../Images/CardsImageSpanner";
 
 export const Pantelleria1 = () => {
     const data = useStaticQuery(graphql`
@@ -21,5 +21,5 @@ export const Pantelleria1 = () => {
 
     const images = data.allFile.edges.map(edge => getImage(edge.node.childImageSharp));
 
-    return <LandscapeImageSpanner images={images} />;
+    return <CardsImageSpanner images={images} />;
 };
