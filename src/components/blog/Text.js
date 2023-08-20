@@ -44,11 +44,8 @@ export const Pony = ({children, fontSize = "1.4rem"}) => {
 export const Dialogue = ({children, withQuotesBegin= true, withQuotesEnd= true}) => {
     return (
         <div style={{
-            // fontSize: "1.1rem",
-            // paddingBottom: "1.5rem",
-            // paddingLeft: "1rem",
-            // paddingRight: "1rem",
-            lineHeight: "1.9rem"
+            lineHeight: "1.9rem",
+            fontSize: "1.1rem",
         }}>
             <span style={{
                 marginLeft: "1.5rem"

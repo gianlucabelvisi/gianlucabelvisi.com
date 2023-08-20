@@ -55,6 +55,7 @@ const Wrapper = styled.span`
   display: flex;
   width: 100%;
   height: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const StyledButton = styled.button`
@@ -65,7 +66,7 @@ const StyledButton = styled.button`
   top: -1rem;
   background: none;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   animation: ${props => props.clicked ? css`${bounce} 0.5s linear` : 'none'};
 `;
 
