@@ -29,7 +29,7 @@ export const ShakyTitle = ({emoji, title, children}) => {
 
 const Wrapper = styled.div`
   position: relative;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
