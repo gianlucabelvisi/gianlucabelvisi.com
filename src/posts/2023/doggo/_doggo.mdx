@@ -12,6 +12,7 @@ hashtags: "template"
 hidden: false
 ---
 
+import Poll from "../../../components/blog/Poll";
 import BlogImage from "../../../components/blog/BlogImage";
 import {ResponsiveEmbed} from "../../../components/blog/ResponsiveEmbed";
 import YouTube from "../../../components/blog/YouTube";
@@ -424,6 +425,13 @@ There is a lot to unpack:
 * I have never been lost in a forest. I have never been in a forest. I have essentially never been.
 
 * My name is not Mark Brown. Or maybe it is. Let's create some distance with the author.
+
+<Poll
+    id={"cat_dog"}
+    question={"Are you a dog person or a cat person?"}
+    answers={["Dog Person", "Cat Person"]}
+    labels={["Dog Person", "Hitler"]}
+/>
 
 So, after bulk sending my truth, I sit waiting on my ass for a reply.
 
