@@ -119,7 +119,8 @@ export const FigureLabel = ({children}) => {
             marginBottom: "2rem",
             marginTop: ".5rem",
             paddingLeft: "4rem",
-            paddingRight: "4rem"
+            paddingRight: "4rem",
+            textWrap: "balance"
         }}>
             <em>{children}</em>
         </div>
