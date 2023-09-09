@@ -88,11 +88,11 @@ const Overlay = styled.div`
   width: 35%;
 
   @media screen and (max-width: 2000px) {
-    top: 50%;
+    top: 30%;
     width: 40%;
   }
   @media screen and (max-width: 1200px) {
-    top: 50%;
+    top: 30%;
     width: 40%;
   }
   @media screen and (max-width: 1000px) {
