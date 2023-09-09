@@ -17,6 +17,7 @@ const FeaturedPost = ({post}) => {
     const content = post.node.frontmatter
     return (
         <Delayed>
+            
             <Wrapper data-aos="fade-up" data-aos-duration="1000">
 
                 {width > 500 &&
