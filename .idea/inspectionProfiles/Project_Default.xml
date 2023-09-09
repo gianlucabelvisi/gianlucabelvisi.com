@@ -2,6 +2,6 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="CssReplaceWithShorthandSafely" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
-    <inspection_tool class="StructuralWrap" enabled="true" level="INFORMATION" enabled_by_default="true" editorAttributes="INFORMATION_ATTRIBUTES" />
+    <inspection_tool class="StructuralWrap" enabled="false" level="TYPO" enabled_by_default="false" />
   </profile>
 </component>

@@ -44,10 +44,6 @@ export const Pony = ({children, fontSize = "1.4rem"}) => {
 export const Dialogue = ({children, withQuotesBegin= true, withQuotesEnd= true}) => {
     return (
         <div style={{
-            // fontSize: "1.1rem",
-            // paddingBottom: "1.5rem",
-            // paddingLeft: "1rem",
-            // paddingRight: "1rem",
             lineHeight: "1.9rem"
         }}>
             <span style={{
@@ -123,7 +119,8 @@ export const FigureLabel = ({children}) => {
             marginBottom: "2rem",
             marginTop: ".5rem",
             paddingLeft: "4rem",
-            paddingRight: "4rem"
+            paddingRight: "4rem",
+            textWrap: "balance"
         }}>
             <em>{children}</em>
         </div>

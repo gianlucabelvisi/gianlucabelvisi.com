@@ -83,7 +83,7 @@ const Overlay = styled.div`
     transform: scale(1.05);
   }
 
-  right: 0;
+  left: 0;
   top: 60%;
   width: 35%;
 

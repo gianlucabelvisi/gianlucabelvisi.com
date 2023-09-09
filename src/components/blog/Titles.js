@@ -5,7 +5,7 @@ import styled, {keyframes} from "styled-components"
 export const SpicyTake = ({children}) => {
     return (
         <Wrapper>
-            <Icon>🌶</Icon>
+            <ShakyIcon>🌶</ShakyIcon>
             <Qualifier>Spicy Take</Qualifier>
             <Title>
                 {children}
@@ -15,9 +15,21 @@ export const SpicyTake = ({children}) => {
     );
 };
 
+export const ShakyTitle = ({emoji, title, children}) => {
+    return (
+        <Wrapper>
+            <ShakyIcon>{emoji}</ShakyIcon>
+            <Qualifier>{title}</Qualifier>
+            <Title>
+                {children}
+            </Title>
+        </Wrapper>
+    );
+};
+
 const Wrapper = styled.div`
   position: relative;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
@@ -42,7 +54,7 @@ const Pulse = keyframes`
 `
 
 
-const Icon = styled.div`
+const ShakyIcon = styled.div`
   font-size: 1.6rem;
   transform: all(0, 0, 0);
   animation: 2s ease-in-out 0s 1 ${Pulse};

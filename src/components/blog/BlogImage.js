@@ -22,7 +22,10 @@ const BlogImage = ({imageName}) => {
     `)
 
     return (
-        <div>
+        <div style={{
+            marginTop: "1rem",
+            marginBottom: "1rem",
+        }}>
             {data.allFile.edges.filter(edge => edge.node.name === imageName).map((edge, key) => (
                     <Image key={key} image={getImage(edge.node)} alt="who am I"/>
                 )
