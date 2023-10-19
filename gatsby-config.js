@@ -32,6 +32,15 @@ module.exports = {
         icon: `src/assets/images/icon.jpg`, // This path is relative to the root of the site.
         cache_busting_mode: 'query',
         legacy: true,
+        orientation: `portrait`,
+        screenshots: [
+          {
+            src: "src/assets/images/icon.jpg",
+            sizes: "563x563",
+            type: "image/jpg"
+          }
+          // ... more screenshots
+        ]
       },
     },
     {
