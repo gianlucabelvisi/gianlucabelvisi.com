@@ -108,9 +108,10 @@ const Overlay = styled.div`
     top: 50%;
     width: 90%;
   }
-  @media screen and (max-width: 400px) {
-    top: 60%;
-    width: 95%;
+  @media screen and (max-width: 500px) {
+    top: 50%;
+    width: 100%;
+    border-radius: 0;
   }
 `
 const Title = styled.div`
