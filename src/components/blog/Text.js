@@ -174,13 +174,15 @@ export const BlogSubTitle = ({children}) => {
     );
 };
 
-const GlyphLeft = styled(ImQuotesLeft)`
+export const GlyphLeft = styled(ImQuotesLeft)`
   color: ${props => props.theme.accentColor};
-  margin-right: .5rem;
+  margin-left: .3rem;
+  margin-right: .2rem;
 `
-const GlyphRight = styled(ImQuotesRight)`
+export const GlyphRight = styled(ImQuotesRight)`
   color: ${props => props.theme.accentColor};
-  margin-left: .5rem;
+  margin-left: .2rem;
+  margin-right: .3rem;
 `
 const SubTitle = styled.div`
   margin-bottom: 2rem;
