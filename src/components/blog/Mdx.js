@@ -23,6 +23,7 @@ const Mdx = ({body}) => {
                 ul: UL,
                 ol: OL,
                 li: LI,
+                h1: H1,
                 h2: H2,
                 h3: H3,
                 h4: H4,
@@ -53,6 +54,10 @@ export default Mdx;
 const P = styled.p`
   margin-bottom: 1rem;
   line-height: 1.5rem;
+`
+const H1 = styled.h1`
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 `
 const H2 = styled.h2`
   padding-top: 1rem;

@@ -51,18 +51,18 @@ const BlogTemplate = ({data}) => {
 
                     <MailchimpForm/>
 
-                    <Comments>
-                        <Disqus
-                            style={{
-                                marginTop: "3rem"
-                            }}
-                            config={{
-                                url: 'https://gianlucabelvisi.com/' + frontmatter.path,
-                                identifier: frontmatter.path,
-                                title: frontmatter.title,
-                            }}
-                        />
-                    </Comments>
+                    {/*<Comments>*/}
+                    {/*    <Disqus*/}
+                    {/*        style={{*/}
+                    {/*            marginTop: "3rem"*/}
+                    {/*        }}*/}
+                    {/*        config={{*/}
+                    {/*            url: 'https://gianlucabelvisi.com/' + frontmatter.path,*/}
+                    {/*            identifier: frontmatter.path,*/}
+                    {/*            title: frontmatter.title,*/}
+                    {/*        }}*/}
+                    {/*    />*/}
+                    {/*</Comments>*/}
 
                 </Content>
             </Wrapper>

@@ -15,6 +15,19 @@ const YouTube = ({source}) => {
     );
 };
 
+export const YouTubeShorts = ({source}) => {
+    return (
+        <Wrapper>
+            <Iframe src={"https://www.youtube.com/shorts/" + source}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </Iframe>
+        </Wrapper>
+    );
+};
+
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
