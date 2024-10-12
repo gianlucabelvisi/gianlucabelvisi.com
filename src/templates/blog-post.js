@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
-import {Disqus} from 'gatsby-plugin-disqus';
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";
@@ -50,19 +49,6 @@ const BlogTemplate = ({data}) => {
                     <PostFooter path={frontmatter.path} author={frontmatter.author}/>
 
                     <MailchimpForm/>
-
-                    {/*<Comments>*/}
-                    {/*    <Disqus*/}
-                    {/*        style={{*/}
-                    {/*            marginTop: "3rem"*/}
-                    {/*        }}*/}
-                    {/*        config={{*/}
-                    {/*            url: 'https://gianlucabelvisi.com/' + frontmatter.path,*/}
-                    {/*            identifier: frontmatter.path,*/}
-                    {/*            title: frontmatter.title,*/}
-                    {/*        }}*/}
-                    {/*    />*/}
-                    {/*</Comments>*/}
 
                 </Content>
             </Wrapper>
@@ -158,9 +144,6 @@ const SideBar = styled.div`
 `
 const Post = styled.div`
 `
-const Comments = styled.div`
-`
-
 export const pageQuery = graphql`
     query BlogPostQuery($id: String!) {
         mdx(id: {eq: $id}) {
