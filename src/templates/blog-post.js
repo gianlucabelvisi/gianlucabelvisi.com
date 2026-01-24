@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import {graphql} from 'gatsby'
 import styled from "styled-components"
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
-import {Disqus} from 'gatsby-plugin-disqus';
 import SocialShare from "../components/SocialShare";
 import Aos from "aos";
 import Mdx from "../components/blog/Mdx";

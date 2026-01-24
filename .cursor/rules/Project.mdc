@@ -1,0 +1,371 @@
+---
+alwaysApply: true
+---
+
+# Old Gatsby Blog - Cursor Rule
+
+## Project Overview
+
+This is a personal blog built with **Gatsby v3** using MDX for content. The site features a Netflix-style homepage with content sliders, styled-components for theming, and Firebase for analytics/reactions.
+
+**Author:** Gianluca Belvisi  
+**Site:** gianlucabelvisi.com
+
+---
+
+## Technology Stack
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Gatsby | ^3.4.1 | Static site generator |
+| React | ^17.0.1 | UI framework |
+| MDX | ^1.6.22 | Markdown + JSX content |
+| styled-components | ^5.3.0 | CSS-in-JS styling |
+| gatsby-plugin-image | ^1.5.0 | Image optimization |
+| Firebase | ^9.6.6 | Analytics, view counter, reactions |
+| AOS | ^2.3.4 | Scroll animations |
+
+---
+
+## Project Structure
+
+```
+old_blog/
+├── gatsby-config.js          # Gatsby configuration & plugins
+├── gatsby-node.js            # Page creation & schema customization
+├── src/
+│   ├── assets/               # Static assets (site icon, etc.)
+│   ├── components/
+│   │   ├── blog/             # MDX-specific components
+│   │   │   ├── Mdx.js        # MDX provider & component mapping
+│   │   │   ├── Text.js       # Typography components (Dialogue, Song, etc.)
+│   │   │   ├── Quote.js      # Styled quote blocks
+│   │   │   ├── Spoiler.js    # Spoiler/reveal component
+│   │   │   ├── Boxes.js      # TextBox, ProfitBox components
+│   │   │   ├── YouTube.js    # YouTube embed wrapper
+│   │   │   ├── ResponsiveEmbed.js  # Generic responsive iframe
+│   │   │   └── ...
+│   │   ├── styles/
+│   │   │   ├── GlobalStyles.js  # CSS variables & global styles
+│   │   │   └── Theme.js         # styled-components theme object
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── NetflixSlider.js  # Homepage content carousel
+│   │   ├── FeaturedPost.js   # Hero section for latest post
+│   │   └── ...
+│   ├── data/                 # JSON data files
+│   │   ├── Hashtags.json     # Available hashtags
+│   │   └── ...
+│   ├── pages/                # Static pages
+│   │   ├── index.js          # Homepage with sliders
+│   │   ├── about.js
+│   │   └── ...
+│   ├── posts/                # Blog content (organized by year)
+│   │   ├── 2019/
+│   │   ├── 2020/
+│   │   ├── 2021/
+│   │   │   └── post-name/
+│   │   │       ├── post.mdx  # or named file like sforza1.mdx
+│   │   │       ├── cover.jpg
+│   │   │       └── *.jpg     # Post images
+│   │   └── ...
+│   └── templates/
+│       ├── blog-post.js      # Single post template
+│       └── all-posts.js      # Paginated post list
+```
+
+---
+
+## Frontmatter Schema
+
+Every MDX post requires this frontmatter:
+
+```yaml
+---
+path: "/url-slug"              # URL path (required, unique)
+date: 2024-01-15               # Publish date (YYYY-MM-DD)
+title: "Post Title"            # Main title (required)
+subTitle: "Post subtitle"      # Displayed with decorative quotes
+author: "Gianluca Belvisi"     # Author name
+cardImage: "cover.jpg"         # Thumbnail for sliders (relative path)
+featureImage: "cover.jpg"      # Hero image for post page
+featureImagePhone: "cover.jpg" # Mobile-optimized hero (can be same)
+onHover: "🦄"                  # Emoji shown on card hover
+hashtags: "tag1, tag2, tag3"   # Comma-separated, used for filtering
+hidden: false                  # Optional: exclude from public listings
+---
+```
+
+### Special Fields
+
+| Field | Purpose |
+|-------|---------|
+| `hidden: true` | Post exists but hidden from sliders/listings |
+| `isFuture` | Auto-computed: `true` if date > today (drafts) |
+| `hashtags` | Used to filter posts into themed sliders |
+
+---
+
+## MDX Components
+
+### Available in All Posts (via MDXProvider)
+
+These components are globally available in any `.mdx` file without imports:
+
+```jsx
+// Typography
+<Spoiler>Hidden content revealed on click</Spoiler>
+<Quote title="Quote" from="Author">Quote text</Quote>
+<FigureLabel>Image caption, centered and italic</FigureLabel>
+<TextBox title="Box Title">Callout box content</TextBox>
+
+// Media
+<YouTube source="dQw4w9WgXcQ" />
+<YouTubeAudio />
+<ResponsiveEmbed src="https://..." ratio="16:9" />
+
+// Layout
+<ThreeColumns>
+  <Col1>Left column</Col1>
+  <Col23>Right columns (2/3 width)</Col23>
+</ThreeColumns>
+<Break />
+<NewLine />
+<Indented>Indented block of text</Indented>
+
+// Special
+<Song>Lyrics styled in "Indie Flower" font</Song>
+<Question>Question styled in "Irish Grover" font</Question>
+```
+
+### Components Requiring Import
+
+```jsx
+import {Dialogue} from "../../../components/blog/Text";
+
+<Dialogue>
+    Character dialogue with decorative quotes
+</Dialogue>
+```
+
+---
+
+## Styling System
+
+### CSS Variables (GlobalStyles.js)
+
+```css
+:root {
+  --white: #fafafb;
+  --black: #131313;
+  --primary-color: #e87c48;         /* Orange accent */
+  --primary-color-darker: #bd643a;
+  --primary-color-lighter: #ff9664;
+  --secondary-color: #135291;       /* Blue (header, nav) */
+  --secondary-color-darker: #0b3966;
+  --secondary-color-lighter: #205b95;
+}
+```
+
+### Theme Object (Theme.js)
+
+```javascript
+Theme = {
+  accentColor: "var(--primary-color-lighter)",  // Orange
+  bgColor: "var(--white)",
+  borderRadius: "10px",
+  header: { bgColor: "var(--secondary-color)" },
+  card: { accentColor: "var(--primary-color)" },
+  button: { mainColor: "var(--primary-color)" },
+  post: {
+    link: {
+      color: "var(--primary-color)",
+      visited: "var(--primary-color-darker)",
+      hover: "var(--primary-color-lighter)"
+    }
+  },
+  media: { tablet: "768", phone: "500" }
+}
+```
+
+### Fonts
+
+- **Primary:** Roboto (via `typeface-roboto`)
+- **Decorative:** Irish Grover, Indie Flower, Dancing Script, Pacifico
+
+---
+
+## Content Organization
+
+### Post File Naming
+
+Posts can be named either:
+- `post.mdx` (generic)
+- `descriptive-name.mdx` (e.g., `sforza1.mdx`)
+
+### Image Handling
+
+- Images live in the same folder as the `.mdx` file
+- Reference with relative paths: `![Alt text](image.jpg)`
+- Gatsby processes images via `gatsby-remark-images` (max width: 1200px)
+- Card/feature images must be specified in frontmatter
+
+### Hashtag System
+
+Hashtags enable content filtering on the homepage:
+
+```javascript
+// In index.js
+const caterina = posts.filter(post => containsHashtags(post, 'caterina sforza'))
+const food = posts.filter(post => containsHashtags(post, 'food', 'coffee', 'diet'))
+```
+
+Available hashtags defined in `src/data/Hashtags.json`:
+```
+jokes, lifestyle, mindfulness, science, health, books, tv shows,
+diet, food, tech, travel, investing, history, italy, renaissance,
+coffee, the grind, sport, this blog, ...
+```
+
+---
+
+## Page Creation (gatsby-node.js)
+
+### Dynamic Page Generation
+
+```javascript
+// Creates individual post pages
+data.allMdx.edges.forEach(({node}) => {
+  actions.createPage({
+    path: node.frontmatter.path,
+    component: require.resolve('./src/templates/blog-post.js'),
+    context: { id: node.id }
+  })
+})
+
+// Creates paginated blog listing pages
+// /blog-page1, /blog-page2, etc.
+```
+
+### Schema Customization
+
+```javascript
+// Auto-computed fields on MDX nodes
+isFuture: new Date(frontmatter.date) > new Date()
+isHidden: !!frontmatter.hidden
+```
+
+---
+
+## GraphQL Patterns
+
+### Query for All Posts
+
+```graphql
+query {
+  allMdx(
+    sort: {fields: frontmatter___date, order: DESC}
+    filter: {isFuture: {eq: false}, isHidden: {eq: false}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          path, title, subTitle, date, hashtags, onHover
+          cardImage { childImageSharp { gatsbyImageData } }
+        }
+      }
+    }
+  }
+}
+```
+
+### Query for Single Post
+
+```graphql
+query BlogPostQuery($id: String!) {
+  mdx(id: {eq: $id}) {
+    body
+    frontmatter {
+      path, date, author, subTitle, title
+      featureImage { childImageSharp { gatsbyImageData } }
+    }
+  }
+}
+```
+
+---
+
+## Key Components
+
+### NetflixSlider
+
+Horizontal carousel with:
+- Responsive items (2-5 per screen based on width)
+- Swipe support (react-swipeable)
+- Progress indicators
+- Hover zoom effect on cards
+
+### FeaturedPost
+
+Hero section for the latest post with:
+- Full-width feature image
+- Title overlay
+- AOS scroll animations
+
+### Mdx Component
+
+MDX renderer with component mapping:
+- Overrides base HTML elements (p, h1-h4, ul, ol, table, a)
+- Provides custom components globally
+- Handles code syntax highlighting via `prism-react-renderer`
+
+---
+
+## Animation Patterns
+
+Uses **AOS (Animate On Scroll)**:
+
+```jsx
+<div data-aos="fade-up" data-aos-delay="90" data-aos-duration="1000">
+  Content animates when scrolled into view
+</div>
+```
+
+Common animations: `zoom-out-down`, `fade-down`, `fade-right`, `fade-up`, `fade-left`
+
+---
+
+## Development Commands
+
+```bash
+npm run develop  # Start dev server (gatsby develop)
+npm run build    # Production build (gatsby build)
+npm run serve    # Serve production build locally
+npm run clean    # Clear Gatsby cache
+```
+
+---
+
+## Migration Notes (for Next.js)
+
+When migrating to Next.js, consider:
+
+1. **Replace GraphQL** with file system operations (`fs`, `gray-matter`)
+2. **Replace `gatsby-plugin-image`** with `next/image`
+3. **Replace `gatsby-plugin-mdx`** with `next-mdx-remote`
+4. **Convert styled-components** to CSS Modules (optional)
+5. **Recreate page generation** with `getStaticPaths` / `getStaticProps`
+6. **Port MDX components** to the new MDX provider setup
+7. **Handle image paths** - Next.js needs images in `/public` or special handling
+
+### Key Files to Port
+
+| Old Location | Purpose |
+|--------------|---------|
+| `src/components/blog/Mdx.js` | MDX provider & component map |
+| `src/components/blog/*.js` | Custom MDX components |
+| `src/components/styles/Theme.js` | Color/theme variables |
+| `src/posts/**/*.mdx` | All blog content |
+
+### Key articles
+
+_diabetes.mdx has the latest tech and writing standars and can be a source of inspiration
